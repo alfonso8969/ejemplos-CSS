@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BEM para Estilos CSS</title>
+    <style>
+        /* Estilos generales para la demostración */
+        body {
+            font-family: sans-serif;
+            line-height: 1.6;
+            margin: 20px;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+        .container {
+            max-width: 900px;
+            margin: 30px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        h1, h2, h3 {
+            color: #0056b3;
+            border-bottom: 2px solid #eee;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+        }
+        p {
+            margin-bottom: 15px;
+        }
+        ul {
+            list-style-type: disc;
+            margin-left: 20px;
+            margin-bottom: 15px;
+        }
+        pre {
+            background-color: #eee;
+            padding: 15px;
+            border-left: 4px solid #0056b3;
+            overflow-x: auto;
+            margin-bottom: 20px;
+            border-radius: 4px;
+        }
+        code {
+            font-family: 'Courier New', monospace;
+            color: #d14; /* Color para el código inline */
+            background-color: #e9e9e9;
+            padding: 2px 4px;
+            border-radius: 3px;
+        }
+        strong {
+            color: #007bff;
+        }
+        .note {
+            background-color: #e6f7ff;
+            border-left: 5px solid #007bff;
+            padding: 15px;
+            margin-top: 20px;
+            margin-bottom: 20px;
+            border-radius: 4px;
+        }
+
+        /* --- EJEMPLOS BEM --- */
+
+        /* Bloque: Card */
+        .card {
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            margin-bottom: 20px;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        /* Elementos de la Card */
+        .card__header {
+            font-size: 1.5em;
+            font-weight: bold;
+            color: #333;
+        }
+
+        .card__body {
+            font-size: 1em;
+            color: #555;
+        }
+
+        .card__button {
+            display: inline-block;
+            padding: 10px 15px;
+            background-color: #007bff;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            text-align: center;
+            transition: background-color 0.3s ease;
+        }
+
+        .card__button:hover {
+            background-color: #0056b3;
+        }
+
+        /* Modificadores de la Card */
+        .card--featured {
+            border-color: #28a745;
+            box-shadow: 0 4px 10px rgba(40, 167, 69, 0.2);
+        }
+
+        /* Modificador del Botón */
+        .card__button--primary {
+            background-color: #28a745;
+        }
+
+        .card__button--primary:hover {
+            background-color: #218838;
+        }
+
+        /* Otro bloque de ejemplo: Formulario */
+        .form {
+            background-color: #f9f9f9;
+            border: 1px solid #eee;
+            padding: 25px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+
+        .form__group {
+            margin-bottom: 15px;
+        }
+
+        .form__label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+            color: #444;
+        }
+
+        .form__input {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            box-sizing: border-box; /* Incluye padding y borde en el ancho total */
+        }
+
+        .form__input--error {
+            border-color: #dc3545;
+            box-shadow: 0 0 0 0.2rem rgba(220,53,69,.25);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>¡Hola, Futuros Maestros del CSS!</h1>
+        <p>Hoy vamos a explorar una metodología increíble para organizar vuestros estilos CSS: <strong>BEM</strong>. BEM significa <strong>Bloque, Elemento, Modificador</strong> y es una forma muy popular de escribir clases CSS que sean fáciles de entender, mantener y reutilizar.</p>
+
+        <p class="note">
+            <strong>¿Por qué BEM?</strong> A medida que vuestros proyectos web crecen, el CSS puede volverse un caos. BEM nos ayuda a evitar conflictos de nombres, a que el código sea predecible y a que otros desarrolladores (¡o vosotros mismos en el futuro!) entiendan rápidamente la estructura.
+        </p>
+ 
+
+        <h2>Los Pilares de BEM: Bloque, Elemento, Modificador</h2>
+
+        <h3>1. Bloque (Block)</h3>
+        <p>Un <strong>Bloque</strong> es una entidad independiente y reutilizable. Piensa en ellos como componentes de tu interfaz de usuario.</p>
+        <ul>
+            <li><strong>Ejemplos:</strong> <code>.header</code>, <code>.button</code>, <code>.card</code>, <code>.menu</code>, <code>.form</code>.</li>
+            <li><strong>Convención:</strong> Nombres de una sola palabra o varias palabras separadas por guiones (kebab-case).</li>
+            <li><strong>Código de ejemplo:</strong></li>
+        </ul>
+<pre><code>&lt;div class=&quot;card&quot;&gt;
+    &lt;!-- Contenido de la tarjeta --&gt;
+&lt;/div&gt;
+
+&lt;button class=&quot;button&quot;&gt;
+    Click aquí
+&lt;/button&gt;</code></pre>
+
+        <h3>2. Elemento (Element)</h3>
+        <p>Un <strong>Elemento</strong> es una parte de un Bloque que no puede usarse independientemente. Está lógicamente conectado a su Bloque.</p>
+        <ul>
+            <li><strong>Ejemplos:</strong> <code>.card__header</code>, <code>.button__icon</code>, <code>.menu__item</code>, <code>.form__input</code>.</li>
+            <li><strong>Convención:</strong> Se une al Bloque con <strong>doble guion bajo</strong> (<code>__</code>).</li>
+            <li><strong>Código de ejemplo:</strong></li>
+        </ul>
+<pre><code>&lt;div class=&quot;card&quot;&gt;
+    &lt;h2 class=&quot;card__header&quot;&gt;Título de la Tarjeta&lt;/h2&gt;
+    &lt;p class=&quot;card__body&quot;&gt;Contenido principal de la tarjeta.&lt;/p&gt;
+    &lt;a href=&quot;#&quot; class=&quot;card__button&quot;&gt;Leer más&lt;/a&gt;
+&lt;/div&gt;</code></pre>
+        <p>En este ejemplo, <code>card__header</code>, <code>card__body</code> y <code>card__button</code> son elementos del bloque <code>card</code>.</p>
+
+        <h3>3. Modificador (Modifier)</h3>
+        <p>Un <strong>Modificador</strong> es una bandera en un Bloque o Elemento que cambia su apariencia, comportamiento o estado.</p>
+        <ul>
+            <li><strong>Ejemplos:</strong> <code>.button--large</code>, <code>.card--featured</code>, <code>.form__input--error</code>, <code>.menu__item--active</code>.</li>
+            <li><strong>Convención:</strong> Se une al Bloque o Elemento con <strong>doble guion medio</strong> (<code>--</code>).</li>
+            <li><strong>Código de ejemplo:</strong></li>
+        </ul>
+<pre><code>&lt;!-- Modificador para el bloque card --&gt;
+&lt;div class=&quot;card card--featured&quot;&gt;
+    &lt;h2 class=&quot;card__header&quot;&gt;Tarjeta Destacada&lt;/h2&gt;
+    &lt;p class=&quot;card__body&quot;&gt;¡Esta tarjeta tiene un estilo especial!&lt;/p&gt;
+    &lt;a href=&quot;#&quot; class=&quot;card__button card__button--primary&quot;&gt;Ver Producto&lt;/a&gt;
+&lt;/div&gt;
+
+&lt;!-- Modificador para el elemento form__input --&gt;
+&lt;form class=&quot;form&quot;&gt;
+    &lt;div class=&quot;form__group&quot;&gt;
+        &lt;label for=&quot;email&quot; class=&quot;form__label&quot;&gt;Email:&lt;/label&gt;
+        &lt;input type=&quot;email&quot; id=&quot;email&quot; class=&quot;form__input form__input--error&quot;&gt;
+    &lt;/div&gt;
+&lt;/form&gt;</code></pre>
+        <p>Observa que puedes aplicar múltiples clases a un mismo elemento HTML: la clase base del bloque/elemento y las clases de los modificadores.</p>
+
+ 
+
+        <h2>Reglas Clave de BEM</h2>
+        <ul>
+            <li><strong>Independencia:</strong> Los bloques deben ser independientes. No dependas de la estructura HTML para aplicar estilos.</li>
+            <li><strong>Un solo nivel:</strong> Los elementos siempre pertenecen directamente a un bloque, no a otro elemento. Por ejemplo, no <code>.card__header__title</code>, sino <code>.card__title</code> si el título es un elemento del bloque <code>card</code>.</li>
+            <li><strong>Nombrar con propósito:</strong> Los nombres de clase deben describir el propósito, no la apariencia. En lugar de <code>.red-button</code>, usa <code>.button--danger</code>.</li>
+            <li><strong>Evitar IDs en CSS:</strong> En BEM, nos enfocamos en clases para la modularidad y reutilización.</li>
+        </ul>
+
+ 
+
+        <h2>Ejemplos Prácticos</h2>
+
+        <h3>Ejemplo 1: Una Tarjeta de Contenido</h3>
+        <div class="card">
+            <h2 class="card__header">Título de la Noticia</h2>
+            <p class="card__body">Este es el cuerpo principal de la tarjeta, donde se describe el contenido relevante. Aquí podemos poner un extracto o una breve descripción.</p>
+            <a href="#" class="card__button">Ver detalles</a>
+        </div>
+
+        <div class="card card--featured">
+            <h2 class="card__header">¡Noticia Destacada!</h2>
+            <p class="card__body">Esta es una tarjeta especial que queremos que resalte. Observa cómo el borde y la sombra cambian para indicar su importancia.</p>
+            <a href="#" class="card__button card__button--primary">¡Comprar ahora!</a>
+        </div>
+ 
+        <h3>Ejemplo 2: Un Formulario Simple</h3>
+        <form class="form">
+            <div class="form__group">
+                <label for="name" class="form__label">Nombre:</label>
+                <input type="text" id="name" class="form__input" placeholder="Tu nombre completo">
+            </div>
+            <div class="form__group">
+                <label for="email-form" class="form__label">Email:</label>
+                <input type="email" id="email-form" class="form__input form__input--error" placeholder="email@ejemplo.com">
+                <small style="color: #dc3545; display: block; margin-top: 5px;">Este campo es obligatorio</small>
+            </div>
+            <button type="submit" class="card__button">Enviar Formulario</button>
+        </form>
+
+       
+
+        <h2>Beneficios de Usar BEM</h2>
+        <ul>
+            <li><strong>Claridad y Legibilidad:</strong> Los nombres de clase son muy descriptivos, lo que facilita entender la función de cada parte.</li>
+            <li><strong>Modularidad:</strong> Cada bloque es independiente, lo que permite reutilizar componentes en diferentes partes de tu sitio web sin problemas.</li>
+            <li><strong>Mantenibilidad:</strong> Es más fácil depurar y modificar estilos, ya que los cambios en un bloque no afectarán a otros.</li>
+            <li><strong>Escalabilidad:</strong> Ideal para proyectos grandes con equipos de desarrollo.</li>
+            <li><strong>Predecibilidad:</strong> Sabrás exactamente cómo se comportarán tus estilos.</li>
+        </ul>
+
+        <p class="note">
+            <strong>Un consejo importante:</strong> Al principio, BEM puede parecer un poco "verboso" por los nombres largos, pero la claridad y los beneficios a largo plazo superan con creces esta pequeña incomodidad inicial. ¡La práctica hace al maestro!
+        </p>
+
+        <p>¡Esperamos que esta introducción a BEM os sea muy útil! ¡A practicar!</p>
+    </div>
+</body>
+</html>

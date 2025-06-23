@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Intermedio - Grid Layout</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            min-height: 100vh;
+        }
+
+        .contenedor-principal {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .header {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 40px;
+            border-radius: 20px;
+            text-align: center;
+            margin-bottom: 30px;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+        }
+
+        .header h1 {
+            font-size: 3.5em;
+            background: linear-gradient(45deg, #667eea, #764ba2);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 15px;
+        }
+
+        .seccion {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            margin-bottom: 30px;
+            padding: 30px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .seccion h2 {
+            color: #2c3e50;
+            font-size: 2.2em;
+            margin-bottom: 20px;
+            border-bottom: 3px solid #e74c3c;
+            padding-bottom: 10px;
+        }
+
+        /* === GRID BÁSICO === */
+        .grid-basico {
+            grid-gap: 15px;
+            background-color: #ecf0f1;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px 0;
+        }
+
+        .grid-item {
+            background-color: #3498db;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            border-radius: 8px;
+            font-weight: bold;
+            min-height: 80px;
+        }
+
+        /* === GRID CON DIFERENTES TAMAÑOS === */
+        .grid-fracciones {
+            background-color: #ecf0f1;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px 0;
+        }
+
+        .grid-fracciones .grid-item:nth-child(1) {
+            background-color: #e74c3c;
+        }
+
+        .grid-fracciones .grid-item:nth-child(2) {
+            background-color: #f39c12;
+        }
+
+        .grid-fracciones .grid-item:nth-child(3) {
+            background-color: #27ae60;
+        }
+
+
+
+
+
+        /* === GALERÍA GRID === */
+        .galeria-grid {
+
+            margin: 30px 0;
+        }
+
+        .imagen-grid-card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+
+        .imagen-grid-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .grid-card-content {
+            padding: 20px;
+        }
+
+        .grid-card-content h3 {
+            color: #2c3e50;
+            margin-bottom: 10px;
+            font-size: 1.3em;
+        }
+
+        .grid-card-content p {
+            color: #7f8c8d;
+            line-height: 1.5;
+        }
+
+        /* === GRID COMPLEJO === */
+        .grid-complejo {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            grid-template-rows: repeat(3, 150px);
+            grid-gap: 15px;
+            background-color: #ecf0f1;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px 0;
+        }
+
+        .item-grande {
+
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 10px;
+            font-size: 1.5em;
+            font-weight: bold;
+        }
+
+        .item-alto {
+            grid-row: span 2;
+            background-color: #e74c3c;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 8px;
+            font-weight: bold;
+        }
+
+        .item-ancho {
+            grid-column: span 2;
+            background-color: #f39c12;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 8px;
+            font-weight: bold;
+        }
+
+        .item-normal {
+            background-color: #27ae60;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 8px;
+            font-weight: bold;
+        }
+
+        /* === DASHBOARD GRID === */
+        .dashboard {
+
+            margin: 30px 0;
+        }
+
+        .widget {
+            background: white;
+            padding: 25px;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            border-left: 5px solid #3498db;
+        }
+
+        .widget h3 {
+            color: #2c3e50;
+            margin-bottom: 15px;
+            font-size: 1.4em;
+        }
+
+        .widget-stat {
+            font-size: 2.5em;
+            font-weight: bold;
+            color: #3498db;
+            margin: 10px 0;
+        }
+
+        .widget img {
+            width: 100%;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 10px;
+            margin: 10px 0;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="contenedor-principal">
+        <div class="header">
+            <h1>CSS Grid Layout</h1>
+            <p>El sistema de layout bidimensional más poderoso de CSS</p>
+        </div>
+
+
+        <div class="seccion">
+            <h2>Grid Básico</h2>
+            <p>Un grid simple con 3 columnas de igual tamaño:</p>
+
+            <div class="grid-basico">
+                <div class="grid-item">Item 1</div>
+                <div class="grid-item">Item 2</div>
+                <div class="grid-item">Item 3</div>
+                <div class="grid-item">Item 4</div>
+                <div class="grid-item">Item 5</div>
+                <div class="grid-item">Item 6</div>
+            </div>
+
+        </div>
+
+        <div class="seccion">
+            <h2>Fracciones y Tamaños</h2>
+            <p>Usando fracciones (fr) para crear columnas de diferentes tamaños:</p>
+
+            <div class="grid-fracciones">
+                <div class="grid-item">1fr</div>
+                <div class="grid-item">2fr (doble)</div>
+                <div class="grid-item">1fr</div>
+            </div>
+
+        </div>
+
+
+
+        <div class="seccion">
+            <h2>Galería Responsiva con Grid</h2>
+            <p>Una galería que se adapta automáticamente usando <span class="propiedad">auto-fit</span> y <span
+                    class="propiedad">minmax</span>:</p>
+
+            <div class="galeria-grid">
+                <div class="imagen-grid-card">
+                    <img src="https://picsum.photos/300/200?random=42" alt="Imagen 1">
+                    <div class="grid-card-content">
+                        <h3>Fotografía Artística</h3>
+                        <p>Capturando momentos únicos con una perspectiva creativa y original.</p>
+                    </div>
+                </div>
+
+                <div class="imagen-grid-card">
+                    <img src="https://picsum.photos/300/200?random=43" alt="Imagen 2">
+                    <div class="grid-card-content">
+                        <h3>Diseño Minimalista</h3>
+                        <p>La belleza de la simplicidad en cada elemento visual.</p>
+                    </div>
+                </div>
+
+                <div class="imagen-grid-card">
+                    <img src="https://picsum.photos/300/200?random=44" alt="Imagen 3">
+                    <div class="grid-card-content">
+                        <h3>Naturaleza Urbana</h3>
+                        <p>Encontrando la naturaleza en medio del paisaje urbano moderno.</p>
+                    </div>
+                </div>
+
+                <div class="imagen-grid-card">
+                    <img src="https://picsum.photos/300/200?random=45" alt="Imagen 4">
+                    <div class="grid-card-content">
+                        <h3>Innovación Digital</h3>
+                        <p>Explorando las fronteras de la tecnología y el diseño digital.</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="seccion">
+            <h2>Dashboard con Grid</h2>
+            <p>Un dashboard responsivo que muestra diferentes widgets:</p>
+
+            <div class="dashboard">
+                <div class="widget">
+                    <h3>Estadísticas</h3>
+                    <div class="widget-stat">1,234</div>
+                    <p>Usuarios activos este mes</p>
+                    <img src="https://picsum.photos/250/150?random=46" alt="Gráfico estadísticas">
+                </div>
+
+                <div class="widget">
+                    <h3>Ingresos</h3>
+                    <div class="widget-stat">$45,678</div>
+                    <p>Ingresos totales del trimestre</p>
+                    <img src="https://picsum.photos/250/150?random=47" alt="Gráfico ingresos">
+                </div>
+
+                <div class="widget">
+                    <h3>Conversiones</h3>
+                    <div class="widget-stat">23.5%</div>
+                    <p>Tasa de conversión promedio</p>
+                    <img src="https://picsum.photos/250/150?random=48" alt="Gráfico conversiones">
+                </div>
+
+                <div class="widget">
+                    <h3>Crecimiento</h3>
+                    <div class="widget-stat">+15.2%</div>
+                    <p>Crecimiento respecto al mes anterior</p>
+                    <img src="https://picsum.photos/250/150?random=49" alt="Gráfico crecimiento">
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+</body>
+
+</html>

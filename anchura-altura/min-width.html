@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="">
+
+    <style>
+        
+        body{
+            background:rgb(138, 138, 138);
+        }
+        
+        h1{
+            font-size: 4em;
+        }
+
+        body > header{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 50px;
+            background: linear-gradient(rgba(64, 10, 150,0.6),rgba(64, 10, 150,0.1)),
+                         url('https://picsum.photos/1800/1800') center/cover;
+            color:#FFF;
+            text-align: center;
+             
+        }
+
+        /*>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>*/    
+        /* PROBAMOS EL min-width EN LA CAJA PADRE */
+
+        .cajaPadre{
+            /* la caja ocupará el 80% de ancho pero como poco será de 700px.
+            En tamaños más pequeños se verá un scroll horizontal */
+            width: 80%;      
+            min-width: 700px;
+ 
+            margin:50px auto;
+            padding: 20px;
+            border:3px solid #000;
+            background: #ffffff;
+        }
+
+        .cajasHijo{
+            width: 300px;
+        }
+
+        .cajasHijo:nth-child(odd){
+            background: #6bb1f7;
+        }
+
+        .cajasHijo:nth-child(even){
+            background: #6bf7a8;
+        }     
+
+        /* Reglas particulares para hijos  */
+        .cajaPadre .hijo2{
+            background: #f9b60f;
+             
+        }
+  
+    </style>
+	 
+
+        
+    <title>Document</title>
+</head>
+<body>
+    <header>
+        <h1>Probamos min-width</h1>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum fugit est vero ex non officia! Inventore ipsa rem exercitationem molestias.</p>
+    </header>
+
+    <div class="cajaPadre">
+        <!-- HIJO 1 -->
+        <div class="cajasHijo hijo1">
+            <h2>Caja1</h2>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident, saepe!</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum, delectus dignissimos.</p>
+        </div>
+
+
+        <!-- HIJO 2 -->
+        <div class="cajasHijo hijo2">
+            <h2>Caja2</h2>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident, saepe!</p>
+
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima alias facilis voluptate cupiditate voluptatum incidunt perspiciatis id autem! Possimus, cumque!</p>
+
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio voluptatibus placeat accusantium magni rem nihil possimus explicabo, numquam, provident eveniet tempore eum debitis aut facere? Sint reprehenderit laudantium incidunt dolore.</p>
+        </div>
+
+        <!-- HIJO 3 -->
+        <div class="cajasHijo hijo3">
+            <h2>Caja3</h2>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident, saepe!</p>
+        </div>
+
+        <!-- HIJO 4 -->
+        <div class="cajasHijo hijo4">
+            <h2>Caja4</h2>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident, saepe!</p>
+        </div>
+        
+        <!-- HIJO 5 -->
+        <div class="cajasHijo hijo5">
+            <h2>Caja5</h2>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident, saepe!</p>
+        </div>
+
+        <!-- HIJO 6 -->
+        <div class="cajasHijo hijo6">
+            <h2>Caja6</h2>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident, saepe!</p>
+        </div>
+ 
+    </div>
+
+</body>
+</html>

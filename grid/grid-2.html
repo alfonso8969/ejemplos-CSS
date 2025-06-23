@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        /* estilos generales */
+        * {
+            box-sizing: border-box;
+        }
+
+        body,
+        figure,
+        p {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: sans-serif;
+            font-size: 1.1em;
+            color: rgb(43, 43, 43);
+        }
+
+        h1,
+        h2,
+        h3 {
+            margin: 0 0 10px 0;
+            color: rgb(53, 99, 84);
+        }
+
+
+        h2 {
+            font-size: 2.5em;
+        }
+
+        ul,
+        li {
+            margin: 0;
+            padding: 0;
+            list-style-type: none;
+        }
+
+        p {
+            line-height: 1.4em;
+        }
+
+        figure {
+            margin: 1em 0;
+        }
+
+        figcaption {
+            margin-top: 10px;
+            font-size: 0.8em;
+            color: rgb(124, 124, 124);
+        }
+
+        /* header principal */
+
+        body>header {
+            min-height: 35vh;
+            background: url("https://picsum.photos/1080/300") center/cover, #323233;
+            color: aliceblue;
+
+        }
+
+        body>header>p {
+            text-shadow: 2px 2px 4px #000;
+        }
+
+
+
+        .titulo-header {
+            font-size: 4em;
+            text-shadow: 2px 2px 4px #000;
+        }
+
+        .padding-lateral {
+            padding: 0 2em;
+        }
+
+        /* estructura */
+        .ancho-maximo {
+            max-width: 1500px;
+            margin: 0 auto;
+        }
+
+
+        /* navegación principal */
+
+
+        nav {
+            min-height: 100px;
+            background: #000;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #FFF;
+        }
+
+        /* contenido principal */
+
+        .productos {
+            padding-top: 2em;
+            padding-bottom: 2em;
+        }
+
+
+        .productos>header {
+            padding: 2em 0;
+        }
+
+        .productos>header p {
+            font-size: 1.4em;
+        }
+
+        .productos .caja-producto {
+            padding: 15px;
+            display: grid;
+            grid-auto-flow: row;
+            align-content: end;
+            background: #1f1f1f;
+            color: rgb(200, 200, 200);
+            border: 1px solid gray;
+        }
+
+        .caja-producto {
+            text-align: center;
+        }
+
+        .caja-producto img {
+            width: 100%;
+        }
+
+
+        .nombre-producto {
+            margin-top: 10px;
+            font-size: 0.9em;
+            text-transform: uppercase;
+            font-weight: bold;
+        }
+
+        .precio-producto {
+            margin-top: 10px;
+            color: rgb(162, 210, 194);
+            font-size: 0.9em;
+        }
+
+        /* footer principal */
+        body>footer {
+            padding: 40px;
+            text-align: center;
+        }
+
+        body>footer p {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- colocar los contenidos del header entrados en horizontal y vertical con GRID -->
+    <header>
+        <p class="titulo-header">Demo GRID</p>
+        <p>Lorem ipsum dolor sit amet consectetur.</p>
+    </header>
+
+    <nav class="padding-lateral">
+
+        <!-- poner enlaces en horizontal con GRID -->
+        <ul class="ancho-maximo">
+            <li><a href="#">Enlace 1</a></li>
+            <li><a href="#">Enlace 2</a></li>
+            <li><a href="#">Enlace 3</a></li>
+            <li><a href="#">Enlace 4</a></li>
+            <li><a href="#">Enlace 5</a></li>
+        </ul>
+    </nav>
+
+    <main>
+
+        <section class="productos ancho-maximo padding-lateral">
+
+            <header>
+                <h2>Ad sequi doloremque</h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi possimus maxime labore
+                    <strong>doloribus eius? Obcaecati id ipsa</strong> porro soluta magnam. Praesentium voluptatum
+                    laudantium molestiae soluta repellendus provident numquam fugit nam?</strong></p>
+            </header>
+
+            <!-- poner cajas de productos en horizontal con GRID -->
+
+            <div>
+
+                <!-- caja producto -->
+                <div class="caja-producto">
+                    <p class="nombre-producto">Lorem dolor</p>
+                    <figure>
+                        <a href="#">
+                            <img src="https://picsum.photos/400/600" alt="bla bla">
+                        </a>
+                    </figure>
+                    <p class="descripcion-producto">Lorem ipsum dolor sit amet consectetur adipisicing, ipsum dolor sit
+                        amet consectetur adipisicing elit. Lorem18</p>
+                    <p class="precio-producto">Desde: <br> 10 € / mes</p>
+                </div>
+
+                <!-- caja producto -->
+                <div class="caja-producto">
+                    <p class="nombre-producto">Lorem dolor</p>
+                    <figure>
+                        <a href="#">
+                            <img src="https://picsum.photos/401/600" alt="bla bla">
+                        </a>
+                    </figure>
+                    <p class="descripcion-producto">Lorem ipsum dolor sit amet consectetur adipisicing, ipsum dolor sit
+                        amet consectetur adipisicing elit. Lorem18</p>
+                    <p class="precio-producto">Desde: <br> 10 € / mes</p>
+                </div>
+
+                <!-- caja producto -->
+                <div class="caja-producto">
+                    <p class="nombre-producto">Lorem dolor</p>
+                    <figure>
+                        <a href="#">
+                            <img src="https://picsum.photos/402/600" alt="bla bla">
+                        </a>
+                    </figure>
+                    <p class="descripcion-producto">Lorem ipsum dolor sit amet consectetur adipisicing, ipsum dolor sit
+                        amet consectetur adipisicing elit. Lorem18</p>
+                    <p class="precio-producto">Desde: <br> 10 € / mes</p>
+                </div>
+
+                <!-- caja producto -->
+                <div class="caja-producto">
+                    <p class="nombre-producto">Lorem dolor</p>
+                    <figure>
+                        <a href="#">
+                            <img src="https://picsum.photos/403/600" alt="bla bla">
+                        </a>
+                    </figure>
+                    <p class="descripcion-producto">Lorem ipsum dolor sit amet consectetur adipisicing, ipsum dolor sit
+                        amet consectetur adipisicing elit. Lorem18</p>
+                    <p class="precio-producto">Desde: <br> 10 € / mes</p>
+                </div>
+
+                <!-- caja producto -->
+                <div class="caja-producto">
+                    <p class="nombre-producto">Lorem dolor</p>
+                    <figure>
+                        <a href="#">
+                            <img src="https://picsum.photos/404/600" alt="bla bla">
+                        </a>
+                    </figure>
+                    <p class="descripcion-producto">Lorem ipsum dolor sit amet consectetur adipisicing, ipsum dolor sit
+                        amet consectetur adipisicing elit. Lorem18</p>
+                    <p class="precio-producto">Desde: <br> 10 € / mes</p>
+                </div>
+
+                <!-- caja producto -->
+                <div class="caja-producto">
+                    <p class="nombre-producto">Lorem dolor</p>
+                    <figure>
+                        <a href="#">
+                            <img src="https://picsum.photos/405/600" alt="bla bla">
+                        </a>
+                    </figure>
+                    <p class="descripcion-producto">Lorem ipsum dolor sit amet consectetur adipisicing, ipsum dolor sit
+                        amet consectetur adipisicing elit. Lorem18</p>
+                    <p class="precio-producto">Desde: <br> 10 € / mes</p>
+                </div>
+
+                <!-- caja producto -->
+                <div class="caja-producto">
+                    <p class="nombre-producto">Lorem dolor</p>
+                    <figure>
+                        <a href="#">
+                            <img src="https://picsum.photos/406/600" alt="bla bla">
+                        </a>
+                    </figure>
+                    <p class="descripcion-producto">Lorem ipsum dolor sit amet consectetur adipisicing, ipsum dolor sit
+                        amet consectetur adipisicing elit. Lorem18</p>
+                    <p class="precio-producto">Desde: <br> 10 € / mes</p>
+                </div>
+
+                <!-- caja producto -->
+                <div class="caja-producto">
+                    <p class="nombre-producto">Lorem dolor</p>
+                    <figure>
+                        <a href="#">
+                            <img src="https://picsum.photos/407/600" alt="bla bla">
+                        </a>
+                    </figure>
+                    <p class="descripcion-producto">Lorem ipsum dolor sit amet consectetur adipisicing, ipsum dolor sit
+                        amet consectetur adipisicing elit. Lorem18</p>
+                    <p class="precio-producto">Desde: <br> 10 € / mes</p>
+                </div>
+
+            </div> <!-- fin  grid -->
+
+        </section>
+    </main>
+
+    <footer>
+        <div>MENÚ SECUNDARIO</div>
+        <p><small>&reg;Todos los derechos reservados</small></p>
+    </footer>
+</body>
+
+</html>

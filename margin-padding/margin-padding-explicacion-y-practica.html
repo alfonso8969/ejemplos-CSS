@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clase de CSS: Margin y Padding</title>
+    <style>
+        /* Estilos Generales y Reset Básico */
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f7f6;
+            color: #333;
+        }
+
+        .header {
+            background-color: #2c3e50;
+            color: #fff;
+            padding: 20px 0;
+            text-align: center;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        }
+
+        .header__title {
+            margin: 0;
+            font-size: 2.8em;
+            letter-spacing: 1px;
+        }
+
+        .main-content {
+            max-width: 900px;
+            margin: 30px auto;
+            background-color: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.08);
+            padding: 25px;
+        }
+
+        .section {
+            margin-bottom: 40px;
+            padding-bottom: 20px;
+            border-bottom: 1px dashed #e0e0e0;
+        }
+
+        .section:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+        }
+
+        .section__title {
+            color: #2980b9;
+            font-size: 2.2em;
+            margin-bottom: 25px;
+            text-align: center;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #3498db;
+        }
+
+        .explanation-text {
+            font-size: 1.1em;
+            margin-bottom: 20px;
+            color: #555;
+            text-align: center;
+        }
+
+        .example-container {
+            background-color: #ecf0f1;
+            border: 2px solid #bdc3c7;
+            margin-bottom: 25px;
+            padding: 15px;
+            border-radius: 6px;
+            position: relative; /* Para la etiqueta de propiedad */
+        }
+
+        .example-box {
+            background-color: #3498db;
+            color: #fff;
+            padding: 20px;
+            border: 2px solid #2980b9;
+            text-align: center;
+            font-weight: bold;
+            font-size: 1.2em;
+            border-radius: 4px;
+        }
+
+        /* Etiqueta para indicar la propiedad en el ejemplo */
+        .property-label {
+            position: absolute;
+            top: 5px;
+            left: 5px;
+            background-color: rgba(0, 0, 0, 0.6);
+            color: #fff;
+            padding: 3px 8px;
+            font-size: 0.75em;
+            border-radius: 3px;
+            z-index: 10;
+        }
+
+        /* --- ZONA DE PRUEBAS DE PADDING --- */
+        .padding-example .example-box {
+            /*
+            ¡Es tu turno! Prueba a cambiar la propiedad 'padding' aquí.
+            'padding' añade espacio *dentro* del borde del elemento.
+
+            Valores que puedes probar:
+            - padding: 20px;                     (Todas las direcciones)
+            - padding: 10px 30px;                (Arriba/Abajo y Izquierda/Derecha)
+            - padding: 5px 10px 15px 20px;       (Arriba, Derecha, Abajo, Izquierda)
+            - padding-top: 50px;                 (Solo arriba)
+            - padding-left: 40px;                (Solo izquierda)
+            */
+            padding: 20px; /* Valor inicial, ¡cámbialo! */
+        }
+
+        /* --- ZONA DE PRUEBAS DE MARGIN --- */
+        .margin-example .example-box {
+            /*
+            ¡Es tu turno! Prueba a cambiar la propiedad 'margin' aquí.
+            'margin' añade espacio *fuera* del borde del elemento, separándolo de otros elementos adyacentes.
+
+            Valores que puedes probar:
+            - margin: 30px;                     (Todas las direcciones)
+            - margin: 15px 40px;                (Arriba/Abajo y Izquierda/Derecha)
+            - margin: 10px 20px 30px 40px;      (Arriba, Derecha, Abajo, Izquierda)
+            - margin-top: 50px;                 (Solo arriba)
+            - margin-bottom: 20px;              (Solo abajo)
+            - margin: auto;                     (Para centrar elementos de bloque con ancho definido)
+            */
+            margin: 20px; /* Valor inicial, ¡cámbialo! */
+            width: 80%; /* Añade un ancho para ver mejor 'margin: auto' */
+        }
+
+        /* --- EJEMPLO DE COLAPSO DE MÁRGENES --- */
+        .margin-collapse-example .first-element,
+        .margin-collapse-example .second-element {
+            background-color: #f39c12;
+            color: #fff;
+            padding: 15px;
+            border: 1px solid #e67e22;
+            text-align: center;
+            font-weight: bold;
+        }
+
+        .margin-collapse-example .first-element {
+            /* PRUEBA: margin-bottom aquí */
+            margin-bottom: 30px; /* Prueba diferentes valores para ver el colapso */
+        }
+
+        .margin-collapse-example .second-element {
+            /* PRUEBA: margin-top aquí */
+            margin-top: 20px; /* Prueba diferentes valores para ver el colapso */
+        }
+
+        /* --- COMBINACIÓN DE PADDING Y MARGIN --- */
+        .combination-example .outer-box {
+            background-color: #9b59b6;
+            border: 3px dashed #8e44ad;
+            color: #fff;
+            text-align: center;
+            padding: 30px; /* PRUEBA: padding en la caja exterior */
+            margin-bottom: 30px; /* PRUEBA: margin en la caja exterior */
+        }
+
+        .combination-example .inner-box {
+            background-color: #1abc9c;
+            border: 2px solid #16a085;
+            color: #fff;
+            padding: 20px; /* PRUEBA: padding en la caja interior */
+            margin: 20px; /* PRUEBA: margin en la caja interior */
+        }
+
+        /* --- DESAFÍO PRÁCTICO --- */
+        .challenge-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px; /* Espacio entre las cajas del desafío */
+            background-color: #f9f9f9;
+            border: 2px dashed #a7b7c7;
+            padding: 20px;
+            border-radius: 8px;
+        }
+
+        .challenge-box {
+            width: 150px;
+            height: 100px;
+            background-color: #4CAF50; /* Verde inicial */
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-weight: bold;
+            font-size: 1.1em;
+            border: 2px solid #388E3C;
+            border-radius: 5px;
+            box-shadow: 2px 2px 5px rgba(0,0,0,0.2);
+            /* Aquí es donde tus alumnos añadirán sus estilos */
+        }
+
+        .challenge-box--1 { background-color: #FFC107; border-color: #FFA000; }
+        .challenge-box--2 { background-color: #2196F3; border-color: #1976D2; }
+        .challenge-box--3 { background-color: #E91E63; border-color: #C2185B; }
+        .challenge-box--4 { background-color: #9C27B0; border-color: #7B1FA2; }
+        .challenge-box--5 { background-color: #00BCD4; border-color: #0097A7; }
+
+
+        /* Footer */
+        .footer {
+            background-color: #34495e;
+            color: #fff;
+            text-align: center;
+            padding: 20px 0;
+            margin-top: 50px;
+            font-size: 0.9em;
+            box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.2);
+        }
+
+        .footer__text {
+            margin: 5px 0;
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="header__container">
+            <h1 class="header__title">Entendiendo Margin y Padding en CSS</h1>
+        </div>
+    </header>
+
+    <main class="main-content">
+
+        <section class="section">
+            <h2 class="section__title">¿Qué son Margin y Padding?</h2>
+            <p class="explanation-text">
+                En el modelo de caja de CSS, cada elemento HTML se representa como una caja rectangular.
+                <br>Las propiedades **`padding`** y **`margin`** controlan el espacio alrededor del contenido de esta caja.
+            </p>
+        </section>
+
+        <section class="section">
+            <h2 class="section__title">1. Padding: Espacio Interno</h2>
+            <p class="explanation-text">
+                El **`padding`** es el espacio entre el **contenido** de un elemento y su **borde**.
+                Afecta al tamaño real del elemento y su fondo.
+                <br>¡Modifica el valor de `padding` en el CSS para ver el efecto!
+            </p>
+            <div class="example-container padding-example">
+                <span class="property-label">Padding</span>
+                <div class="example-box">
+                    Contenido con Padding
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2 class="section__title">2. Margin: Espacio Externo</h2>
+            <p class="explanation-text">
+                El **`margin`** es el espacio que rodea el **borde** de un elemento, separándolo de otros elementos adyacentes.
+                Afecta al espacio entre cajas, no al tamaño de la caja en sí.
+                <br>¡Modifica el valor de `margin` en el CSS para ver el efecto!
+            </p>
+            <div class="example-container margin-example">
+                <span class="property-label">Margin</span>
+                <div class="example-box">
+                    Contenido con Margin
+                </div>
+            </div>
+            <div class="example-container margin-example" style="margin-top: 20px;">
+                <span class="property-label">Margin</span>
+                <div class="example-box">
+                    Otro elemento para ver la separación
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2 class="section__title">3. Colapso de Márgenes</h2>
+            <p class="explanation-text">
+                Un concepto importante de los **`margin`** es el **colapso de márgenes**. Cuando dos márgenes verticales adyacentes se encuentran,
+                se colapsan en un solo margen, y el tamaño resultante es el mayor de los dos.
+                <br>¡Prueba a cambiar los `margin-bottom` del primer elemento y `margin-top` del segundo!
+            </p>
+            <div class="example-container margin-collapse-example">
+                <span class="property-label">Colapso de Márgenes</span>
+                <div class="first-element">Primer Elemento (margin-bottom)</div>
+                <div class="second-element">Segundo Elemento (margin-top)</div>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2 class="section__title">4. Combinando Margin y Padding</h2>
+            <p class="explanation-text">
+                Ambas propiedades se usan constantemente en combinación para crear diseños y espaciados efectivos.
+                <br>Observa cómo el `padding` afecta el espacio dentro de la caja y el `margin` el espacio entre cajas.
+                <br>¡Modifica tanto el `padding` como el `margin` de las cajas para experimentar!
+            </p>
+            <div class="example-container combination-example">
+                <span class="property-label">Combinación</span>
+                <div class="outer-box">
+                    Caja Exterior (con su propio padding y margin)
+                    <div class="inner-box">
+                        Caja Interior (con su propio padding y margin)
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        ---
+
+        <section class="section">
+            <h2 class="section__title">5. Desafío Práctico: ¡Experimenta!</h2>
+            <p class="explanation-text">
+                Ahora que conoces las bases, es tu turno de aplicar lo aprendido.
+                <br>Para cada una de las cajas de abajo, añade las propiedades **`margin`** y **`padding`** en sus respectivas reglas CSS.
+                <br>¡Intenta crear efectos únicos y comprender cómo cada valor influye en la apariencia y el posicionamiento!
+            </p>
+            <div class="challenge-container">
+                <div class="challenge-box challenge-box--1">Caja 1</div>
+                <div class="challenge-box challenge-box--2">Caja 2</div>
+                <div class="challenge-box challenge-box--3">Caja 3</div>
+                <div class="challenge-box challenge-box--4">Caja 4</div>
+                <div class="challenge-box challenge-box--5">Caja 5</div>
+            </div>
+            <div class="explanation-text" style="margin-top: 30px; border-top: 1px dashed #e0e0e0; padding-top: 20px;">
+                **Ideas para probar:**
+                <ul>
+                    <li>Aplica `margin` solo a un lado (e.g., `margin-left: 50px;`).</li>
+                    <li>Usa `padding` con diferentes valores para cada lado (e.g., `padding: 10px 20px 30px 40px;`).</li>
+                    <li>Intenta usar valores negativos para `margin` (e.g., `margin-top: -10px;`).</li>
+                    <li>Prueba con porcentajes (e.g., `padding: 5%; margin: 2%;`).</li>
+                    <li>¿Qué pasa si aplicas `margin: auto;` a una de las cajas? (Recuerda que necesita un `width` definido para centrarse).</li>
+                </ul>
+                ¡Diviértete experimentando y observando los resultados!
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="footer">
+        <div class="footer__container">
+            <p class="footer__text">Clase de CSS para desarrolladores web.</p>
+            <p class="footer__text">&copy; 2025. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+</body>
+</html>

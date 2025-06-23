@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+    <style>
+       
+        body {
+            margin:0 2dvw;
+            background: #0c0c0c;
+            font-family: sans-serif;
+            line-height: 1.5;
+        }
+
+        h2,
+        p {
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            font-size: 1.5rem;
+            text-align: center;
+            color: #FFF;
+        }
+
+        .cajaPadre {
+            display: flex;
+            flex-wrap: wrap;
+            margin: 40px;
+            border: 3px solid #000;
+            background: #ffffff;
+            font-size: 0.8rem;
+        }
+
+        .cajaPadre>div {
+            flex-basis: 27%;
+            border: 1px solid gray;
+        }
+
+        .cajaPadre>div:nth-child(even) {
+            background: #80f6c6;
+        }
+
+        .cajaPadre>div:nth-child(odd) {
+            background: #95dff2;
+        }
+
+        /* cambiamos  padding de caja 5 */
+        #ejemplo .caja5 {
+            background: #eff211;
+        }
+    </style>
+
+
+    <title>Document</title>
+</head>
+
+<body id="ejemplo">
+    <header>
+        <h1>Probamos box-sizing</h1>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum fugit est vero ex non officia! Inventore ipsa
+            rem exercitationem molestias.</p>
+    </header>
+
+    <div class="cajaPadre">
+        <!-- CAJA 1 -->
+        <div class="caja1">
+            <h2>Caja1</h2>
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit..</p>
+
+            <p>Lorem ipsum, dolor si Molestias illo porro corporis quo.</p>
+
+        </div>
+
+        <!-- CAJA 2 -->
+        <div class="caja2">
+            <h2>Caja2</h2>
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit..</p>
+
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Molestias illo porro corporis quo.</p>
+        </div>
+
+        <!-- CAJA 3 -->
+        <div class="caja3">
+            <h2>Caja3</h2>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime doloremque.</p>
+
+            <p>Lorem ipsum dolor sit amet consectetur adipisnde odio!</p>
+
+        </div>
+
+        <!-- CAJA 4 -->
+        <div class="caja4">
+            <h2>Caja4</h2>
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicdam.</p>
+
+        </div>
+
+        <!-- CAJA 5 -->
+        <div class="caja5">
+            <h2>Caja5</h2>
+            <p>Lorem ipsum dolor, sit amet consectetur adipisdam.</p>
+
+        </div>
+
+        <!-- CAJA 6 -->
+        <div class="caja6">
+            <h2>Caja6</h2>
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicdam.</p>
+
+        </div>
+
+        <!-- CAJA 7 -->
+        <div class="caja7">
+            <h2>Caja7</h2>
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolores quaerat esse animi expedita error
+                impedit veritatis praesentium id culpa quibusdam.</p>
+        </div>
+
+        <!-- CAJA 8 -->
+        <div class="caja8">
+            <h2>Caja8</h2>
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Molestias illo porro corporis quo.</p>
+        </div>
+
+        <!-- CAJA 9 -->
+        <div class="caja9">
+            <h2>Caja9</h2>
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Molestias illo porro corporis quo.</p>
+
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Tempore quis id nobis, corrupti ipsum
+                necessitatibus, veriuam.</p>
+        </div>
+    </div>
+
+</body>
+
+</html>

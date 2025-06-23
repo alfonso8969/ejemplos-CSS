@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Explora el Mundo - Tu Agencia de Viajes (Clases y Más Contenido)</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&family=Montserrat:wght@700&display=swap" rel="stylesheet">
+    <style>
+        /* Estilos Base */
+        body {
+            font-family: 'Open Sans', sans-serif;
+            margin: 0;
+            padding: 0;
+            line-height: 1.7;
+            /*PERSONALIZA COLOR DE TEXTO*/
+            /*PERSONALIZA COLOR DE BACKGROUND*/
+        }
+
+        h1, h2, h3, h4 {
+            font-family: 'Montserrat', sans-serif;
+            /*PERSONALIZA COLOR DE TEXTO*/
+            margin-bottom: 0.8em;
+            line-height: 1.2;
+        }
+
+        a {
+            text-decoration: none;
+            /*PERSONALIZA COLOR DE TEXTO*/
+            transition: color 0.3s ease;
+        }
+
+        a:hover {
+            /*PERSONALIZA COLOR DE TEXTO*/
+        }
+
+        /* --- BLOQUE: container --- */
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px 0;
+        }
+
+        /* --- BLOQUE: header --- */
+        .header {
+            /*PERSONALIZA COLOR DE BACKGROUND*/
+            /*PERSONALIZA COLOR DE TEXTO*/
+            padding: 20px 0;
+            text-align: center;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .header__logo { /* ELEMENTO: logo dentro de header */
+            font-size: 2.8em;
+            margin: 0;
+            /*PERSONALIZA COLOR DE TEXTO*/
+            letter-spacing: 1px;
+        }
+
+        .header__slogan { /* ELEMENTO: slogan dentro de header */
+            font-size: 1.1em;
+            /*PERSONALIZA COLOR DE TEXTO*/
+            margin-top: 5px;
+        }
+
+        /* --- BLOQUE: nav --- */
+        .nav {
+            /*PERSONALIZA COLOR DE BACKGROUND*/
+            padding: 12px 0;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .nav__list { /* ELEMENTO: list dentro de nav */
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .nav__item { /* ELEMENTO: item dentro de nav */
+            margin: 0 20px;
+        }
+
+        .nav__link { /* ELEMENTO: link dentro de nav */
+            display: block;
+            padding: 10px 15px;
+            /*PERSONALIZA COLOR DE TEXTO*/
+            font-weight: 600;
+            transition: background-color 0.3s ease, color 0.3s ease;
+            border-radius: 5px;
+        }
+
+        .nav__link:hover {
+            /*PERSONALIZA COLOR DE BACKGROUND*/
+            /*PERSONALIZA COLOR DE TEXTO*/
+        }
+
+        /* --- BLOQUE: main-content --- */
+        /* Envuelve las secciones para el layout principal */
+        .main-content {
+            padding: 40px 0;
+        }
+
+        /* --- BLOQUE: section --- */
+        .section {
+            /*PERSONALIZA COLOR DE BACKGROUND*/
+            padding: 35px;
+            margin-bottom: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+            /*PERSONALIZA COLOR DE BACKGROUND*/ /* Esto es un borde, pero se refiere a un color */
+        }
+
+        /* MODIFICADOR: section--dark para secciones con fondo oscuro */
+        .section--dark {
+            /*PERSONALIZA COLOR DE BACKGROUND*/
+            /*PERSONALIZA COLOR DE TEXTO*/
+        }
+
+        .section--dark .section__title {
+            /*PERSONALIZA COLOR DE TEXTO*/
+            border-bottom: 2px solid rgba(255, 255, 255, 0.2); /* Borde más claro para fondo oscuro */
+        }
+
+        .section__title { /* ELEMENTO: title dentro de section */
+            /*PERSONALIZA COLOR DE TEXTO*/
+            margin-top: 0;
+            /*PERSONALIZA COLOR DE BACKGROUND*/ /* Esto es un borde, pero se refiere a un color */
+            padding-bottom: 15px;
+            margin-bottom: 25px;
+        }
+
+        .section__text-highlight {
+            font-weight: 600;
+            /*PERSONALIZA COLOR DE TEXTO*/
+        }
+
+        /* --- BLOQUE: card-grid --- */
+        .card-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+            margin-top: 30px;
+        }
+
+        /* --- BLOQUE: card --- */
+        .card {
+            /*PERSONALIZA COLOR DE BACKGROUND*/
+            padding: 25px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+            /*PERSONALIZA COLOR DE BACKGROUND*/ /* Esto es un borde, pero se refiere a un color */
+            text-align: center;
+        }
+
+      
+
+        .card__title { /* ELEMENTO: title dentro de card */
+            /*PERSONALIZA COLOR DE TEXTO*/
+            font-size: 1.5em;
+            margin-top: 0;
+            margin-bottom: 15px;
+        }
+
+        .card__text { /* ELEMENTO: text dentro de card */
+            /*PERSONALIZA COLOR DE TEXTO*/
+            font-size: 0.95em;
+        }
+
+        /* --- BLOQUE: highlight-box --- */
+        .highlight-box {
+            /*PERSONALIZA COLOR DE BACKGROUND*/
+            /*PERSONALIZA COLOR DE TEXTO*/
+            padding: 30px;
+            border-radius: 10px;
+            text-align: center;
+            margin: 30px 0;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+
+        .highlight-box__title {
+            font-size: 2em;
+            margin-bottom: 10px;
+            /*PERSONALIZA COLOR DE TEXTO*/
+        }
+
+        .highlight-box__text {
+            font-size: 1.1em;
+            /*PERSONALIZA COLOR DE TEXTO*/
+        }
+
+
+        /* --- BLOQUE: testimonials --- */
+        .testimonials {
+            padding: 30px 0;
+            /*PERSONALIZA COLOR DE BACKGROUND*/
+            /*PERSONALIZA COLOR DE TEXTO*/
+        }
+
+        .testimonials__title {
+            text-align: center;
+            margin-bottom: 40px;
+            /*PERSONALIZA COLOR DE TEXTO*/
+        }
+
+        .testimonial-card-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+        }
+
+        .testimonial-card {
+            /*PERSONALIZA COLOR DE BACKGROUND*/
+            /*PERSONALIZA COLOR DE TEXTO*/
+            padding: 25px;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            font-style: italic;
+            text-align: center;
+        }
+
+        .testimonial-card__quote {
+            margin-bottom: 15px;
+        }
+
+        .testimonial-card__author {
+            font-weight: bold;
+            font-style: normal;
+            /*PERSONALIZA COLOR DE TEXTO*/
+        }
+
+
+        /* --- BLOQUE: button --- */
+        .button {
+            display: inline-block;
+            /*PERSONALIZA COLOR DE BACKGROUND*/
+            /*PERSONALIZA COLOR DE TEXTO*/
+            padding: 12px 28px;
+            border-radius: 5px;
+            margin-top: 25px;
+            font-weight: 600;
+            transition: background-color 0.3s ease, color 0.3s ease;
+            border: none;
+            cursor: pointer;
+        }
+
+        .button:hover {
+            /*PERSONALIZA COLOR DE BACKGROUND*/
+            /*PERSONALIZA COLOR DE TEXTO*/
+        }
+
+        /* --- BLOQUE: footer --- */
+        .footer {
+            /*PERSONALIZA COLOR DE BACKGROUND*/
+            /*PERSONALIZA COLOR DE TEXTO*/
+            text-align: center;
+            padding: 25px 0;
+            margin-top: 40px;
+            font-size: 0.9em;
+            /*PERSONALIZA COLOR DE BACKGROUND*/ /* Esto es un borde, pero se refiere a un color */
+        }
+
+        .footer__text { /* ELEMENTO: text dentro de footer */
+            margin: 5px 0;
+        }
+
+ 
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <h1 class="header__logo">Explora el Mundo</h1>
+            <p class="header__slogan">Tu aventura comienza aquí.</p>
+        </div>
+    </header>
+
+    <nav class="nav">
+        <div class="container">
+            <ul class="nav__list">
+                <li class="nav__item"><a href="#inicio" class="nav__link">Inicio</a></li>
+                <li class="nav__item"><a href="#destinos" class="nav__link">Destinos</a></li>
+                <li class="nav__item"><a href="#aventuras" class="nav__link">Aventuras</a></li>
+                <li class="nav__item"><a href="#experiencias" class="nav__link">Experiencias</a></li>
+                <li class="nav__item"><a href="#servicios" class="nav__link">Servicios</a></li>
+                <li class="nav__item"><a href="#testimonios" class="nav__link">Testimonios</a></li>
+                <li class="nav__item"><a href="#contacto" class="nav__link">Contacto</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main class="main-content">
+        <div class="container">
+            <section class="section">
+                <h2 class="section__title">Planifica el Viaje de Tus Sueños</h2>
+                <p>En "Explora el Mundo", te ayudamos a descubrir experiencias inolvidables. Desde escapadas urbanas hasta aventuras exóticas, tenemos el viaje perfecto para ti.</p>
+                <p>Nuestros expertos en viajes están listos para asistirte en cada paso, asegurando que tu única preocupación sea disfrutar. <span class="section__text-highlight">¡Prepárate para la aventura de tu vida!</span></p>
+                <a href="#destinos" class="button">Descubre Destinos</a>
+            </section>
+
+            <section class="section section--dark">
+                <h2 class="section__title">¿Por Qué Elegirnos?</h2>
+                <p>Somos tu socio ideal para viajar. Con <span class="section__text-highlight">más de 20 años de experiencia</span>, ofrecemos asesoramiento experto, paquetes personalizados y soporte 24/7. Nuestra pasión por los viajes se traduce en una experiencia inigualable para ti.</p>
+                <p>Creemos que cada viaje debe ser tan único como el viajero. Por eso, diseñamos itinerarios que se ajustan a tus deseos y presupuesto.</p>
+            </section>
+
+            <section class="section" id="destinos">
+                <h2 class="section__title">Destinos Populares</h2>
+                <div class="card-grid">
+                    <div class="card">
+                        <h3 class="card__title">París, Francia</h3>
+                        <p class="card__text">La ciudad del amor y las luces. Disfruta de su arte, gastronomía y cultura.</p>
+                        <a href="#" class="button">Ver Paquetes</a>
+                    </div>
+                    <div class="card">
+                        <h3 class="card__title">Tokio, Japón</h3>
+                        <p class="card__text">Una metrópolis vibrante donde la tradición se encuentra con la tecnología.</p>
+                        <a href="#" class="button">Ver Paquetes</a>
+                    </div>
+                    <div class="card">
+                        <h3 class="card__title">Bali, Indonesia</h3>
+                        <p class="card__text">Playas paradisíacas, templos ancestrales y una naturaleza exuberante.</p>
+                        <a href="#" class="button">Ver Paquetes</a>
+                    </div>
+                    <div class="card">
+                        <h3 class="card__title">Nueva York, EE. UU.</h3>
+                        <p class="card__text">La ciudad que nunca duerme. Iconos, espectáculos y diversidad cultural.</p>
+                        <a href="#" class="button">Ver Paquetes</a>
+                    </div>
+                </div>
+            </section>
+
+            <div class="highlight-box">
+                <h2 class="highlight-box__title">¡Oferta Especial de Última Hora!</h2>
+                <p class="highlight-box__text">Consigue un 15% de descuento en viajes a Tailandia este mes. ¡No te lo pierdas!</p>
+                <a href="#" class="button">¡Reserva Ahora!</a>
+            </div>
+
+            <section class="section" id="aventuras">
+                <h2 class="section__title">Aventuras Inolvidables</h2>
+                <p>¿Buscas adrenalina? Explora nuestras opciones de viajes de aventura:</p>
+                <div class="card-grid">
+                    <div class="card">
+                        <h3 class="card__title">Senderismo en los Andes</h3>
+                        <p class="card__text">Descubre paisajes impresionantes y culturas andinas.</p>
+                        <a href="#" class="button">Más Info</a>
+                    </div>
+                    <div class="card">
+                        <h3 class="card__title">Buceo en la Gran Barrera</h3>
+                        <p class="card__text">Explora la vida marina más rica del planeta.</p>
+                        <a href="#" class="button">Más Info</a>
+                    </div>
+                    <div class="card">
+                        <h3 class="card__title">Safari en el Serengeti</h3>
+                        <p class="card__text">Observa la vida salvaje en su hábitat natural.</p>
+                        <a href="#" class="button">Más Info</a>
+                    </div>
+                </div>
+            </section>
+
+            <section class="section" id="experiencias">
+                <h2 class="section__title">Experiencias Culturales</h2>
+                <p>Sumérgete en la cultura local con nuestros viajes temáticos:</p>
+                <div class="card-grid">
+                    <div class="card">
+                        <h3 class="card__title">Clases de Cocina Italiana</h3>
+                        <p class="card__text">Aprende a preparar platos tradicionales en la Toscana.</p>
+                        <a href="#" class="button">Detalles</a>
+                    </div>
+                    <div class="card">
+                        <h3 class="card__title">Ruta del Sake en Japón</h3>
+                        <p class="card__text">Explora destilerías y tradiciones ancestrales.</p>
+                        <a href="#" class="button">Detalles</a>
+                    </div>
+                    <div class="card">
+                        <h3 class="card__title">Festivales de la India</h3>
+                        <p class="card__text">Vive la explosión de colores y sonidos en sus celebraciones.</p>
+                        <a href="#" class="button">Detalles</a>
+                    </div>
+                </div>
+            </section>
+
+            <section class="section" id="servicios">
+                <h2 class="section__title">Nuestros Servicios de Viaje</h2>
+                <p>Ofrecemos una gama completa de servicios para que tu viaje sea perfecto:</p>
+                <ul>
+                    <li>Reservas de vuelos y hoteles</li>
+                    <li>Tours y excursiones personalizados</li>
+                    <li>Seguro de viaje integral</li>
+                    <li>Asistencia 24/7 en destino</li>
+                    <li>Paquetes de luna de miel y viajes en grupo</li>
+                </ul>
+                <a href="#contacto" class="button">Pide un Presupuesto</a>
+            </section>
+
+            <section class="testimonials" id="testimonios">
+                <h2 class="testimonials__title section__title">Lo Que Dicen Nuestros Viajeros</h2>
+                <div class="testimonial-card-grid">
+                    <div class="testimonial-card">
+                        <p class="testimonial-card__quote">"¡El mejor viaje de mi vida! Todo estuvo perfectamente organizado, desde los vuelos hasta las excursiones. Sin duda, repetiré con Explora el Mundo."</p>
+                        <p class="testimonial-card__author">— Ana G., Viajera a Tailandia</p>
+                    </div>
+                    <div class="testimonial-card">
+                        <p class="testimonial-card__quote">"La atención al cliente es excepcional. Tuvieron en cuenta cada detalle y crearon un itinerario a medida para mi luna de miel. ¡Inolvidable!"</p>
+                        <p class="testimonial-card__author">— Carlos M., Viajero a Maldivas</p>
+                    </div>
+                    <div class="testimonial-card">
+                        <p class="testimonial-card__quote">"Sorprendido por la calidad de los guías locales y la inmersión cultural. Una experiencia auténtica y enriquecedora. Muy recomendable."</p>
+                        <p class="testimonial-card__author">— Laura P., Viajera a Perú</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="section" id="contacto">
+                <h2 class="section__title">Contacta con Nosotros</h2>
+                <p>¿Listo para empezar tu próxima aventura? Rellena el formulario o llámanos. Estaremos encantados de ayudarte a planificar tu viaje perfecto.</p>
+                <p>Email: <a href="mailto:info@exploraelmundo.com">info@exploraelmundo.com</a></p>
+                <p>Teléfono: +34 912 345 678</p>
+            </section>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p class="footer__text">&copy; Explora el Mundo. Todos los derechos reservados.</p>
+            <p class="footer__text">Diseñado con pasión por los viajes.</p>
+        </div>
+    </footer>
+</body>
+</html>

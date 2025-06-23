@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unidades CSS: dvw y dvh para Cajas</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            margin: 0;
+            background-color: #f4f7f6;
+            color: #333;
+            line-height: 1.6;
+            padding: 20px;
+        }
+
+        h1 {
+            color: #2c3e50;
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 20px auto;
+            border-radius: 8px;
+        }
+
+        .container {
+            background-color: #fff;
+            padding: 20px;
+            margin-bottom: 40px;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            max-width: 900px;
+            margin: 0 auto 40px auto;
+            border: 1px solid #ddd;
+        }
+
+        .example-box {
+            background-color: #9b59b6;
+            color: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 20px auto;
+            font-weight: bold;
+            border-radius: 5px;
+            text-align: center;
+            padding: 10px;
+            box-sizing: border-box;
+        }
+
+        .example-box p {
+            font-size: 1.1rem;
+            /* Usamos rem para el texto aquí, ya que no estamos explicando texto */
+        }
+
+        /* DVW Example */
+        .dvw-box {
+            width: 80dvw;
+            /* Ocupa el 80% del ancho del viewport dinámico */
+            height: 100px;
+            /* Alto fijo para ver el efecto del dvw claramente */
+
+            background-color: #f1c40f;
+            color: #2c3e50;
+        }
+
+        /* DVH Example */
+        .dvh-section {
+            background-color: #3498db;
+            color: #fff;
+            height: 40dvh;
+            /* Ocupa el 40% de la altura del viewport dinámico */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .dvh-section p {
+            font-size: 1.2rem;
+            max-width: 80%;
+        }
+
+        /* DVW and DVH combined */
+        .dvw-dvh-box {
+            width: 30dvw;
+            /* 30% del ancho del viewport */
+            height: 20dvh;
+            /* 20% de la altura del viewport */
+            background-color: #e67e22;
+            margin-top: 30px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Unidades de Dimensión: `dvw` y `dvh`</h1>
+
+    <div class="container">
+        <h2>`dvw` (Dynamic Viewport Width) - Relativo al Ancho de la Ventana</h2>
+        <p>La unidad **`dvw`** es el 1% del **ancho de la ventana visible** del navegador. Es fantástica para crear
+            elementos que se escalen horizontalmente con el tamaño de la pantalla. Un <code>div</code> con
+            <code>width: 50dvw;</code> ocupará exactamente la mitad del ancho de tu navegador.</p>
+        <div class="example-box dvw-box">
+            <p>Ancho: 80dvw<br>Alto: 100px</p>
+        </div>
+        <p>Redimensiona tu navegador horizontalmente. Observa cómo el ancho de esta caja cambia. La altura se mantiene
+            fija en 100px.</p>
+
+        <p><strong>¡Cuidado!</strong> Cuando utilizas dvw para las anchuras la caja podría ocupar más espacio que su padre.</p>
+
+        <img src="https://picsum.photos/600/300?random=3" alt="Paisaje que se extiende horizontalmente">
+    </div>
+
+    <div class="container">
+        <h2>`dvh` (Dynamic Viewport Height) - Relativo al Alto de la Ventana</h2>
+        <p>Similar a `dvw`, **`dvh`** es el 1% de la **altura de la ventana visible**. Es ideal para secciones que deben
+            ocupar una porción específica de la altura de la pantalla, como una sección "hero" o un panel lateral. La
+            "d" de dinámico es crucial para la precisión en móviles, ya que considera las barras de navegación que
+            aparecen y desaparecen.</p>
+        <div class="dvh-section">
+            <p>Esta sección tiene una altura de 40dvh.<br>Redimensiona tu navegador verticalmente.</p>
+        </div>
+        <p>Mira cómo la altura de la sección azul se ajusta cuando cambias el tamaño vertical de tu navegador.</p>
+        <img src="https://picsum.photos/600/300?random=4" alt="Edificio muy alto">
+    </div>
+
+    <div class="container">
+        <h2>Combinando `dvw` y `dvh`</h2>
+        <p>Puedes usar `dvw` y `dvh` juntos para crear cajas que se ajusten perfectamente tanto al ancho como al alto de
+            la ventana.</p>
+        <div class="example-box dvw-dvh-box">
+            <p>Ancho: 30dvw<br>Alto: 20dvh</p>
+        </div>
+        <p>Esta caja se adapta a ambas dimensiones de tu ventana. Pruébalo redimensionando en todas direcciones.</p>
+    </div>
+
+</body>
+
+</html>

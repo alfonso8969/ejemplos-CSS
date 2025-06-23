@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            background: #aaaaaa;
+        }
+
+        h1 {
+            font-size: 4em;
+        }
+
+        h2,
+        p {
+            margin: 0;
+            padding: 0;
+        }
+
+
+
+        header {
+            /* Aquí también podemos utilizar Grid para centrar los elementos en horizontal y vertical */
+
+
+            min-height: 200px;
+            background: linear-gradient(rgba(64, 10, 150, 0.6), rgba(64, 10, 150, 0.1)),
+                url('https://picsum.photos/1800/1800') center/cover;
+            color: #FFF;
+
+
+        }
+
+        header h1,
+        header p {
+            margin: 0;
+            padding: 0;
+        }
+
+        .cajaPadre p {
+            display: none;
+        }
+
+        .caja2 h2 {
+            font-size: 2.6em;
+        }
+
+        /* -------------CAJA PADRE DEL GRID ----------------*/
+        .cajaPadre {
+            /* En al padre definimos algunas opciones del Grid */
+
+            min-height: 700px;
+            /* establecemos una altura al padre para ver mejor las opciones de Grid */
+            margin: 40px;
+            border: 4px solid #000;
+            background: #ffffff;
+        }
+
+
+        /* -------------HIJOS GRID ----------------*/
+        .cajaPadre>div {
+            /* en los hijos podemos establecer valores: */
+
+            padding: 15px;
+            border: 1px solid gray;
+        }
+
+        .cajaPadre>div:nth-child(even) {
+            background: #80f6c6;
+        }
+
+        .cajaPadre>div:nth-child(odd) {
+            background: #95dff2;
+        }
+    </style>
+
+
+
+</head>
+
+<body id="ejemplo">
+    <header>
+        <h1>Diseño con display: Grid</h1>
+        <!-- AVISO hay una regla CSS que elimina los p, para probar algunas opciones de Grid de forma más sencilla.
+            Más adelante prueba a deshabilitar esa regla para ver como se comportan los elementos con mas contenido -->
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum fugit est vero ex non officia! Inventore ipsa
+            rem exercitationem molestias.</p>
+    </header>
+
+    <div class="cajaPadre">
+        <!-- CAJA 1 -->
+        <div class="caja1">
+            <h2>Caja1</h2>
+            <p>Lorem ipsum</p>
+
+        </div>
+
+        <!-- CAJA 2 -->
+        <div class="caja2">
+            <h2>Caja2</h2>
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit.</p>
+
+        </div>
+
+        <!-- CAJA 3 -->
+        <div class="caja3">
+            <h2>Caja3</h2>
+            <p>Lorem ipsum dolor sit amet. Lorem ipsum dolor sit, amet consectetur adipisicing elit. Suscipit!</p>
+
+
+        </div>
+
+        <!-- CAJA 4 -->
+        <div class="caja4">
+            <h2>Caja4</h2>
+            <p>Lorem ipsum dolor</p>
+
+        </div>
+
+        <!-- CAJA 5 -->
+        <div class="caja5">
+            <h2>Caja5</h2>
+            <p>Lorem ipsum dolor, sit amet consectetur.</p>
+
+        </div>
+
+        <!-- CAJA 6 -->
+        <div class="caja6">
+            <h2>Caja6</h2>
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolores quaerat esse animi expedita error
+                impedit veritatis praesentium id culpa quibusdam.</p>
+
+        </div>
+
+
+
+    </div>
+
+</body>
+
+</html>

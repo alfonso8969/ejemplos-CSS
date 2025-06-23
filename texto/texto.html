@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Informe Anual de Tendencias Tecnológicas 2025</title>
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+
+    <style>
+        /* Estilos Generales */
+        body {
+            font-family: sans-serif; /* Deja el valor por defecto del navegador o un genérico simple */
+             /* PRUEBA: line-height */
+            margin: 0;
+            padding: 0;
+            background-color: #f8f8f8;
+            color: #333;
+        }
+ 
+        .header {
+            background-color: #1a2a3a;
+            color: #fff;
+            padding: 20px 0;
+            text-align: center;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        }
+
+        .header__title {
+            margin: 0;
+          /* PRUEBA: font-family */
+           /* PRUEBA: font-size */
+        }
+
+        .header__subtitle {
+            margin-top: 10px;
+          /* PRUEBA: font-size */
+            opacity: 0.9;
+        }
+
+        .nav {
+            background-color: #2c3e50;
+            padding: 10px 0;
+        }
+
+        .nav__list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .nav__item {
+            margin: 0 15px;
+        }
+
+        .nav__link {
+            color: #fff;
+            text-decoration: none;
+             /* PRUEBA: font-weight */
+            padding: 8px 15px;
+            border-radius: 4px;
+        }
+
+        .nav__link:hover {
+            background-color: #34495e;
+            color: #ecf0f1;
+        }
+
+        .main {
+            padding: 30px;
+            max-width: 1000px;
+            margin: 30px auto;
+            background-color: #fff;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+
+        .section {
+            margin-bottom: 50px;
+            padding-bottom: 30px;
+            border-bottom: 1px solid #eee;
+        }
+
+        .section:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+        }
+
+        .section__title {
+            color: #0056b3;
+             /* PRUEBA: font-family */
+            /* PRUEBA: font-size */
+            margin-bottom: 25px;
+             /* PRUEBA: text-align */
+            border-bottom: 2px solid #007bff;
+            padding-bottom: 10px;
+        }
+
+        .section__subtitle {
+            color: #007bff;
+             /* PRUEBA: font-size */
+            margin-top: 35px;
+            margin-bottom: 20px;
+            border-left: 4px solid #007bff;
+            padding-left: 10px;
+        }
+
+       
+
+        /* --- Zonas para probar propiedades de texto --- */
+
+        /* Zona 1: Artículos de Contenido Principal */
+        .content-area--main-article .content-area__paragraph {
+            /* PRUEBA: font-size */
+            /* PRUEBA: font-family */
+            /* PRUEBA: line-height */
+        }
+
+        .content-area--main-article .content-area__heading {
+            /* PRUEBA: font-size */
+            /* PRUEBA: font-family */
+            /* PRUEBA: text-shadow */
+            color: #333;
+        }
+
+        /* Zona 2: Citas Destacadas o Bloques Especiales */
+        .highlight-block--quote {
+            background-color: #e6f2ff;
+            border-left: 5px solid #007bff;
+            padding: 20px;
+            margin: 30px 0;
+            font-style: italic;
+            color: #0056b3;
+            /* PRUEBA: clamp() con font-size */
+            /* PRUEBA: text-align */
+        }
+
+        /* Zona 3: Metadatos y Textos Pequeños */
+        .metadata-info {
+            /* PRUEBA: font-size */
+            color: #666;
+            /* PRUEBA: text-align */
+            margin-top: 20px;
+            /* PRUEBA: letter-spacing */
+            /* PRUEBA: word-spacing */
+        }
+
+        .metadata-info__author {
+            /* PRUEBA: font-weight */
+            color: #555;
+        }
+
+        .metadata-info__date {
+            /* PRUEBA: text-decoration */
+            color: #888;
+        }
+        .metadata-info__date:hover {
+            /* PRUEBA: text-decoration (para hover) */
+        }
+
+        /* Zona 4: Listados de Puntos Clave */
+        .key-points-list {
+            /* PRUEBA: list-style-type, p.ej. list-style-type: square; */
+            padding-left: 20px;
+        }
+
+        .key-points-list__item {
+            margin-bottom: 0.8em;
+            /* PRUEBA: text-indent */
+        }
+        .key-points-list--numbered {
+            /* PRUEBA: list-style-type */
+        }
+        .key-points-list--roman {
+            /* PRUEBA: list-style-type */
+        }
+        .key-points-list--no-markers {
+            /* PRUEBA: list-style-type */
+            padding-left: 0;
+        }
+
+
+        /* Zona 5: Contenido de Código o Datos Técnicos */
+    
+
+        .long-unbroken-word {
+            display: block;
+            width: 200px;
+            background-color: #f0f0f0;
+            border: 1px solid #aaa;
+            padding: 5px;
+            margin-top: 10px;
+            /* PRUEBA: word-wrap: */
+        }
+  
+
+        /* Zona 6: Pie de Página o Aviso Legal */
+        .footer-legal-text {
+            /* PRUEBA: font-size */
+            color: #aaa;
+            /* PRUEBA: text-align */
+            margin-top: 40px;
+            /* PRUEBA: direction; */
+        }
+
+        .footer-legal-text--rtl {
+            /* PRUEBA: direction */
+            /* PRUEBA: text-align */
+        }
+
+        .vertical-text-block {
+            width: 50px;
+            height: 150px;
+            border: 1px dashed #999;
+            margin: 10px;
+            display: inline-block;
+            vertical-align: top;
+            padding: 5px;
+            /* PRUEBA: font-size */
+            color: #555;
+            /* PRUEBA: writing-mode  */
+        }
+
+        .vertical-text-block--vertical-lr {
+            /* PRUEBA: writing-mode  */
+        }
+        .vertical-text-block--vertical-rl {
+            /* PRUEBA: writing-mode  */
+        }
+
+    
+
+        /* Footer */
+        .footer {
+            background-color: #1a2a3a;
+            color: #fff;
+            text-align: center;
+            padding: 25px 0;
+            margin-top: 50px;
+            /* PRUEBA: font-size */
+ 
+        }
+
+        .footer__text {
+            margin: 5px 0;
+            opacity: 0.8;
+        }
+
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="header__container">
+            <h1 class="header__title">Informe Anual de Tendencias Tecnológicas 2025</h1>
+            <p class="header__subtitle">Análisis Profundo del Futuro Digital</p>
+        </div>
+    </header>
+
+    <nav class="nav">
+        <ul class="nav__list">
+            <li class="nav__item"><a href="#introduccion" class="nav__link">Introducción</a></li>
+            <li class="nav__item"><a href="#ia-generativa" class="nav__link">IA Generativa</a></li>
+            <li class="nav__item"><a href="#ciberseguridad" class="nav__link">Ciberseguridad Cuántica</a></li>
+            <li class="nav__item"><a href="#computacion-espacial" class="nav__link">Computación Espacial</a></li>
+            <li class="nav__item"><a href="#sostenibilidad" class="nav__link">Tecnología Sostenible</a></li>
+            <li class="nav__item"><a href="#conclusion" class="nav__link">Conclusión</a></li>
+        </ul>
+    </nav>
+
+    <main class="main">
+        <section id="introduccion" class="section section--introduction">
+            <h2 class="section__title">Introducción: El Panorama Digital de 2025</h2>
+            <div class="content-area--main-article">
+                <p class="content-area__paragraph">El año 2025 marca un punto de inflexión significativo en la evolución tecnológica. La convergencia de diversas disciplinas ha impulsado innovaciones que están redefiniendo industrias enteras y transformando la vida cotidiana. Este informe examina las tendencias más impactantes que moldearán el paisaje tecnológico en los próximos doce meses.</p>
+                <p class="content-area__paragraph">Desde la inteligencia artificial hasta la computación cuántica y la creciente necesidad de soluciones sostenibles, el ritmo del cambio es vertiginoso. Comprender estas dinámicas es crucial para empresas, gobiernos y la sociedad en general para navegar con éxito en esta era de transformación digital.</p>
+                <p class="content-area__paragraph">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Culpa ullam incidunt temporibus quisquam minus eaque dicta voluptatibus, consectetur eligendi, ad adipisci unde excepturi asperiores quas corporis id ipsum necessitatibus commodi error. Perspiciatis numquam dignissimos, nulla quo voluptas aliquid ex nobis praesentium amet libero qui. Corrupti nobis commodi repudiandae perferendis facere, dicta rem vero dolorem quasi expedita eaque, perspiciatis minima modi aut, alias molestiae ipsa explicabo. Aspernatur!.</p>
+            </div>
+        </section>
+
+        <section id="ia-generativa" class="section section--generative-ai">
+            <h2 class="section__title">1. La Ascensión de la IA Generativa</h2>
+            <h3 class="section__subtitle">1.1. Modelos de Lenguaje Avanzados</h3>
+            <div class="content-area--main-article">
+                <p class="content-area__paragraph">Los modelos de lenguaje de gran escala (LLMs) han superado las expectativas iniciales, no solo en la generación de texto coherente, sino también en la comprensión contextual y la capacidad de razonamiento. Su aplicación se extiende desde la automatización de la creación de contenido hasta la asistencia en investigación científica compleja.</p>
+                <p class="content-area__paragraph">La democratización de estas herramientas presenta oportunidades sin precedentes para la innovación. Sin embargo, también plantea desafíos éticos importantes relacionados con la autoría, el sesgo algorítmico y la desinformación, temas que requieren una atención constante y soluciones robustas.</p>
+            </div>
+
+            <div class="highlight-block highlight-block--quote">
+                "La inteligencia artificial generativa no es solo una herramienta; es una nueva forma de pensar sobre la creación y la innovación."
+            </div>
+
+            <h3 class="section__subtitle">1.2. Impacto en el Diseño y Desarrollo</h3>
+            <div class="content-area--main-article">
+                <p class="content-area__paragraph">En el ámbito del diseño y el desarrollo de software, la IA generativa está revolucionando los flujos de trabajo. Desde la generación automática de código hasta la creación de prototipos de interfaces de usuario en minutos, los desarrolladores ahora pueden enfocar su energía en problemas de mayor nivel.</p>
+                <ul class="key-points-list">
+                    <li class="key-points-list__item">Prototipado rápido y eficiente.</li>
+                    <li class="key-points-list__item">Optimización de código y detección de errores.</li>
+                    <li class="key-points-list__item">Personalización masiva de experiencias de usuario.</li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="ciberseguridad" class="section section--cybersecurity">
+            <h2 class="section__title">2. Ciberseguridad Cuántica y Resiliencia</h2>
+            <h3 class="section__subtitle">2.1. Desafíos Emergentes</h3>
+            <div class="content-area--main-article">
+                <p class="content-area__paragraph">Con el avance de la computación cuántica, las amenazas a los sistemas de cifrado actuales son cada vez más inminentes. La necesidad de desarrollar y adoptar algoritmos post-cuánticos seguros se ha vuelto una prioridad global.</p>
+                <ul class="key-points-list key-points-list--numbered">
+                    <li class="key-points-list__item">Desarrollo de criptografía resistente a la cuántica.</li>
+                    <li class="key-points-list__item">Implementación de infraestructuras de clave pública cuántica.</li>
+                    <li class="key-points-list__item">Formación de especialistas en seguridad cuántica.</li>
+                </ul>
+            </div>
+
+            <h3 class="section__subtitle">2.2. Estrategias de Defensa Adaptativa</h3>
+            <div class="content-area--main-article">
+                <p class="content-area__paragraph">Las organizaciones están invirtiendo en sistemas de ciberseguridad que no solo detectan, sino que también predicen y se adaptan a nuevas amenazas. Esto incluye el uso de IA para análisis de comportamiento y respuesta automatizada a incidentes.</p>
+               
+                <p class="long-unbroken-word" lang="en">ThisIsAVeryLongWordThatShouldBreakIfTheContainerIsTooNarrowWithoutOverflowingTheParentElement.</p>
+                <p class="long-unbroken-word" lang="en">ThisIsAVeryLongWordThatShouldOverflowIfTheContainerIsTooNarrowWithoutBreakingOrHyphenatingTheParent.</p>
+                 
+            </div>
+        </section>
+
+        <section id="computacion-espacial" class="section section--spatial-computing">
+            <h2 class="section__title">3. La Era de la Computación Espacial</h2>
+            <h3 class="section__subtitle">3.1. Realidad Extendida (XR)</h3>
+            <div class="content-area--main-article">
+                <p class="content-area__paragraph">La realidad virtual (VR), la realidad aumentada (AR) y la realidad mixta (MR) se están fusionando para crear experiencias de computación espacial verdaderamente inmersivas. Esto no solo afecta al entretenimiento, sino que redefine la capacitación, la colaboración remota y la visualización de datos.</p>
+                <div class="highlight-block highlight-block--quote">
+                    "El espacio digital y el físico se entrelazan de maneras que apenas comenzamos a comprender."
+                </div>
+                <ul class="key-points-list">
+                    <li class="key-points-list__item">Innovación en dispositivos hápticos.</li>
+                    <li class="key-points-list__item">Desarrollo de entornos virtuales persistentes.</li>
+                    <li class="key-points-list__item">Aplicaciones en medicina y arquitectura.</li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="sostenibilidad" class="section section--sustainability">
+            <h2 class="section__title">4. Tecnología al Servicio de la Sostenibilidad</h2>
+            <h3 class="section__subtitle">4.1. Eficiencia Energética y Materiales</h3>
+            <div class="content-area--main-article">
+                <p class="content-area__paragraph">El sector tecnológico está asumiendo una responsabilidad creciente en la mitigación del cambio climático. Esto se traduce en un enfoque en la eficiencia energética de los centros de datos, el diseño de hardware con materiales reciclados y la optimización de algoritmos para reducir el consumo.</p>
+            </div>
+
+            <h3 class="section__subtitle">4.2. Innovación en Economía Circular</h3>
+            <div class="content-area--main-article">
+                <p class="content-area__paragraph">La economía circular en tecnología busca maximizar el valor de los productos y materiales durante el mayor tiempo posible. Esto implica el rediseño de productos para facilitar su reparación y reciclaje, y el fomento de modelos de negocio basados en el servicio y la reutilización.</p>
+                <ul class="key-points-list key-points-list--roman">
+                    <li class="key-points-list__item">I. Diseño para la longevidad y modularidad.</li>
+                    <li class="key-points-list__item">II. Estrategias de recuperación y remanufactura.</li>
+                    <li class="key-points-list__item">III. Plataformas de intercambio y reutilización.</li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="conclusion" class="section section--conclusion">
+            <h2 class="section__title">Conclusión: Forjando el Futuro</h2>
+            <div class="content-area--main-article">
+                <p class="content-area__paragraph">Las tendencias tecnológicas de 2025 no son solo avances técnicos; son impulsores de un cambio social y económico profundo. La colaboración entre la industria, la academia y los gobiernos será esencial para aprovechar el potencial de estas tecnologías de manera responsable y equitativa.</p>
+                <p class="content-area__paragraph">En un mundo cada vez más interconectado, la adaptabilidad y el aprendizaje continuo serán clave. Este informe sirve como una guía para entender el presente y anticipar el futuro, fomentando el diálogo y la acción en un panorama en constante evolución.</p>
+            </div>
+            <div class="metadata-info">
+                <p class="metadata-info__text">Publicado por <span class="metadata-info__author">Tech Insights Lab</span> el <span class="metadata-info__date">11 de marzo de 2024</span></p>
+              
+            </div>
+            <div class="footer-legal-text">
+                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Magnam, accusantium? Quod minus ratione reprehenderit?.</p>
+                <p lang="ar" class="footer-legal-text--rtl">جميع الحقوق محفوظة. 2025. هذا المستند هو ملكية فكرية لمختبر رؤى التكنولوجيا.</p>
+                <div style="margin-top: 15px; display: flex; justify-content: center; gap: 20px;">
+                    <div class="vertical-text-block">
+                        Lorem ipsum
+                    </div>
+                   
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="footer__container">
+            <p class="footer__text">&copy; Tech Insights Lab </p>
+            <p class="footer__text">Explorando el futuro de la tecnología.</p>
+        </div>
+    </footer>
+</body>
+</html>

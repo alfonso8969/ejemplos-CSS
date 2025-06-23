@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS - Flexbox</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
+
+        .contenedor-principal {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .header {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 30px;
+            border-radius: 20px;
+            text-align: center;
+            margin-bottom: 30px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        .header h1 {
+            font-size: 3em;
+            background: linear-gradient(45deg, #667eea, #764ba2);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 10px;
+        }
+
+        .seccion {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            margin-bottom: 30px;
+            padding: 30px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .seccion h2 {
+            color: #2c3e50;
+            font-size: 2em;
+            margin-bottom: 20px;
+            border-bottom: 3px solid #3498db;
+            padding-bottom: 10px;
+        }
+
+        /* === CONTENEDORES FLEX === */
+        .flex-container {
+
+            background-color: #ecf0f1;
+            border: 2px dashed #95a5a6;
+            border-radius: 10px;
+            padding: 20px;
+            margin: 20px 0;
+            min-height: 200px;
+        }
+
+        .flex-item {
+            background-color: #3498db;
+            color: white;
+            padding: 20px;
+            margin: 5px;
+            border-radius: 8px;
+            text-align: center;
+            font-weight: bold;
+            min-width: 100px;
+        }
+
+        /* === EJEMPLOS DE JUSTIFY-CONTENT === */
+        .justify-start {}
+
+        .justify-center {}
+
+        .justify-end {}
+
+        .justify-between {}
+
+        .justify-around {}
+
+        .justify-evenly {}
+
+        /* === EJEMPLOS DE ALIGN-ITEMS === */
+        .align-start {}
+
+        .align-center {}
+
+        .align-end {}
+
+        .align-stretch {}
+
+        .align-baseline {}
+
+        .align-stretch .flex-item {
+            min-height: auto;
+        }
+
+        /* === EJEMPLOS DE FLEX-DIRECTION === */
+        .flex-row {}
+
+        .flex-row-reverse {}
+
+        .flex-column {}
+
+        .flex-column-reverse {}
+
+        /* === EJEMPLOS DE FLEX-WRAP === */
+        .flex-wrap {}
+
+        .flex-nowrap {}
+
+        .flex-wrap-reverse {}
+
+        /* === GALERÍA RESPONSIVA === */
+        .galeria-flex {
+            margin: 30px 0;
+        }
+
+        .imagen-card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+
+        .hijo {
+            flex: 1 1 300px;
+            max-width: 350px;
+            /* flex-grow, flex-shrink y flex-basis */
+        }
+
+
+        .imagen-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .card-content {
+            padding: 20px;
+        }
+
+        .card-content h3 {
+            color: #2c3e50;
+            margin-bottom: 10px;
+            font-size: 1.3em;
+        }
+
+        .card-content p {
+            color: #7f8c8d;
+            line-height: 1.5;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="contenedor-principal">
+        <div class="header">
+            <h1>Flexbox en CSS</h1>
+            <p>Sistema de layout flexible para crear diseños</p>
+        </div>
+
+
+        <div class="seccion">
+            <h2>Justify-Content (Alineación Horizontal)</h2>
+            <p>Controla la alineación de los elementos a lo largo del eje principal:</p>
+
+            <h3>flex-start (por defecto)</h3>
+            <div class="flex-container justify-start">
+                <div class="flex-item">1</div>
+                <div class="flex-item">2</div>
+                <div class="flex-item">3</div>
+            </div>
+
+            <h3>center</h3>
+            <div class="flex-container justify-center">
+                <div class="flex-item">1</div>
+                <div class="flex-item">2</div>
+                <div class="flex-item">3</div>
+            </div>
+
+            <h3>space-between</h3>
+            <div class="flex-container justify-between">
+                <div class="flex-item">1</div>
+                <div class="flex-item">2</div>
+                <div class="flex-item">3</div>
+            </div>
+
+            <h3>space-around</h3>
+            <div class="flex-container justify-around">
+                <div class="flex-item">1</div>
+                <div class="flex-item">2</div>
+                <div class="flex-item">3</div>
+            </div>
+
+
+        </div>
+
+        <div class="seccion">
+            <h2>Align-Items (Alineación Vertical)</h2>
+            <p>Controla la alineación de los elementos a lo largo del eje transversal:</p>
+
+            <h3>center</h3>
+            <div class="flex-container align-center">
+                <div class="flex-item">Elemento<br>Corto</div>
+                <div class="flex-item">Elemento<br>Más<br>Alto</div>
+                <div class="flex-item">Medio</div>
+            </div>
+
+            <h3>stretch</h3>
+            <div class="flex-container align-stretch">
+                <div class="flex-item">Se estira</div>
+                <div class="flex-item">Para ocupar<br>toda la altura</div>
+                <div class="flex-item">Disponible</div>
+            </div>
+
+        </div>
+
+        <div class="seccion">
+            <h2>Flex-Direction (Dirección del Flujo)</h2>
+
+            <h3>row (por defecto)</h3>
+            <div class="flex-container flex-row justify-center">
+                <div class="flex-item">1</div>
+                <div class="flex-item">2</div>
+                <div class="flex-item">3</div>
+            </div>
+
+            <h3>column</h3>
+            <div class="flex-container flex-column align-center" style="height: 300px;">
+                <div class="flex-item">1</div>
+                <div class="flex-item">2</div>
+                <div class="flex-item">3</div>
+            </div>
+        </div>
+
+
+        <div class="seccion">
+            <h2>Galería Responsiva con Flexbox</h2>
+            <p>Una galería que se adapta automáticamente al tamaño de la pantalla:</p>
+
+            <div class="galeria-flex">
+                <div class="imagen-card">
+                    <img src="https://picsum.photos/350/200?random=30" alt="Imagen 1">
+                    <div class="card-content">
+                        <h3>Paisaje Natural</h3>
+                        <p>Una hermosa vista de la naturaleza capturada en el momento perfecto.</p>
+                    </div>
+                </div>
+
+                <div class="imagen-card">
+                    <img src="https://picsum.photos/350/200?random=31" alt="Imagen 2">
+                    <div class="card-content">
+                        <h3>Arquitectura Moderna</h3>
+                        <p>Diseños contemporáneos que desafían los límites de la creatividad.</p>
+                    </div>
+                </div>
+
+                <div class="imagen-card">
+                    <img src="https://picsum.photos/350/200?random=32" alt="Imagen 3">
+                    <div class="card-content">
+                        <h3>Arte Urbano</h3>
+                        <p>Expresiones artísticas que transforman los espacios urbanos.</p>
+                    </div>
+                </div>
+
+                <div class="imagen-card">
+                    <img src="https://picsum.photos/350/200?random=33" alt="Imagen 4">
+                    <div class="card-content">
+                        <h3>Tecnología</h3>
+                        <p>Innovaciones que están cambiando nuestro mundo digital.</p>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+
+    </div>
+</body>
+
+</html>

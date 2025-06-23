@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nuestros Formatos - Agua Asturiana</title>
+          <style>
+        /* Estilos generales */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        
+        .container {
+            width: 80%;
+            margin: 0 auto;
+        }
+        /* Estilos del encabezado */
+        .header {
+            background-color: #d8b722;
+            color: white;
+            padding: 2rem;
+            text-align: center;
+        }
+
+        .header__logo {
+            border-radius: 50%;
+        }
+
+        .header__title {
+            font-size: 3.5rem;
+            margin: 1rem 0;
+        }
+
+        .header p {
+            font-size: 1.6rem;
+            margin: 0;
+        }
+
+        /* Estilos de la navegación */
+        .nav {
+            background-color: #333;
+            color: white;
+            padding: 1rem 0;
+        }
+
+        .nav__list {
+            list-style: none;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+        }
+
+        .nav__item {
+            margin: 0 1.5rem;
+        } 
+
+        .nav__link {
+            color: #fff;
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+            text-decoration: none;
+        }
+
+        .nav__link:hover {
+            background-color: #555;
+        }
+
+        /* Estilos del contenido principal */
+        .main {
+            padding: 2rem 0;
+        }
+
+        .section {
+            margin-bottom: 2rem;
+        }
+
+        .section__title {
+            color: #d8b722;
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .columns__title {
+            font-size: 1.8rem;
+            color: #944c82;
+        }
+        </style>
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <img src="https://picsum.photos/id/1084/100/100" alt="Logo Agua Asturiana" class="header__logo">
+            <h1 class="header__title">Nuestros Formatos de Agua Asturiana</h1>
+            <p>Pureza y frescura en cada envase</p>
+        </div>
+    </header>
+
+    <nav class="nav">
+        <div class="container">
+            <ul class="nav__list">
+                <li class="nav__item"><a href="index.html" class="nav__link">Inicio</a></li>
+                <li class="nav__item"><a href="nosotros.html" class="nav__link">Nosotros</a></li>
+                <li class="nav__item"><a href="productos.html" class="nav__link">Productos</a></li>
+                <li class="nav__item"><a href="contacto.html" class="nav__link">Contacto</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main class="main container">
+        <section class="section products-overview">
+            <h2 class="section__title">Nuestra Gama de Agua Mineral</h2>
+            <p class="section__paragraph">Ofrecemos nuestra agua pura de manantial en diversos formatos para adaptarse a todas tus necesidades, garantizando siempre la máxima calidad y frescura.</p>
+
+            <div class="products-grid">
+                <div class="product-card">
+                    <img src="https://picsum.photos/id/214/300/250" alt="Botella de Agua 1.5L" class="product-card__image">
+                    <h3 class="product-card__title">Botella de Agua 1.5L</h3>
+                    <p class="product-card__description">Perfecta para el consumo diario en casa o para llevar contigo.</p>
+                    <p class="product-card__price">1,20 €</p>
+                    <a href="#" class="product-card__button">Ver Detalles</a>
+                </div>
+
+                <div class="product-card">
+                    <img src="https://picsum.photos/id/215/300/250" alt="Pack de 6 Botellas de 0.5L" class="product-card__image">
+                    <h3 class="product-card__title">Pack de 6 x 0.5L</h3>
+                    <p class="product-card__description">Ideal para deportistas y para llevar en el bolso o la mochila.</p>
+                    <p class="product-card__price">2,99 €</p>
+                    <a href="#" class="product-card__button">Ver Detalles</a>
+                </div>
+
+                <div class="product-card">
+                    <img src="https://picsum.photos/id/216/300/250" alt="Garrafa de Agua 5L" class="product-card__image">
+                    <h3 class="product-card__title">Garrafa de Agua 5L</h3>
+                    <p class="product-card__description">Formato familiar, ideal para el hogar o la oficina.</p>
+                    <p class="product-card__price">3,50 €</p>
+                    <a href="#" class="product-card__button">Ver Detalles</a>
+                </div>
+
+                <div class="product-card">
+                    <img src="https://picsum.photos/id/217/300/250" alt="Edición Limitada Cristal" class="product-card__image">
+                    <h3 class="product-card__title">Edición Limitada Cristal</h3>
+                    <p class="product-card__description">Una botella de diseño para ocasiones especiales.</p>
+                    <p class="product-card__price">5,00 €</p>
+                    <a href="#" class="product-card__button">Ver Detalles</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p class="footer__text">&copy; Agua Asturiana. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Demostración de Variables CSS</title>
+    <style>
+        /*
+         * Definición de Variables CSS (Custom Properties)
+         * Las variables se definen dentro del selector :root para que sean accesibles
+         * desde cualquier parte del documento. Son como "tokens de diseño" globales.
+         */
+        :root {
+            /* --- Colores --- */
+            --color-primary: #007bff; /* Azul principal */
+            --color-secondary: #6c757d; /* Gris secundario */
+            --color-accent: #28a745; /* Verde de acento */
+            --color-text-dark: #343a40; /* Texto oscuro */
+            --color-text-light: #f8f9fa; /* Texto claro (para fondos oscuros) */
+            --color-background-light: #ffffff; /* Fondo claro */
+            --color-border: #dee2e6; /* Color de borde */
+
+            /* --- Tipografía --- */
+            --font-family-base: 'Arial', sans-serif;
+            --font-size-base: 16px;
+            --font-size-heading-1: 3em;
+            --font-size-heading-2: 2.2em;
+            --font-size-heading-3: 1.7em;
+            --font-size-small: 0.85em;
+            --line-height-base: 1.6;
+
+            /* --- Espaciado --- */
+            --spacing-xxs: 4px;
+            --spacing-xs: 8px;
+            --spacing-sm: 16px;
+            --spacing-md: 24px;
+            --spacing-lg: 48px;
+            --spacing-xl: 80px;
+
+            /* --- Otros --- */
+            --border-radius-base: 8px;
+            --box-shadow-base: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        /* --- Estilos Generales --- */
+        body {
+            font-family: var(--font-family-base);
+            font-size: var(--font-size-base);
+            line-height: var(--line-height-base);
+            margin: 0;
+            padding: 0;
+            background-color: var(--color-background-light);
+            color: var(--color-text-dark);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        /* --- Estilos del Header Hero --- */
+        .hero-header {
+            width: 100%;
+            height: 100dvh;
+            background-image: url('https://picsum.photos/1920/1080?random=10' ); /* Imagen de fondo aleatoria de Picsum */
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: var(--color-text-light);
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.7);
+            text-align: center;
+            margin-bottom: var(--spacing-lg);
+        }
+
+        .hero-header h1 {
+            font-size: var(--font-size-heading-1);
+            margin-bottom: var(--spacing-sm);
+        }
+
+        .hero-header p {
+            font-size: var(--font-size-heading-2);
+        }
+
+        /* --- Estilos generales del contenido principal --- */
+        main {
+            width: 100%;
+            max-width: 1200px;
+            padding: var(--spacing-md);
+            box-sizing: border-box;
+        }
+
+        section {
+            margin-bottom: var(--spacing-lg);
+            padding: var(--spacing-md);
+            background-color: var(--color-background-light);
+            border: 1px solid var(--color-border);
+            border-radius: var(--border-radius-base);
+            box-shadow: var(--box-shadow-base);
+            text-align: center;
+        }
+
+        h2 {
+            /* Aquí se aplica --color-primary al color del h2 */
+            color: var(--color-primary);
+            font-size: var(--font-size-heading-2);
+            margin-top: 0;
+            margin-bottom: var(--spacing-sm);
+        }
+
+        h3 {
+            color: var(--color-secondary);
+            font-size: var(--font-size-heading-3);
+            margin-top: var(--spacing-sm);
+            margin-bottom: var(--spacing-xs);
+        }
+
+        .example-box {
+            display: inline-block;
+            padding: var(--spacing-sm);
+            margin: var(--spacing-xs);
+            border-radius: var(--border-radius-base);
+            font-weight: bold;
+            box-shadow: var(--box-shadow-base);
+        }
+
+        /* --- Ejemplos de uso de variables --- */
+
+        /* Colores */
+        .color-primary-box {
+            background-color: var(--color-primary);
+            color: var(--color-text-light);
+        }
+        .color-accent-box {
+            background-color: var(--color-accent);
+            color: var(--color-text-light);
+        }
+        .color-secondary-box {
+            background-color: var(--color-secondary);
+            color: var(--color-text-light);
+        }
+
+        /* Misma Variable, Diferentes Propiedades */
+        .color-usage-example {
+            padding: var(--spacing-sm);
+            margin: var(--spacing-xs);
+            border-radius: var(--border-radius-base);
+            font-weight: bold;
+            display: inline-block;
+        }
+        .color-usage-example.primary-bg-dark-text {
+            background-color: var(--color-primary);
+            color: var(--color-text-dark);
+        }
+        .color-usage-example.primary-text-light-bg {
+            background-color: var(--color-background-light);
+            color: var(--color-primary);
+            border: 1px solid var(--color-primary);
+        }
+        .color-usage-example.accent-bg-light-text {
+            background-color: var(--color-accent);
+            color: var(--color-text-light);
+        }
+
+        /* Botón de ejemplo */
+        .primary-button {
+            padding: var(--spacing-sm) var(--spacing-md);
+            border: none;
+            border-radius: var(--border-radius-base);
+            font-size: var(--font-size-base);
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            margin-top: var(--spacing-md);
+            /* Aquí se aplica --color-primary al background-color del botón */
+            background-color: var(--color-primary);
+            color: var(--color-text-light);
+        }
+
+        .primary-button:hover {
+            background-color: #0056b3; /* Un tono más oscuro para el hover, podrías definirlo como otra variable */
+        }
+
+
+        /* Tipografía */
+        .text-small {
+            font-size: var(--font-size-small);
+        }
+        .text-base {
+            font-size: var(--font-size-base);
+        }
+        .text-h3 {
+            font-size: var(--font-size-heading-3);
+        }
+
+        /* Espaciado */
+        .spacing-example-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: var(--spacing-md);
+            border: 1px dashed var(--color-border);
+            padding: var(--spacing-lg);
+            margin-top: var(--spacing-md);
+        }
+        .spacing-box {
+            background-color: var(--color-primary);
+            width: 50px;
+            height: 50px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: var(--color-text-light);
+            border-radius: var(--border-radius-base);
+        }
+
+        /* --- Estilos del Footer --- */
+        footer {
+            width: 100%;
+            background-color: var(--color-secondary);
+            color: var(--color-text-light);
+            text-align: center;
+            padding: var(--spacing-md) 0;
+            margin-top: var(--spacing-xl);
+        }
+    </style>
+</head>
+<body>
+
+    <header class="hero-header">
+        <nav>
+            <!-- Aquí iría tu menú de navegación, si lo tuvieras -->
+        </nav>
+        <h1>Introducción a las Variables CSS</h1>
+        <p>Centralizando tus estilos para un desarrollo más eficiente.</p>
+    </header>
+
+    <main>
+        <section>
+            <h2>¿Qué son las Variables CSS?</h2>
+            <h3>¡Organiza y Reutiliza tus Estilos!</h3>
+            <p>Las variables CSS (también conocidas como propiedades personalizadas) te permiten definir valores que puedes reutilizar en todo tu CSS. Esto te ayudará a mantener la consistencia en tu diseño y a realizar cambios globales de forma muy sencilla.</p>
+            <p>Al cambiar un solo valor en la definición de la variable en `:root`, todos los elementos que la utilizan se actualizarán automáticamente. Esto permite crear temas o realizar ajustes de diseño de manera mucho más ágil.</p>
+        </section>
+
+        <section>
+            <h2>Variables de Color</h2>
+            <h3>Define tu paleta de colores</h3>
+            <p>Aquí puedes ver cómo se aplican las variables de color para que cada caja muestre el color correspondiente a su nombre.</p>
+            <div class="example-box color-primary-box">Color Primario</div>
+            <div class="example-box color-accent-box">Color Acento</div>
+            <div class="example-box color-secondary-box">Color Secundario</div>
+
+            <h3>Misma Variable, Diferentes Propiedades</h3>
+            <p>Observa cómo la misma variable de color puede ser utilizada para diferentes propiedades CSS, como el color de fondo (`background-color`) y el color del texto (`color`), o incluso para bordes. Esto permite mantener una paleta de colores coherente en todo tu diseño.</p>
+            <div class="color-usage-example primary-bg-dark-text">Fondo Primario, Texto Oscuro</div>
+            <div class="color-usage-example primary-text-light-bg">Texto Primario, Fondo Claro</div>
+            <div class="color-usage-example accent-bg-light-text">Fondo Acento, Texto Claro</div>
+
+            <h3>¡Demostración Clave! Una Variable, Múltiples Usos</h3>
+            <p>**Observa cómo el título `h2` de esta sección y el botón de abajo comparten el mismo color principal.** Esto se logra utilizando la variable CSS `--color-primary` en dos propiedades diferentes: el `color` del texto para el `h2` y el `background-color` para el botón. Si cambias el valor de `--color-primary` en `:root`, ¡ambos elementos se actualizarán automáticamente!</p>
+            <button class="primary-button">Botón Primario</button>
+        </section>
+
+        <section>
+            <h2>Variables de Tipografía</h2>
+            <h3>Controla el tamaño y la familia de tus fuentes</h3>
+            <p>Aquí se aplican las variables de tamaño de fuente para que cada texto refleje el tamaño propuesto.</p>
+            <p class="example-box text-small">Texto Pequeño</p>
+            <p class="example-box text-base">Texto Base</p>
+            <p class="example-box text-h3">Texto H3</p>
+        </section>
+
+        <section>
+            <h2>Variables de Espaciado</h2>
+            <h3>Gestiona márgenes y paddings de forma consistente</h3>
+            <p>Aquí se aplican las variables de espaciado para controlar la separación entre elementos y el padding interno.</p>
+            <div class="spacing-example-container">
+                <div class="spacing-box">1</div>
+                <div class="spacing-box">2</div>
+                <div class="spacing-box">3</div>
+            </div>
+        </section>
+
+        <section>
+            <h2>Combinando Variables</h2>
+            <h3>Crea componentes reutilizables</h3>
+            <p>En esta sección, puedes observar cómo se combinan diferentes tipos de variables (color, espaciado, borde, sombra) para crear un componente con un estilo coherente.</p>
+            <div class="example-box color-primary-box">
+                <p class="text-base">Componente con Variables</p>
+                <p class="text-small">¡Fácil de mantener!</p>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Demostración de Variables CSS. Todos los derechos reservados.</p>
+    </footer>
+
+</body>
+</html>

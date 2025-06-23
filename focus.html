@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="">	     
+    <title>CSS focus</title>
+
+    <style>
+        
+        body{
+            background:rgb(138, 138, 138);
+        }
+        
+        h1{
+            font-size: 4em;
+        }
+    
+        body > header{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 50px;
+            background: linear-gradient(rgba(64, 10, 150,0.6),rgba(64, 10, 150,0.1)),
+                         url('https://picsum.photos/1800/1800') center/cover;
+            color:#FFF;
+            text-align: center;
+             
+        }
+        section{
+            padding: 40px 100px;
+            background: #FFF;
+        }
+
+        form{
+            padding: 2em;
+            max-width: 500px;
+            margin: 0 auto;
+        }
+
+        .campo-form{
+            margin: 1em 0;
+        }
+
+        footer{
+            text-align: center;
+        }
+                
+    
+    </style>
+</head>
+<body>
+    <header>
+        <h1>CSS focus</h1>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum fugit est vero ex non officia! Inventore ipsa rem exercitationem molestias.</p>
+    </header>
+
+    <main>
+        <section>
+
+            <h2>Formulario 1 para probar :focus</h2>
+            
+            <form class="formulario-1" action="procesar-form.php" method="post" enctype="multipart/form-data">
+
+                <div class="campo-form">
+                    <label for="nombre">Nombre</label>
+                    <input type="text" name="nombre" id="nombre">
+                </div>
+
+                <div class="campo-form">
+                    <label for="email">Email</label>
+                    <input type="email" name="email" id="email">
+                </div>
+
+                <div class="campo-form">
+                    <input type="submit" value="Enviar">
+                </div>
+
+            </form>
+
+            <h2>Formulario 2 para probar :focus-visible</h2>
+            
+            <form class="formulario-2" action="procesar-form.php" method="post" enctype="multipart/form-data">
+
+                <div class="campo-form">
+                    <label for="nombre">Nombre</label>
+                    <input type="text" name="nombre" id="nombre">
+                </div>
+
+                <div class="campo-form">
+                    <label for="email">Email</label>
+                    <input type="email" name="email" id="email">
+                </div>
+
+                <div class="campo-form">
+                    <input type="submit" value="Enviar">
+                </div>
+
+            </form>
+
+            <h2>Formulario 3 para probar :focus-within </h2>
+            
+            <form class="formulario-3" action="procesar-form.php" method="post" enctype="multipart/form-data">
+
+                <div class="campo-form">
+                    <label for="nombre">Nombre</label>
+                    <input type="text" name="nombre" id="nombre">
+                </div>
+
+                <div class="campo-form">
+                    <label for="email">Email</label>
+                    <input type="email" name="email" id="email">
+                </div>
+
+                <div class="campo-form">
+                    <input type="submit" value="Enviar">
+                </div>
+
+            </form>
+            
+        </section>
+    </main>
+
+    <footer>
+        <p>© Todos los derechos reservados</p>
+    </footer>
+</body>
+</html>
+
+

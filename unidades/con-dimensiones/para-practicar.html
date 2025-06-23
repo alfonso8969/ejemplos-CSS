@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desafío de Unidades CSS: Órdenes Exactas</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Space+Mono:wght@400;700&display=swap"
+        rel="stylesheet">
+    <style>
+        /* Base para REM (no se usa directamente en este desafío, pero buena práctica) */
+        html {
+            font-size: 16px;
+        }
+
+        body {
+            font-family: 'Space Mono', monospace;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(to bottom, #0a0a2a, #200a40);
+            color: #e0e0ff;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* --- Estilos del Header Hero --- */
+
+        /* Debes conseguir que .hero-header tenga una altura igual que la altura del dispositivo */
+        .hero-header {
+            /* height: TU VALOR AQUÍ; */
+            background-image: url('https://picsum.photos/1920/1080?random=5');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            text-align: center;
+            margin-bottom: 50px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        .hero-header h1 {
+            font-family: 'Orbitron', sans-serif;
+            font-size: clamp(2.5rem, 6dvw, 4.5rem);
+            margin-bottom: 15px;
+            color: #00ffff;
+        }
+
+        .hero-header p {
+            font-size: clamp(1rem, 2dvw, 1.6rem);
+            max-width: 800px;
+            padding: 0 20px;
+        }
+
+
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background: #000;
+        }
+
+        nav ul {
+            list-style: none;
+            min-height: 40px;
+            display: grid;
+            grid-auto-flow: column;
+            justify-content: center;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        nav a {
+            color: #FFF;
+            text-decoration: none;
+        }
+
+        /* --- Estilos generales del contenido principal --- */
+        main {
+            width: 100%;
+            max-width: 1200px;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+
+        section {
+            margin-bottom: 50px;
+            padding: 30px;
+            background-color: rgba(30, 30, 60, 0.7);
+            border: 2px solid #00aaff;
+            border-radius: 12px;
+            text-align: center;
+        }
+
+        h2 {
+            font-family: 'Orbitron', sans-serif;
+            color: #00ffaa;
+            margin-top: 0;
+            margin-bottom: 25px;
+            font-size: 2rem;
+        }
+
+        h3 {
+            font-family: 'Space Mono', monospace;
+            color: #aaffdd;
+            margin-top: 15px;
+            margin-bottom: 15px;
+            font-size: 1.3rem;
+        }
+
+        .challenge-description {
+            font-size: 1.1rem;
+            color: #ccffee;
+            margin-bottom: 30px;
+        }
+
+        /* ESTILO BASE PARA TODOS LOS SPANS - ¡NO TOCAR ESTO! */
+        span {
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            padding: 8px 15px;
+            margin: 10px;
+            border-radius: 8px;
+            font-weight: bold;
+            box-sizing: border-box;
+            border: 2px solid #fff;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+            min-width: 50px;
+            min-height: 30px;
+            text-align: center;
+        }
+
+
+
+        /* Sección 1: Unidades de Píxeles (px) - Grupo 1 */
+        .px-ejemplo-1 span {
+            background-color: #28a745;
+            /* Verde */
+            border-color: #76c7c0;
+        }
+
+        .px-ejemplo-1 .px-item-1 {
+            /* ORDEN EXACTA: Dale a este span un ancho de 200 píxeles y un alto de 60 píxeles. */
+            /* width: TU VALOR AQUÍ; */
+            /* height: TU VALOR AQUÍ; */
+        }
+
+        .px-ejemplo-1 .px-item-2 {
+            /* ORDEN EXACTA: Dale a este span un ancho de 120 píxeles y un alto de 35 píxeles. */
+            /* width: TU VALOR AQUÍ; */
+            /* height: TU VALOR AQUÍ; */
+        }
+
+        .px-ejemplo-1 .px-item-3 {
+            /* ORDEN EXACTA: Dale a este span un ancho de 250 píxeles y un alto de 70 píxeles. */
+            /* width: TU VALOR AQUÍ; */
+            /* height: TU VALOR AQUÍ; */
+        }
+
+        /* Sección 2: Unidades de Píxeles (px) - Grupo 2 */
+        .px-ejemplo-2 span {
+            background-color: #1a6f36;
+            /* Verde Oscuro */
+            border-color: #60a09a;
+        }
+
+        .px-ejemplo-2 .px-item-4 {
+            /* ORDEN EXACTA: Dale a este span un ancho de 180 píxeles y un alto de 50 píxeles. */
+            /* width: TU VALOR AQUÍ; */
+            /* height: TU VALOR AQUÍ; */
+        }
+
+        .px-ejemplo-2 .px-item-5 {
+            /* ORDEN EXACTA: Dale a este span un ancho de 90 píxeles y un alto de 45 píxeles. */
+            /* width: TU VALOR AQUÍ; */
+            /* height: TU VALOR AQUÍ; */
+        }
+
+        /* Sección 3: Unidades de Porcentaje (%) - Grupo 1 */
+        .porcentaje-ejemplo-1 .inner-container {
+            width: 80%;
+            /* El contenedor interno tiene el 80% del ancho de la sección */
+            min-height: 150px;
+            /* Altura mínima para este contenedor interno */
+            border: 2px dashed #ffc107;
+            background-color: rgba(255, 193, 7, 0.1);
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            flex-wrap: wrap;
+            padding: 10px;
+            box-sizing: border-box;
+        }
+
+        .porcentaje-ejemplo-1 span {
+            background-color: #ffc107;
+            /* Amarillo */
+            border-color: #ffe08a;
+            font-size: 0.9em;
+        }
+
+        .porcentaje-ejemplo-1 .porcentaje-item-a {
+            /* ORDEN EXACTA: Dale a este span un ancho del 30% de su contenedor padre (.inner-container). */
+            /* width: TU VALOR AQUÍ; */
+        }
+
+        .porcentaje-ejemplo-1 .porcentaje-item-b {
+            /* ORDEN EXACTA: Dale a este span un ancho del 45% de su contenedor padre (.inner-container). */
+            /* width: TU VALOR AQUÍ; */
+        }
+
+        .porcentaje-ejemplo-1 .porcentaje-item-c {
+            /* ORDEN EXACTA: Dale a este span un ancho del 20% de su contenedor padre (.inner-container). */
+            /* width: TU VALOR AQUÍ; */
+        }
+
+        /* Sección 4: Unidades de Porcentaje (%) - Grupo 2 */
+        .porcentaje-ejemplo-2 .inner-container {
+            width: 70%;
+            /* El contenedor interno tiene el 70% del ancho de la sección */
+            min-height: 120px;
+            /* Altura mínima para este contenedor interno */
+            border: 2px dashed #e68a00;
+            /* Naranja Oscuro */
+            background-color: rgba(230, 138, 0, 0.1);
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            flex-wrap: wrap;
+            padding: 10px;
+            box-sizing: border-box;
+        }
+
+        .porcentaje-ejemplo-2 span {
+            background-color: #fd7e14;
+            /* Naranja */
+            border-color: #ffbf8a;
+            font-size: 0.9em;
+        }
+
+        .porcentaje-ejemplo-2 .porcentaje-item-d {
+            /* ORDEN EXACTA: Dale a este span un ancho del 35% de su contenedor padre (.inner-container). */
+            /* width: TU VALOR AQUÍ; */
+        }
+
+        .porcentaje-ejemplo-2 .porcentaje-item-e {
+            /* ORDEN EXACTA: Dale a este span un ancho del 50% de su contenedor padre (.inner-container). */
+            /* width: TU VALOR AQUÍ; */
+        }
+
+        /* --- Fin de la Zona de Práctica --- */
+
+        /* Estilos del Footer */
+        footer {
+            width: 100%;
+            background-color: rgba(10, 10, 40, 0.7);
+            color: #aaffdd;
+            text-align: center;
+            padding: 25px 0;
+            margin-top: 50px;
+            border-top: 2px solid #00aaff;
+            box-shadow: 0 -4px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        footer p {
+            margin: 0;
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header class="hero-header">
+        <nav>
+            <ul>
+                <li><a href="#introduccion">Inicio</a></li>
+                <li><a href="#pixeles1">Píxeles 1</a></li>
+                <li><a href="#pixeles2">Píxeles 2</a></li>
+                <li><a href="#porcentaje1">Porcentaje 1</a></li>
+                <li><a href="#porcentaje2">Porcentaje 2</a></li>
+            </ul>
+        </nav>
+
+        <h1>Desafío de Unidades CSS Avanzadas</h1>
+        <p>La altura del header debe ser igual que la altura del dispositivo</p>
+
+    </header>
+
+    <main>
+        <section id="introduccion">
+            <h2>Introducción al Experimento</h2>
+            <h3>¡Redimensiona tu navegador para observar los cambios!</h3>
+            <p class="challenge-description">En este desafío, **modificarás el código CSS** para controlar el tamaño de
+                diferentes elementos HTML. **Tu tarea es añadir las propiedades `width` y `height`** (o solo `width` en
+                el caso de los porcentajes) en las reglas CSS de cada sección, siguiendo las **ÓRDENES EXACTAS** que
+                encontrarás a continuación y en los comentarios del CSS. Al hacerlo, **observarás cómo cada unidad
+                afecta el diseño** al redimensionar la ventana de tu navegador.</p>
+        </section>
+
+        <section id="pixeles1">
+            <h2>Unidades de Píxeles (px) - Grupo 1</h2>
+            <h3>Tamaño fijo, sin importar el viewport</h3>
+            <p class="challenge-description">Estos elementos **deben mantener siempre sus dimensiones fijas**. Son
+                ideales para elementos que necesitan un tamaño preciso e inmutable, como iconos o botones.</p>
+            <p class="challenge-description">
+                **ÓRDENES EXACTAS:** <br>
+                - Para **"Caja PX 1"**: Dale un **ancho de 200 píxeles** y un **alto de 60 píxeles**. <br>
+                - Para **"Caja PX 2"**: Dale un **ancho de 120 píxeles** y un **alto de 35 píxeles**. <br>
+                - Para **"Caja PX 3"**: Dale un **ancho de 250 píxeles** y un **alto de 70 píxeles**.
+            </p>
+            <div class="px-ejemplo-1">
+                <span class="px-item-1">Caja PX 1</span>
+                <span class="px-item-2">Caja PX 2</span>
+                <span class="px-item-3">Caja PX 3</span>
+            </div>
+        </section>
+
+        <section id="pixeles2">
+            <h2>Unidades de Píxeles (px) - Grupo 2</h2>
+            <h3>Más práctica con tamaños fijos</h3>
+            <p class="challenge-description">Continúa practicando con los píxeles. Observa cómo estos elementos también
+                mantienen sus dimensiones sin importar el tamaño de la ventana.</p>
+            <p class="challenge-description">
+                **ÓRDENES EXACTAS:** <br>
+                - Para **"Caja PX 4"**: Dale un **ancho de 180 píxeles** y un **alto de 50 píxeles**. <br>
+                - Para **"Caja PX 5"**: Dale un **ancho de 90 píxeles** y un **alto de 45 píxeles**.
+            </p>
+            <div class="px-ejemplo-2">
+                <span class="px-item-4">Caja PX 4</span>
+                <span class="px-item-5">Caja PX 5</span>
+            </div>
+        </section>
+
+        <section id="porcentaje1" class="porcentaje-ejemplo-1">
+            <h2>Unidades de Porcentaje (%) - Grupo 1</h2>
+            <h3>Escalando con el ancho del contenedor padre</h3>
+            <p class="challenge-description">Estos elementos **deben escalar en relación con el ancho de su contenedor
+                padre**. Observa cómo se ajustan proporcionalmente cuando redimensiones el contenedor o la ventana del
+                navegador. La altura de estos elementos se ajustará automáticamente por su contenido y padding.</p>
+            <p class="challenge-description">
+                **ÓRDENES EXACTAS:** <br>
+                - Para **"Caja % A"**: Dale un **ancho del 30%** de su contenedor padre. <br>
+                - Para **"Caja % B"**: Dale un **ancho del 45%** de su contenedor padre. <br>
+                - Para **"Caja % C"**: Dale un **ancho del 20%** de su contenedor padre.
+            </p>
+            <div class="inner-container">
+                <span class="porcentaje-item-a">Caja % A</span>
+                <span class="porcentaje-item-b">Caja % B</span>
+                <span class="porcentaje-item-c">Caja % C</span>
+            </div>
+        </section>
+
+        <section id="porcentaje2" class="porcentaje-ejemplo-2">
+            <h2>Unidades de Porcentaje (%) - Grupo 2</h2>
+            <h3>Más práctica con anchos relativos</h3>
+            <p class="challenge-description">Sigue practicando con los porcentajes. Verás cómo estos elementos también
+                se adaptan al ancho de su contenedor padre, manteniendo la fluidez del diseño web.</p>
+            <p class="challenge-description">
+                **ÓRDENES EXACTAS:** <br>
+                - Para **"Caja % D"**: Dale un **ancho del 35%** de su contenedor padre. <br>
+                - Para **"Caja % E"**: Dale un **ancho del 50%** de su contenedor padre.
+            </p>
+            <div class="inner-container">
+                <span class="porcentaje-item-d">Caja % D</span>
+                <span class="porcentaje-item-e">Caja % E</span>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Laboratorios de Diseño Web. ¡Desafío completado!</p>
+    </footer>
+
+</body>
+
+</html>

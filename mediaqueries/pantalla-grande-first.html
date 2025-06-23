@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>   
+
+    <style>
+      
+        *{
+            box-sizing: border-box;
+        }
+
+        body{
+			margin: 0;
+			padding: 0;
+            background: #aaaaaa;   
+			font-family: sans-serif; 
+        }
+
+        h1{
+            font-size: 4em;
+        }
+ 
+    
+
+        header{
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			align-items: center;
+            min-height: 200px;
+            background: linear-gradient(rgba(64, 10, 150,0.6),rgba(64, 10, 150,0.1)),
+                         url('https://picsum.photos/1800/1800') center/cover;
+            color:#FFF;
+                 
+        }
+
+        header h1, header p{
+            margin:5px;
+            padding: 0;
+        }
+
+		nav{
+			padding: 1px;
+			background: #000;
+
+		}
+
+		nav ul{
+			display: flex;
+			justify-content: center;
+			list-style-type: none;
+		}
+
+		nav li{
+			margin:0 10px;
+		}
+		
+		nav li a{
+			text-decoration: none;
+			color:#FFF;
+			font-weight: bold;
+		}
+  
+
+        /* -------------CAJA PADRE ----------------*/
+        .cajaPadre{
+			display: flex;
+			flex-wrap: wrap;
+            margin:40px;
+            background: #ffffff;
+        }
+ 
+        .cajaPadre > div{
+            flex-basis: 33.33%;
+            padding: 15px;
+            border:1px solid gray;
+        }
+
+        .cajaPadre > div:nth-child(even){
+            background: #f8f3a7;
+        }
+
+		.cajaPadre > div:nth-child(odd) img{
+           max-width: 100%;
+        }
+
+		  /* -------------FOOTER PRINCIPAL ----------------*/
+		footer{
+			padding: 30px;
+			color:#FFF;
+			background:#000 ;
+			text-align: center;
+
+		}
+  
+
+    </style>
+	
+        
+    
+</head>
+<body id="ejemplo">
+    <header>
+        <h1>Pantalla grande First</h1>
+        
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum fugit est vero ex non officia! Inventore ipsa rem exercitationem molestias.</p>
+    </header>
+
+	<!-- menú de navegación -->
+	<nav>
+		<ul>
+			<li>
+				<a href="#">Inicio</a>
+			</li>
+
+			<li>
+				<a href="#">Productos</a>
+			</li>
+	
+			<li>
+				<a href="#">Ofertas</a>
+			</li>
+
+			<li>
+				<a href="#">Clientes</a>
+			</li>
+	
+			<li>
+				<a href="#">Contacto</a>
+			</li>
+		</ul>
+	</nav>
+
+    <main>
+		<div class="cajaPadre">
+			<!-- CAJA 1 -->
+			<div class="caja1">
+				<h2>Caja1</h2>
+				<p>Lorem ipsum</p>
+				<img src="imagenes/maceta-colgante-madi-huevo-3mod.jpg" width="200" alt="">
+	 
+			</div>
+	
+			<!-- CAJA 2 -->
+			<div class="caja2">
+				<h2>Caja2</h2>
+				<p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quod sed molestiae nobis?</p>
+	
+				<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde incidunt possimus voluptatibus nemo hic. Nisi vel eos alias esse id! Corporis consectetur perferendis numquam eveniet error quod, tempore soluta deserunt.</p>
+				  
+			 </div>
+	
+			<!-- CAJA 3 -->
+			<div class="caja3">
+				<h2>Caja3</h2>
+				<p>Lorem ipsum dolor sit amet. Lorem ipsum dolor sit, amet consectetur adipisicing elit. Suscipit!</p>
+				<img src="imagenes/espejo-mitra-sol-ratan-30cm.jpg" width="200" alt="">
+	
+	  
+			</div>
+	
+			<!-- CAJA 4 -->
+			<div class="caja4">
+				<h2>Caja4</h2>
+				<p>Lorem ipsum dolor, Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda illum minima odit, consequatur impedit sunt deserunt? Quis rem iste illum autem voluptatem provident similique veritatis quidem, tempora voluptas, laborum sed!</p>
+	 
+			</div>
+	
+			<!-- CAJA 5 -->
+			<div class="caja5">
+				<h2>Caja5</h2>
+				<p>Lorem ipsum dolor, sit amet consectetur.</p>
+	
+				<img src="imagenes/jarron-3-botellas-ayra-flor-blanca.jpg" width="200" alt="">
+		   
+			</div>
+	
+			 <!-- CAJA 6 -->
+			 <div class="caja6">
+				<h2>Caja6</h2>
+				<p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolores quaerat esse animi expedita error impedit veritatis praesentium id culpa quibusdam.</p>
+	
+				<p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Animi placeat deserunt quam? Possimus sed, ducimus accusantium, saepe repellendus vel expedita ipsa a quis, esse totam recusandae. Similique tenetur asperiores voluptas.</p>
+	 
+			</div> 
+		</div>
+	</main>
+
+
+	<footer>
+        <address>
+           <p>C/ Zapateros 17, 03680 Aspe - Alicante</p>
+           <p>hola@casika.es</p> 
+           <p>Telf: 965 038 972</p>
+        </address>
+        <p>&copy; Casika. Todos los derechos reservados</p>
+    </footer>
+
+</body>
+</html>

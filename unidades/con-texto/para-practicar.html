@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unidades CSS: Tu Primera Exploración - Completa los Tamaños</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* La única declaración de font-size aquí para empezar */
+        html {
+            font-size: 16px;
+            /* Base para REM. ¡Puedes cambiarlo y ver qué pasa! */
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            margin: 0;
+            background-color: #f5f5f7;
+            /* Gris muy claro */
+            color: #1d1d1f;
+            line-height: 1.55;
+            /* Interlineado */
+        }
+
+        /* HEADER & NAVIGATION */
+        header {
+            background-color: #1d1d1f;
+            color: #86868b;
+            /* Texto gris claro */
+            padding: 2rem 0;
+            text-align: center;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        header h1 {
+            font-weight: 600;
+            /* TU MISIÓN: ¿Qué unidad usarías aquí para un logo/título discreto? ¿px, rem, em, dvw? */
+            /* font-size: ... ; */
+            margin: 0;
+            padding: 0;
+            letter-spacing: 0.05em;
+        }
+
+        header h1 a {
+            color: #ffffff;
+            text-decoration: none;
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 0.5rem;
+        }
+
+        nav ul li {
+            margin: 0 1rem;
+        }
+
+        nav ul li a {
+            color: #86868b;
+            text-decoration: none;
+            font-weight: 400;
+            /* TU MISIÓN: ¿Cómo harías que este texto de navegación sea un poco más pequeño que la base? */
+            /* font-size: ... ; */
+            padding: 0.5rem 0;
+            display: block;
+        }
+
+        /* MAIN CONTENT */
+        main {
+            max-width: 980px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+        }
+
+        /* HERO SECTION */
+        .hero-section {
+            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.8)), url('https://picsum.photos/1920/1080?random=23') center center no-repeat;
+            background-size: cover;
+            color: #ffffff;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            align-items: center;
+            text-align: center;
+            padding-bottom: 8dvh;
+            box-sizing: border-box;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .hero-content h2 {
+            color: #FFF;
+        }
+
+        .hero-section h2 {
+            font-family: 'Inter', sans-serif;
+            font-weight: 700;
+            /* TU MISIÓN: Este es el título principal. Haz que sea GRANDE y se adapte al ancho de la pantalla. */
+            /* font-size: ... ; */
+            margin-bottom: 0.5rem;
+            line-height: 1.1;
+        }
+
+        .hero-section p {
+            /* TU MISIÓN: Este es el subtítulo del héroe. Haz que sea notable pero no tan grande como el h2, y que también se adapte a la pantalla. */
+            /* font-size: ... ; */
+            font-weight: 400;
+            margin-top: 0;
+            margin-bottom: 1.5rem;
+            color: rgba(255, 255, 255, 0.9);
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 1.5rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .hero-button {
+            background-color: #007aff;
+            color: #ffffff;
+            padding: 0.8rem 1.8rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 500;
+            /* TU MISIÓN: El texto del botón. ¿Qué unidad usarías para que se vea bien con el resto del contenido? */
+            /* font-size: ... ; */
+
+        }
+
+        .hero-button.secondary {
+            background-color: rgba(0, 0, 0, 0.45);
+            border: 2px solid #007aff;
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        /* SECTION STYLING */
+        section {
+            background-color: #ffffff;
+            padding: 5rem 2rem;
+            margin-top: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+            text-align: center;
+        }
+
+        section h2 {
+            font-family: 'Inter', sans-serif;
+            font-weight: 600;
+            /* TU MISIÓN: Títulos de sección. Deben ser prominentes, pero no tanto como el h2 del hero. */
+            /* font-size: ... ; */
+            color: #1d1d1f;
+            margin-bottom: 1.5rem;
+            line-height: 1.1;
+        }
+
+        section p {
+            /* TU MISIÓN: Párrafos generales. ¿Qué unidad usarías para que se ajusten bien a la base y a la accesibilidad? */
+            /* font-size: ... ; */
+            color: #86868b;
+            max-width: 700px;
+            margin: 0 auto 2rem auto;
+        }
+
+        /* CARDS SECTION */
+        .cards-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 4rem;
+            text-align: left;
+        }
+
+        .card {
+            background-color: #f5f5f7;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 3px 15px rgba(0, 0, 0, 0.06);
+            display: flex;
+            flex-direction: column;
+        }
+
+        .card-image {
+            width: 100%;
+            height: 250px;
+            /* Altura en PX - esta sí la mantenemos fija para la imagen */
+            object-fit: cover;
+            display: block;
+        }
+
+        .card-content {
+            padding: 1.8rem;
+            flex-grow: 1;
+        }
+
+        .card-content h3 {
+            /* TU MISIÓN: Títulos de las tarjetas. Deben ser legibles dentro de la tarjeta. */
+            /* font-size: ... ; */
+            font-weight: 600;
+            margin-top: 0;
+            margin-bottom: 0.8rem;
+            color: #1d1d1f;
+            line-height: 1.2;
+        }
+
+        .card-content p {
+            /* TU MISIÓN: Texto de los párrafos en las tarjetas. Puedes experimentar con px aquí para un control muy preciso, o con unidades relativas. */
+            /* font-size: ... ; */
+            color: #86868b;
+            margin-bottom: 1.5rem;
+        }
+
+        .read-more-link {
+            display: inline-block;
+            color: #007aff;
+            text-decoration: none;
+            font-weight: 500;
+            /* TU MISIÓN: El enlace "Leer más". Hazlo un poco más pequeño que el párrafo, ¡ideal para EM! */
+            /* font-size: ... ; */
+        }
+
+        /* ADDITIONAL SECTION STYLING (Galería y Contacto) */
+        .image-gallery {
+            margin-top: 4rem;
+        }
+
+        .image-gallery img {
+            width: 100%;
+            height: auto;
+            border-radius: 12px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+            margin-top: 2rem;
+        }
+
+        .image-gallery p {
+            /* TU MISIÓN: Leyenda de la imagen. ¿Qué unidad usarías para que se relacione con el texto de la sección? */
+            /* font-size: ... ; */
+            color: #86868b;
+            margin-top: 1.5rem;
+        }
+
+        /* FOOTER */
+        footer {
+            text-align: center;
+            padding: 3rem;
+            background-color: #1d1d1f;
+            color: #86868b;
+            margin-top: 6rem;
+            /* TU MISIÓN: Texto del footer. Algo discreto que no llame la atención */
+            /* font-size: ... ; */
+            line-height: 1.6;
+        }
+        
+        footer .copyright {
+            /* TU MISIÓN: El copyright. Algo ligeramente más grande que el texto general del footer. */
+            /* font-size: ... ; */
+            
+        }
+        
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1><a href="#hero">EXPLORACIÓN DE PX, EM, REM, DVW</a></h1>
+        <nav>
+            <ul>
+                <li><a href="#articulos">Artículos</a></li>
+                <li><a href="#galeria">Galería</a></li>
+                <li><a href="#contacto">Contacto</a></li>
+                <li><a href="#">Tienda</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero-section" id="hero">
+            <div class="hero-content">
+                <h2>Personaliza los tamaños de texto de esta página.</h2>
+                <p>Utiliza las unidades que has aprendido en los textos de esta página</p>
+                <p>En el css que ya existe se proponen ciertos lugares para incluir font-size y probar px, rem, em,
+                    dwv....pero puedes modificar cualquier zona para practicar lo aprendido</p>
+                <div class="hero-buttons">
+                    <a href="#articulos" class="hero-button">Explora la Colección</a>
+                    <a href="#galeria" class="hero-button secondary">Ver la Galería</a>
+                </div>
+            </div>
+        </section>
+
+        <section id="articulos">
+            <h2>Novedades desde la Frontera Final</h2>
+            <p>Sumérgete en los últimos descubrimientos que están redefiniendo nuestra comprensión del universo. Cada
+                artículo, una ventana a lo desconocido.</p>
+
+            <div class="cards-container">
+                <div class="card">
+                    <img src="https://picsum.photos/600/400?random=24" alt="Telescopio James Webb" class="card-image">
+                    <div class="card-content">
+                        <h3>El Secreto de los Júpiter Calientes</h3>
+                        <p>Nuevos datos del telescopio espacial revelan la sorprendente atmósfera de exoplanetas
+                            gaseosos gigantes. Los detalles más finos se perciben a **17px**.</p>
+                        <a href="#" class="read-more-link">Descubrir más (**1em**)</a>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <img src="https://picsum.photos/600/400?random=25" alt="Sonda espacial en el espacio"
+                        class="card-image">
+                    <div class="card-content">
+                        <h3>La Búsqueda de Vida en Encélado</h3>
+                        <p>La sonda "Deep Dive" se prepara para una misión sin precedentes a la luna de Saturno. Cada
+                            hallazgo, una esperanza.</p>
+                        <a href="#" class="read-more-link">Saber más (**1em**)</a>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <img src="https://picsum.photos/600/400?random=26" alt="Agujero negro y galaxia" class="card-image">
+                    <div class="card-content">
+                        <h3>El Sonido del Agujero Negro Central</h3>
+                        <p>Escucha las "ondas" gravitacionales captadas desde el corazón de nuestra galaxia, un fenómeno
+                            de **200 años luz**.</p>
+                        <a href="#" class="read-more-link">Explorar (**1em**)</a>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <img src="https://picsum.photos/600/400?random=27" alt="Estrellas en formación" class="card-image">
+                    <div class="card-content">
+                        <h3>La Cuna de las Estrellas Nacientes</h3>
+                        <p>Imágenes impresionantes de las guarderías estelares, donde el gas y el polvo dan vida a
+                            nuevos soles. Las texturas son asombrosas a **1.2em**.</p>
+                        <a href="#" class="read-more-link">Ver detalles (**1em**)</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="galeria" class="image-gallery">
+            <h2>Momentos Cósmicos Inolvidables</h2>
+            <p>Una colección curada de las fotografías más impresionantes que nos conectan con la grandeza del universo.
+            </p>
+            <img src="https://picsum.photos/1200/700?random=28" alt="Tierra vista desde el espacio">
+            <p>"Nuestro punto azul pálido, suspendido en un rayo de sol. Un recordatorio humilde y asombroso." -
+                **(Leyenda de imagen en EM)**</p>
+        </section>
+
+        <section id="contacto">
+            <h2>Conecta con el Cosmos</h2>
+            <p>¿Listo para llevar tu exploración al siguiente nivel? Contáctanos para más información o colaboraciones.
+            </p>
+            <p>Correo Electrónico: <a href="mailto:info@exploracioncosmica.com"
+                    style="color: #007aff; text-decoration: none;">info@exploracioncosmica.com</a></p>
+            <p>Soporte: <a href="#" style="color: #007aff; text-decoration: none;">Visita nuestro centro de ayuda</a>
+            </p>
+        </section>
+    </main>
+
+    <footer>
+        <p class="copyright">&copy; 2025 Exploración Cósmica. Todos los derechos reservados.</p>
+
+        <!-- ADVERTENCIA: aunque sería más apropiado incluir ul > li para los posibles enlaces en este caso para hacer más sencillo ejemplo se utilizan simplemente span -->
+        <p>
+            <span>Política de Privacidad</span> |
+            <span>Términos de Uso</span> |
+            <span>Legal</span>
+        </p>
+
+    </footer>
+</body>
+
+</html>

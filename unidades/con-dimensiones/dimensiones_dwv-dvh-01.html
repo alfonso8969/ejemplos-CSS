@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="">
+
+    <style>
+        *{
+            box-sizing: border-box;
+            margin:0;
+            padding: 0;
+        }
+
+        h1{
+            font-size: 4em;
+        }
+
+        body > header{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 50px;
+            background: linear-gradient(rgba(64, 10, 150,0.3),rgba(64, 10, 150,0.1)),
+                         url('https://picsum.photos/1800/1800') center/cover;
+            color:#FFF;
+            text-align: center;
+             
+        }
+        
+        .cajaPadre{
+            width: 500px;
+            border:3px solid #000;
+            background: rgb(219, 219, 219);
+        }
+
+        .caja1, .caja2{
+            padding: 50px;
+            font-size: 25px;
+            font-weight: bold;
+        }
+
+        .caja1{
+             
+            margin:30px 0;
+            background: rgb(103, 245, 139);
+        }
+
+        .caja2{
+             
+            margin:30px 0;
+            background: rgb(240, 151, 228);
+        }
+
+  
+    </style>
+	 
+
+        
+    <title>Document</title>
+</head>
+<body>
+    <header>
+        <h1>Encabezado h1 dentro de header</h1>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum fugit est vero ex non officia! Inventore ipsa rem exercitationem molestias.</p>
+    </header>
+
+    <div class="cajaPadre">
+        <div class="caja1">
+            <h2>Caja1</h2>
+            <p>Lorem ipsum dolor sit.</p>
+        </div>
+
+        <div class="caja2">
+            <h2>Caja2</h2>
+            <p>Lorem ipsum dolor sit.</p>
+        </div>
+    </div>
+
+</body>
+</html>
