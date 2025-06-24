@@ -1,12 +1,11 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="">	     
-    <title>Métodología BEM</title>
-
-    <style>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="">
+        <title>Metodología BEM</title>
+        <style>
         
         body{
             background:rgb(138, 138, 138);
@@ -34,43 +33,134 @@
         }
 
         /* noticias */
-                
-    
-    </style>
-</head>
-<body>
-    <header>
-        <h1>Métodología BEM</h1>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum fugit est vero ex non officia! Inventore ipsa rem exercitationem molestias.</p>
-    </header>
+        .noticias {
+            text-align: center;
+            margin-bottom: 40px;
+        }
 
-    <main>
-        <section>
-            <header>
-                <h2>Noticias</h2>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae, doloremque!</p>
-            </header>
+        .noticias__titulo {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            font-family: sans-serif;
+        }  
 
-            <div class="contenedorNoticias">
+        .noticias__descripcion {
+            font-size: 1.2em;
+            color: #666;
+            font-family: sans-serif;
+        }
+   
+        .contenedorNoticias {
+            display: grid;
+            grid-template-areas: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+        
+         /* noticia */
+       .noticia {
+           margin-bottom: 24px;
+           padding: 20px;
+           background: #bbb;
+           border: 1px solid #eee;
+           border-radius: 10px;
+       }
 
-                <!-- noticia 1 -->
-                 <!-- metodología BEM -->
-                <div class="noticia"> <!-- BLOQUE -->
-                    <h2 class="noticia__titulo">Titulo noticia</h2> <!-- ELEMENTO -->
-                    <p class="noticia__descripcion">Descripción noticia Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nihil consectetur ad nobis.</p><!-- ELEMENTO -->
-                    <a href="#" class="noticia__enlace">Más información</a><!-- ELEMENTO -->
+         /* noticia--urgente */
+        .noticia--urgente {
+            background: #f12f2f;
+            border: 1px solid #ff9999;
+        }
+
+       /* noticia__titulo */
+       .noticia__titulo {
+            font-size: 1.5em;
+            margin: 0 auto;
+            font-family: sans-serif;
+        }
+
+         /* noticia__descripcion */
+         .noticia__descripcion {
+            font-size: 1.2em;
+            margin-bottom: 15px;
+            font-family: sans-serif;
+            color: #333;
+        }
+
+        /* noticia__enlace */
+        .noticia__enlace {
+            display: inline-block;
+            padding: .8em 1em;
+            border: 1px solid #f3e9e9;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+            border-radius: 15px;
+            background: #333;
+            color: #fff;
+            text-decoration: none;
+        }
+
+        .noticia__enlace:hover {
+            background: #555;
+        }
+
+        /* footer */
+        footer {
+            text-align: center;
+            padding: 20px;
+            background: #333;
+            color: #fff;
+        }
+        </style>
+    </head>
+    <body>
+        <header>
+            <h1>Metodología BEM</h1>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum fugit est vero ex non officia! Inventore ipsa rem exercitationem molestias.</p>
+        </header>
+        <main>
+            <section>
+                <header class="noticias">
+                    <h2 class="noticias__titulo">Noticias</h2>
+                    <p class="noticias__descripcion">Lorem ipsum dolor sit amet consectetur adipisicipg elit. Beatae, doloremque!</p>
+                </header>
+                <div class="contenedorNoticias">
+                    <!-- noticia 1 -->
+                    <!-- metodología BEM -->
+                    <div class="noticia">
+                        <!-- BLOQUE -->
+                        <h2 class="noticia__titulo">Titulo noticia</h2>
+                        <!-- ELEMENTO -->
+                        <p class="noticia__descripcion">Descripción noticia Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nihil consectetur ad nobis.</p>
+                        <!-- ELEMENTO -->
+                        <a href="#" class="noticia__enlace">Más información</a>
+                        <!-- ELEMENTO -->
+                    </div>
+                    <!-- noticia 2 -->
+                    <!-- metodología BEM -->
+                    <!-- URGENTE -- Variante -->
+                    <div class="noticia noticia--urgente">
+                        <!-- BLOQUE -->
+                        <h2 class="noticia__titulo">Titulo noticia 2</h2>
+                        <!-- ELEMENTO -->
+                        <p class="noticia__descripcion">Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque excepturi accusamus doloremque sed culpa a iusto, repellendus omnis inventore hic! Quis, eligendi adipisci?</p>
+                        <!-- ELEMENTO -->
+                        <a href="#" class="noticia__enlace">Más información</a>
+                        <!-- ELEMENTO -->
+                    </div>
+                    <!-- noticia 3 -->
+                    <div class="noticia">
+                        <!-- BLOQUE -->
+                        <h2 class="noticia__titulo">Titulo noticia 3</h2>
+                        <!-- ELEMENTO -->
+                        <p class="noticia__descripcion">Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque excepturi accusamus doloremque sed culpa a iusto, repellendus omnis inventore hic! Quis, eligendi adipisci?</p>
+                        <!-- ELEMENTO -->
+                        <a href="#" class="noticia__enlace">Más información</a>
+                        <!-- ELEMENTO -->
+                    </div>
                 </div>
-
-
-            </div>
-            
-        </section>
-    </main>
-
-    <footer>
-        <p>© Todos los derechos reservados</p>
-    </footer>
-</body>
+            </section>
+        </main>
+        <footer>
+            <p>© Todos los derechos reservados</p>
+        </footer>
+    </body>
 </html>
-
-

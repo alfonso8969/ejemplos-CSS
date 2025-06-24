@@ -1,16 +1,15 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Unidades CSS: rem</title>
-    <style>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Unidades CSS: rem</title>
+        <style>
 
         html {
             font-size: 16px;  /* si quiero ser accesible en el html la unidad debería ser em */
         }
-        
-        
+                
         body {
             font-family: Arial, sans-serif;
             margin: 0;
@@ -93,42 +92,149 @@
             margin-top: 40px;
             font-size: 14px;
         }
-    </style>
-</head>
-<body>
-    <header>
-        <h1>Texto con unidades  rem</h1>
-        <nav>
-            <ul>
-                <li><a href="#">Introducción</a></li>
-                <li><a href="#">Ejemplo</a></li>
-                <li><a href="#ventajas-rem">Ventajas</a></li>
-            </ul>
-        </nav>
-    </header>
 
-    <main>
-        <section id="intro-rem">
-            <h2>El Elemento Raíz como Referencia</h2>
-            <p>La unidad **`rem`** es la solución moderna para una tipografía responsiva y accesible. Al basarse en el tamaño de fuente del elemento raíz (`<html>`), puedes cambiar un solo valor y hacer que todo el texto de tu sitio web se escale proporcionalmente.</p>
-            <img src="https://picsum.photos/800/400?random=3" alt="Imagen de un sistema interconectado">
-        </section>
+        .card {
+            --status: attr(data-status type(<custom-ident>));
+            border: 1px solid;
+            border-color: if(
+                            style(--status: pending): royalblue;
+                            style(--status: complete): seagreen;
+                          else: gray);
+            background-color: if(
+                                style(--status: pending): #eff7fa;
+                                style(--status: complete): #f6fff6;
+                                else: #f7f7f7);
+            /*  Now accessible with reading-flow: grid-columns */
+            grid-column: if(
+                            style(--status: pending): 1;
+                            style(--status: complete): 2;
+                            else: 3);
+        }
 
-        <section id="ejemplo-rem">
-            <h3>Interfaz de Control de Clima Planetario</h3>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum, enim perspiciatis modi a numquam dolorem voluptatibus inventore error, dolores sint alias, at hic magni autem neque perferendis cumque? Nam perferendis aut officiis nisi.</p>
+        /* etc */
 
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor quos sit dolore tempora! Aliquid laboriosam hic eaque tempora nihil labore veniam, esse dolorum nostrum, asperiores nemo sequi minima delectus quia debitis vitae? Ipsam inventore voluptate quod velit id hic, omnis officiis quia sint obcaecati.</p>
-        </section>
+        .card {
+            padding: 1rem;
+            border-radius: 0.5rem;
+            box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 18px 0px;
+        }
 
-        <section id="ventajas-rem">
-            <h3>Ventajas de `rem`</h3>
-            <p>La principal ventaja de `rem` es su **predecibilidad y facilidad de mantenimiento**. Evita los problemas de herencia en cascada de `em` y facilita la creación de sistemas de diseño con una tipografía coherente. Además, es excelente para la **accesibilidad**, ya que respeta las preferencias de tamaño de fuente del usuario en el navegador.</p>
-        </section>
-    </main>
+        .user {
+            display: flex;
+            gap: 0.5rem;
+            align-items: center;
+            margin-top: 1rem;
+        }
 
-    <footer>
-        <p>&copy; 2025 Exploradores de Unidades CSS. Todos los derechos reservados.</p>
-    </footer>
-</body>
-</html>
+        .container img {
+            width: 1.5rem;
+            aspect-ratio: 1;
+            border-radius: 50%;
+            display: grid;
+            justify-content: center;
+            padding: 1rem;
+        }
+
+        .container {
+            margin-left: auto;
+            margin-right: auto;
+            margin-top: 25px;
+            display: grid;
+            max-width: 900px;
+            grid-template-columns: repeat(3, 1fr);
+            grid-auto-flow: dense;
+            gap: 1rem;
+        }
+        </style>
+    </head>
+    <body>
+        <header>
+            <h1>Texto con unidades  rem</h1>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium, veniam architecto.</p>
+            <nav>
+                <ul>
+                    <li>
+                        <a href="#">Introducción</a>
+                    </li>
+                    <li>
+                        <a href="#">Ejemplo</a>
+                    </li>
+                    <li>
+                        <a href="#ventajas-rem">Ventajas</a>
+                    </li>
+                </ul>
+            </nav>
+        </header>
+        <div class="container">
+            <div class="card" data-status="inactive">
+                <div class="title">
+                    Build demo to showcase
+                    <code>if()</code>
+                    function in CSS
+                </div>
+                <figure class="user">
+                    <img src="https://web.dev/images/authors/unakravets.jpg" alt="">
+                    <figcaption>una</figcaption>
+                </figure>
+            </div>
+            <div class="card" data-status="complete">
+                <div class="title">Create a div with a data-status on it within this demo</div>
+                <figure class="user">
+                    <img src="https://web.dev/images/authors/unakravets.jpg" alt="">
+                    <figcaption>una</figcaption>
+                </figure>
+            </div>
+            <div class="card" data-status="pending">
+                <div class="title">Make this demo more functional and contextual</div>
+                <figure class="user">
+                    <img src="https://web.dev/images/authors/unakravets.jpg" alt="">
+                    <figcaption>una</figcaption>
+                </figure>
+            </div>
+            <div class="card" data-status="complete">
+                <div class="title">Take a look at the demo</div>
+                <figure class="user">
+                    <img src="https://web.dev/images/authors/bramus.jpg" alt="">
+                    <figcaption>bramus</figcaption>
+                </figure>
+            </div>
+            <div class="card" data-status="pending">
+                <div class="title">Give Una a high-five</div>
+                <figure class="user">
+                    <img src="https://web.dev/images/authors/bramus.jpg" alt="">
+                    <figcaption>bramus</figcaption>
+                </figure>
+            </div>
+            <div class="card" data-status="complete">
+                <div class="title">Book CSS Day flight</div>
+                <figure class="user">
+                    <img src="https://web.dev/images/authors/unakravets.jpg" alt="">
+                    <figcaption>una</figcaption>
+                </figure>
+            </div>
+        </div>
+        <main>
+            <section id="intro-rem">
+                <h2>El Elemento Raíz como Referencia</h2>
+                <p>
+                    La unidad **`rem`** es la solución moderna para una tipografía responsiva y accesible. Al basarse en el tamaño de fuente del elemento raíz (`
+                    <html>
+                        `), puedes cambiar un solo valor y hacer que todo el texto de tu sitio web se escale proporcionalmente.
+                    </p>
+                    <img src="https://picsum.photos/800/400?random=3" alt="Imagen de un sistema interconectado">
+                </section>
+                <section id="ejemplo-rem">
+                    <h3>Interfaz de Control de Clima Planetario</h3>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum, enim perspiciatis modi a numquam dolorem voluptatibus inventore error, dolores sint alias, at hic magni autem neque perferendis cumque? Nam perferendis aut officiis nisi.</p>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor quos sit dolore tempora! Aliquid laboriosam hic eaque tempora nihil labore veniam, esse dolorum nostrum, asperiores nemo sequi minima delectus quia debitis vitae? Ipsam inventore voluptate quod velit id hic, omnis officiis quia sint obcaecati.</p>
+                </section>
+                <section id="ventajas-rem">
+                    <h3>Ventajas de `rem`</h3>
+                    <p>La principal ventaja de `rem` es su **predecibilidad y facilidad de mantenimiento**. Evita los problemas de herencia en cascada de `em` y facilita la creación de sistemas de diseño con una tipografía coherente. Además, es excelente para la **accesibilidad**, ya que respeta las preferencias de tamaño de fuente del usuario en el navegador.</p>
+                </section>
+            </main>
+            <footer>
+                <p>&copy; 2025 Exploradores de Unidades CSS. Todos los derechos reservados.</p>
+            </footer>
+        </body>
+    </html>

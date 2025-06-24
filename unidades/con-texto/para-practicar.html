@@ -36,7 +36,7 @@
         header h1 {
             font-weight: 600;
             /* TU MISIÓN: ¿Qué unidad usarías aquí para un logo/título discreto? ¿px, rem, em, dvw? */
-            /* font-size: ... ; */
+            font-size: 2rem; ; 
             margin: 0;
             padding: 0;
             letter-spacing: 0.05em;
@@ -66,7 +66,7 @@
             text-decoration: none;
             font-weight: 400;
             /* TU MISIÓN: ¿Cómo harías que este texto de navegación sea un poco más pequeño que la base? */
-            /* font-size: ... ; */
+            font-size: 0.875rem;
             padding: 0.5rem 0;
             display: block;
         }
@@ -104,15 +104,15 @@
         .hero-section h2 {
             font-family: 'Inter', sans-serif;
             font-weight: 700;
-            /* TU MISIÓN: Este es el título principal. Haz que sea GRANDE y se adapte al ancho de la pantalla. */
-            /* font-size: ... ; */
+            /* TU MISIÓN: Este es el título principal. Haz que sea GRANDE y se adapte al ancho de la pantalla. */        
+            font-size: 3dvw;
             margin-bottom: 0.5rem;
             line-height: 1.1;
         }
 
         .hero-section p {
             /* TU MISIÓN: Este es el subtítulo del héroe. Haz que sea notable pero no tan grande como el h2, y que también se adapte a la pantalla. */
-            /* font-size: ... ; */
+            font-size: 2dvw;
             font-weight: 400;
             margin-top: 0;
             margin-bottom: 1.5rem;
@@ -135,6 +135,7 @@
             font-weight: 500;
             /* TU MISIÓN: El texto del botón. ¿Qué unidad usarías para que se vea bien con el resto del contenido? */
             /* font-size: ... ; */
+            font-size: 1rem;
 
         }
 
@@ -159,6 +160,7 @@
             font-weight: 600;
             /* TU MISIÓN: Títulos de sección. Deben ser prominentes, pero no tanto como el h2 del hero. */
             /* font-size: ... ; */
+            font-size: 2.5rem;
             color: #1d1d1f;
             margin-bottom: 1.5rem;
             line-height: 1.1;
@@ -167,6 +169,7 @@
         section p {
             /* TU MISIÓN: Párrafos generales. ¿Qué unidad usarías para que se ajusten bien a la base y a la accesibilidad? */
             /* font-size: ... ; */
+            font-size: 1.125rem;
             color: #86868b;
             max-width: 700px;
             margin: 0 auto 2rem auto;
@@ -206,6 +209,7 @@
         .card-content h3 {
             /* TU MISIÓN: Títulos de las tarjetas. Deben ser legibles dentro de la tarjeta. */
             /* font-size: ... ; */
+            font-size: clamp(1.5rem, 2vw, 1.8rem);
             font-weight: 600;
             margin-top: 0;
             margin-bottom: 0.8rem;
@@ -216,6 +220,7 @@
         .card-content p {
             /* TU MISIÓN: Texto de los párrafos en las tarjetas. Puedes experimentar con px aquí para un control muy preciso, o con unidades relativas. */
             /* font-size: ... ; */
+            font-size: 1rem;
             color: #86868b;
             margin-bottom: 1.5rem;
         }
@@ -227,6 +232,7 @@
             font-weight: 500;
             /* TU MISIÓN: El enlace "Leer más". Hazlo un poco más pequeño que el párrafo, ¡ideal para EM! */
             /* font-size: ... ; */
+            font-size: 0.875em;
         }
 
         /* ADDITIONAL SECTION STYLING (Galería y Contacto) */
@@ -245,6 +251,7 @@
         .image-gallery p {
             /* TU MISIÓN: Leyenda de la imagen. ¿Qué unidad usarías para que se relacione con el texto de la sección? */
             /* font-size: ... ; */
+            font-size: 1.125rem;
             color: #86868b;
             margin-top: 1.5rem;
         }
@@ -258,13 +265,16 @@
             margin-top: 6rem;
             /* TU MISIÓN: Texto del footer. Algo discreto que no llame la atención */
             /* font-size: ... ; */
+            font-size: 1.25rem;
+            margin-top: 30px;
             line-height: 1.6;
         }
         
         footer .copyright {
             /* TU MISIÓN: El copyright. Algo ligeramente más grande que el texto general del footer. */
             /* font-size: ... ; */
-            
+            font-size: 1.375rem;
+
         }
         
     </style>
@@ -357,7 +367,7 @@
 
         <section id="contacto">
             <h2>Conecta con el Cosmos</h2>
-            <p>¿Listo para llevar tu exploración al siguiente nivel? Contáctanos para más información o colaboraciones.
+            <p>¿Listo para llevar tu exploración al siguiente nivel? Contáctenos para más información o colaboraciones.
             </p>
             <p>Correo Electrónico: <a href="mailto:info@exploracioncosmica.com"
                     style="color: #007aff; text-decoration: none;">info@exploracioncosmica.com</a></p>
