@@ -1,137 +1,156 @@
 <!DOCTYPE html>
 <html lang="es">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Unidades CSS: px y % para Cajas</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
     <style>
-        body {
-            font-family: 'Inter', sans-serif;
-            margin: 0;
-            background-color: #f4f7f6;
-            color: #333;
-            line-height: 1.6;
-            padding: 20px;
-        }
+      body {
+        font-family: "Inter", sans-serif;
+        margin: 0;
+        background-color: #f4f7f6;
+        color: #333;
+        line-height: 1.6;
+        padding: 20px;
+      }
 
-        h1 {
-            color: #2c3e50;
-            text-align: center;
-            margin-bottom: 40px;
-        }
+      h1 {
+        color: #2c3e50;
+        text-align: center;
+        margin-bottom: 40px;
+      }
 
-        .container {
-            background-color: #fff;
-            padding: 20px;
-            margin-bottom: 40px;
-            border-radius: 8px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-            max-width: 900px;
-            margin: 0 auto 40px auto;
-            border: 1px solid #ddd;
-        }
+      .container {
+        background-color: #fff;
+        padding: 20px;
+        margin-bottom: 40px;
+        border-radius: 8px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        max-width: 900px;
+        margin: 0 auto 40px auto;
+        border: 1px solid #ddd;
+      }
 
-        .example-box {
-            background-color: #3498db;
-            color: #fff;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: 20px auto;
-            font-weight: bold;
-            border-radius: 5px;
-        }
+      .example-box {
+        background-color: #3498db;
+        color: #fff;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 20px auto;
+        font-weight: bold;
+        border-radius: 5px;
+      }
 
-        /* PX Example */
-        .box-dimension-px {
-            width: 300px;
-            /* Ancho fijo */
+      /* PX Example */
+      .box-dimension-px {
+        width: 300px;
+        /* Ancho fijo */
 
-            height: 150px;
-            /* Alto fijo */
-            background-color: #e74c3c;
-        }
+        height: 150px;
+        /* Alto fijo */
+        background-color: #e74c3c;
+      }
 
-        .box-dimension-px p {
-            font-size: 18px;
-            /* Tamaño de texto fijo para este ejemplo */
-        }
+      .box-dimension-px p {
+        font-size: 18px;
+        /* Tamaño de texto fijo para este ejemplo */
+      }
 
-        /* Percentage Example */
-        .box-dimension-porcentaje {
-            width: 70%;
-            /* Este elemento ocupa un  % de su padre */
-           
-            height: 300px;     
-            background-color: #95a5a6;
-            margin: 20px auto;
-            padding: 10px;
-            box-sizing: border-box;
-            /* Incluir padding en el ancho/alto */
-            border-radius: 5px;
-            display: flex;
-            /* Para centrar el hijo fácilmente */
-            align-items: center;
-            justify-content: center;
-            flex-direction: column;
-            text-align: center;
-        }
+      /* Percentage Example */
+      .box-dimension-porcentaje {
+        width: 70%;
+        /* Este elemento ocupa un  % de su padre */
 
-        .otra-caja-porcentaje {
-            width: 75%;
-           /* Este elemento ocupa un  % de su padre */
+        height: 300px;
+        background-color: #95a5a6;
+        margin: 20px auto;
+        padding: 10px;
+        box-sizing: border-box;
+        /* Incluir padding en el ancho/alto */
+        border-radius: 5px;
+        display: flex;
+        /* Para centrar el hijo fácilmente */
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        text-align: center;
+      }
 
-            background-color: #2ecc71;
-        }
+      .otra-caja-porcentaje {
+        width: 75%;
+        /* Este elemento ocupa un  % de su padre */
 
-        .otra-caja-porcentaje p {
-            font-size: 18px;
-        }
+        background-color: #2ecc71;
+      }
 
-        .img-fluid{
-            width: 100%;
-        }
+      .otra-caja-porcentaje p {
+        font-size: 18px;
+      }
+
+      .img-fluid {
+        width: 100%;
+      }
     </style>
-</head>
+  </head>
 
-<body>
+  <body>
     <h1>Unidades de Dimensión: `px` y `%`</h1>
 
     <div class="container">
-        <h2>`px` (Píxeles) - Dimensión Absoluta</h2>
-        <p>Los píxeles (`px`) son unidades **absolutas**. Esto significa que una caja con cierta dimensión no se
-            adpatará al tamaño del navegador o del dispositivo. Es muy predecible pero no se adapta.</p>
-        <div class="example-box box-dimension-px">
-            <p>Ancho y alto fijos</p>
-        </div>
-        <p>Intenta redimensionar tu navegador. Verás que el tamaño de esta caja no cambia.</p>
-        <img src="https://picsum.photos/600/300?random=1" alt="Paisaje ....">
+      <h2>`px` (Píxeles) - Dimensión Absoluta</h2>
+      <p>
+        Los píxeles (`px`) son unidades **absolutas**. Esto significa que una
+        caja con cierta dimensión no se adaptará al tamaño del navegador o del
+        dispositivo. Es muy predecible pero no se adapta.
+      </p>
+      <div class="example-box box-dimension-px">
+        <p>Ancho y alto fijos</p>
+      </div>
+      <p>
+        Intenta redimensionar tu navegador. Verás que el tamaño de esta caja no
+        cambia.
+      </p>
+      <img src="https://picsum.photos/600/300?random=1" alt="Paisaje ...." />
     </div>
 
     <div class="container">
-        <h2>`%` (Porcentaje) - Dimensión Relativa al Padre</h2>
-        <p>El porcentaje (`%`) es una unidad **relativa** al tamaño de su **elemento padre**. Si defines una caja con
-            <code>width: 50%;</code>, ocupará la mitad del ancho del contenedor que la encierra. Si el padre cambia de
-            tamaño, ¡la caja también lo hará!
-        </p>
-        <div class="box-dimension-porcentaje">
-            <p>Soy el padre</p>
+      <h2>`%` (Porcentaje) - Dimensión Relativa al Padre</h2>
+      <p>
+        El porcentaje (`%`) es una unidad **relativa** al tamaño de su
+        **elemento padre**. Si defines una caja con <code>width: 50%;</code>,
+        ocupará la mitad del ancho del contenedor que la encierra. Si el padre
+        cambia de tamaño, ¡la caja también lo hará!
+      </p>
+      <div class="box-dimension-porcentaje">
+        <p>Soy el padre</p>
 
-            <div class="example-box otra-caja-porcentaje">
-                <p>Soy el hijo</p>
-            </div>
+        <div class="example-box otra-caja-porcentaje">
+          <p>Soy el hijo</p>
         </div>
-        <p>Observa cómo la caja verde dentro del contenedor gris se adapta si cambias el tamaño de la ventana del navegador. Su tamaño es una fracción de su padre.</p>
+      </div>
+      <p>
+        Observa cómo la caja verde dentro del contenedor gris se adapta si
+        cambias el tamaño de la ventana del navegador. Su tamaño es una fracción
+        de su padre.
+      </p>
 
-        <p>Por otro lado a su vez la caja gris también tiene dimensión en porcentaje y si cambia su padre modificará su tamaño</p>
+      <p>
+        Por otro lado a su vez la caja gris también tiene dimensión en
+        porcentaje y si cambia su padre modificará su tamaño
+      </p>
 
-        <img class="img-fluid" src="https://picsum.photos/600/300?random=2" alt="Diagrama de proporciones">
+      <img
+        class="img-fluid"
+        src="https://picsum.photos/600/300?random=2"
+        alt="Diagrama de proporciones"
+      />
 
-        <p>La imagen también tiene una dimensión en % para el width</p>
+      <p>La imagen también tiene una dimensión en % para el width</p>
     </div>
-
-</body>
-
+  </body>
 </html>
