@@ -182,6 +182,7 @@
         .key-points-list {
             /* PRUEBA: list-style-type, p.ej. list-style-type: square; */
             padding-left: 20px;
+            list-style-type: circle;
         }
 
         .key-points-list__item {
@@ -190,13 +191,17 @@
         }
         .key-points-list--numbered {
             /* PRUEBA: list-style-type */
+            list-style-type: decimal-leading-zero;
+
         }
         .key-points-list--roman {
             /* PRUEBA: list-style-type */
+            list-style-type: upper-roman;
         }
         .key-points-list--no-markers {
             /* PRUEBA: list-style-type */
             padding-left: 0;
+            list-style-type: none;
         }
 
 
@@ -364,6 +369,14 @@
             <li class="key-points-list__item">Optimización de código y detección de errores.</li>
             <li class="key-points-list__item">Personalización masiva de experiencias de usuario.</li>
           </ul>
+
+          <p>Lista numerada:</p>
+          <ol class="key-points-list--numbered">
+            <li class="key-points-list__item">Desarrollo de aplicaciones más rápidas.</li>
+            <li class="key-points-list__item">Mejora en la colaboración entre equipos multidisciplinarios.</li>
+            <li class="key-points-list__item">Reducción de la carga de trabajo repetitivo.</li>
+            <li class="key-points-list__item">Optimización de aplicaciones móviles y web.</li>
+          </ol>
         </div>
       </section>
 
@@ -430,9 +443,9 @@
             productos y materiales durante el mayor tiempo posible. Esto implica el rediseño de productos para facilitar
             su reparación y reciclaje, y el fomento de modelos de negocio basados en el servicio y la reutilización.</p>
           <ul class="key-points-list key-points-list--roman">
-            <li class="key-points-list__item">I. Diseño para la longevidad y modularidad.</li>
-            <li class="key-points-list__item">II. Estrategias de recuperación y remanufactura.</li>
-            <li class="key-points-list__item">III. Plataformas de intercambio y reutilización.</li>
+            <li class="key-points-list__item">Diseño para la longevidad y modularidad.</li>
+            <li class="key-points-list__item">Estrategias de recuperación y remanufactura.</li>
+            <li class="key-points-list__item">Plataformas de intercambio y reutilización.</li>
           </ul>
         </div>
       </section>

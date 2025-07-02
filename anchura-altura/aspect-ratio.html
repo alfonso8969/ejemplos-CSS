@@ -42,8 +42,7 @@
 
         .cajasHijo {
             width: 300px;
-            padding: 1px;
-            margin-bottom: 20px;
+            aspect-ratio: 1/1;
         }
 
         .cajasHijo:nth-child(odd) {  
@@ -75,22 +74,7 @@
             border: 10px solid green;
         }
 
-        .gallery img {
-            /* width: 200px;
-            height: auto; */
-
-            /* width: auto;
-            height: 180px;  */
-
-            width: 200px;
-            height: 350px;
-            object-fit: cover;
-        }
-
-        div.gallery:nth-last-child(odd) {
-            object-fit: cover;
-            object-position: 50% 100%;
-        }
+       
   
     </style>
 	 
@@ -105,11 +89,7 @@
     </header>
 
     <div class="cajaPadre">
-      <div class="gallery">
-        <img src="../imagenes/food-02.jpg" alt="" >
-        <img src="../imagenes/food-03.jpg" alt="" >
-        <img src="../imagenes/food-09.jpg" alt="" >
-      </div>
+     
         <!-- HIJO 1 -->
         <div class="cajasHijo hijo1">
             <h2>Caja1</h2>

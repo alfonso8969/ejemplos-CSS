@@ -7,6 +7,10 @@
 
 
     <style>
+
+        * {
+            box-sizing: border-box;
+        }
         body {
             margin:0 2dvw;
             background: #0c0c0c;
@@ -24,12 +28,23 @@
             font-size: 1.5rem;
             text-align: center;
             color: #FFF;
+            padding: 4em 2em;
+            background: orange;
+        }
+
+        header h1 {
+            margin: 0 0 30px 0;
+        }
+
+        header p {
+            margin: 30px 0 0 0;
         }
 
         .cajaPadre {
+            max-width: 980px;
+            margin: -50px auto 20px;
             display: flex;
             flex-wrap: wrap;
-            margin: 40px;
             border: 3px solid #000;
             background: #ffffff;
             font-size: 0.8rem;
@@ -50,7 +65,31 @@
 
         /* cambiamos margin y padding de caja 5 */
         #ejemplo .caja5 {
+            /* margin: 45px; */
+            /* margin: 50px 20px; */
+            /* margin: 50px 50px 50px; */
+            margin: 20px 10px 30px 0px;
+            padding: 40px;
             background: #eff211;
+        }
+
+        footer {
+            background: green;
+            color: wheat;
+            text-align: center;
+            padding: 3em;
+        }
+
+        .btn-oferts {
+            /* En los elementos en linea no funciona margin top o bottom */
+            /* para que funcione cambiar prop display a inline-block */
+            display: inline-block;
+            margin-bottom: 40px;
+            padding: .5em 1em;
+            background: red;
+            border-radius: 12px;
+            color: #fff;
+            text-decoration: none;
         }
     </style>
 
@@ -61,6 +100,7 @@
 <body id="ejemplo">
     <header>
         <h1>Probamos margin y padding</h1>
+        <a href="#" class="btn-oferts" >Ver ofertas</a>
         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum fugit est vero ex non officia! Inventore ipsa
             rem exercitationem molestias.</p>
     </header>
@@ -135,7 +175,9 @@
                 necessitatibus, veriuam.</p>
         </div>
     </div>
-
+    <footer>
+        <p>&copy; Todos los derechos reservados</p>
+    </footer>
 </body>
 
 </html>
