@@ -1,127 +1,384 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
+  <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-
     <style>
         *{
             box-sizing: border-box;
         }
 
-        body{
+        body {
             background: #aaaaaa;    
         }
 
-        header{
+        header {
             text-align: center;
         }
 
-        .cajaPadre{
+        header h1 {
+           font-family: sans-serif ;
+           font-size: 8dvw;
+           /* Generar color en texto con degradado */
+           /* background: linear-gradient(to right, green, blue); */
+           background: url('imagenes/gesto-1.jpg') no-repeat center center / cover;
+           background-clip: text;
+           -webkit-background-clip: text;
+           color: transparent;
+        }
+
+        h2 {
+            text-align: center;
+            font-family: sans-serif;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+            font-size: 2em;
+            color: #333;
+        }
+
+        .cajaPadre {
             width: 80%;
             margin:40px auto;
             border:3px solid #000;
             background: #ffffff;
         }
 
-        .cajaPadre > div{
+        .cajaPadre > div {
             width: 70%;
             margin:40px auto;
             padding: 15px 30px;
             border:1px solid gray;
         }
 
- 
-    </style>
-	
-        
+        .caja1 {
+            background-image: linear-gradient(rgba(0, 0, 255, 0.5), rgba(255, 255, 0, 0.5)),
+              url('imagenes/pera_extremidades.png');
+            background-repeat: no-repeat;
+            background-size: contain;
+            background-position: center;
+            box-shadow: 3px 3px 4px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        .caja2 {
+            background: url('imagenes/fondo-naturaleza.png') no-repeat center center;
+            position: relative;
+            background-attachment: fixed;
+            background-size: cover;
+            border: 2px dashed aliceblue !important;
+            border-block-end-color: orange;
+            border-bottom-style: dotted;
+            border-radius: 0 15px 30px;
+        }
+
+        .caja2 * {
+            color: #fff;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        .caja5 {
+          background: url('imagenes/food-01.jpg') fixed no-repeat center top / cover;          
+        }
+
+        .caja5 {
+          background: url('imagenes/fondo-pera.jpg') no-repeat right top / 64px,
+                      url('imagenes/logo-vaca.png') no-repeat right bottom / 48px;
+        }
+
+        .caja7 {
+          background: linear-gradient(to right, #ff7e5f, #575655);
+          background-clip: text;
+          -webkit-background-clip: text;
+          color: transparent;
+        }
+
+        .caja8 {
+            background: 
+            url('imagenes/logo-pajaro.png') no-repeat top right / 48px,
+            linear-gradient(to left top, rgba(10, 22, 22, 0.253), rgba(83, 79, 75, 0.637)),
+            url('imagenes/logo-vaca.png');
+            color: #fff;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        .food3 {
+            margin-bottom: 15px;;
+            box-shadow: 12px 11px 12px rgba(0, 0, 0, 0.5);
+            filter: brightness(0.8) contrast(1.2);
+        }
+
+        .logo-bird {
+            filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.5));
+        }
+
+        /* Pera animada que habla */
+        .pera-gif {
+            width: 100px;
+            height: 120px;
+            background: linear-gradient(135deg, #8FBC8F 0%, #9ACD32 100%);
+            border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+            position: relative;
+            margin: 20px auto;
+            animation: bounce 1s infinite ease-in-out;
+        }
+
+        .pera-gif::before {
+            content: '';
+            position: absolute;
+            top: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 20px;
+            height: 15px;
+            background: #228B22;
+            border-radius: 50%;
+        }
+
+        .pera-gif::after {
+            content: '';
+            position: absolute;
+            top: -15px;
+            left: 60%;
+            width: 25px;
+            height: 12px;
+            background: #32CD32;
+            border-radius: 0 100% 0 100%;
+            transform: rotate(-45deg);
+        }
+
+        .ojos {
+            position: absolute;
+            top: 30%;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 15px;
+        }
+
+        .ojo {
+            width: 20px;
+            height: 20px;
+            background: white;
+            border-radius: 50%;
+            position: relative;
+            animation: blink 3s infinite;
+        }
+
+        .ojo::after {
+            content: '';
+            position: absolute;
+            top: 3px;
+            left: 3px;
+            width: 8px;
+            height: 8px;
+            background: #000;
+            border-radius: 50%;
+            animation: look 2s infinite ease-in-out;
+        }
+
+        .boca {
+            position: absolute;
+            bottom: 25%;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 30px;
+            height: 15px;
+            background: #FF69B4;
+            border-radius: 50%;
+            animation: hablar 0.5s infinite alternate;
+        }
+
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+
+        @keyframes blink {
+            0%, 90%, 100% { height: 20px; }
+            95% { height: 2px; }
+        }
+
+        @keyframes look {
+            0%, 100% { transform: translateX(0); }
+            50% { transform: translateX(8px); }
+        }
+
+        @keyframes hablar {
+            0% { transform: translateX(-50%) scaleY(1); }
+            100% { transform: translateX(-50%) scaleY(1.5); }
+        }
+
+        .speech-bubble {
+            position: absolute;
+            top: 629px;
+            left: 500px;
+            background: white;
+            border: 2px solid #333;
+            border-radius: 15px;
+            padding: 10px;
+            max-width: 150px;
+            animation: fadeInOut 3s infinite;
+        }
+
+        .speech-bubble::before {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 20px;
+            width: 0;
+            height: 0;
+            border-left: 10px solid transparent;
+            border-right: 10px solid transparent;
+            border-top: 10px solid #333;
+        }
+
+        .speech-bubble::after {
+            content: '';
+            position: absolute;
+            bottom: -8px;
+            left: 22px;
+            width: 0;
+            height: 0;
+            border-left: 8px solid transparent;
+            border-right: 8px solid transparent;
+            border-top: 8px solid white;
+        }
+
+        @keyframes fadeInOut {
+            0%, 20% { opacity: 0; transform: scale(0.8); }
+            30%, 70% { opacity: 1; transform: scale(1); }
+            80%, 100% { opacity: 0; transform: scale(0.8); }
+        }
+
+        </style>
     <title>Document</title>
-</head>
-<body>
+  </head>
+  <body>
     <header>
-        <h1>Probamos los background</h1>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum fugit est vero ex non officia! Inventore ipsa rem exercitationem molestias.</p>
+      <h1>Background</h1>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum fugit est vero ex non officia! Inventore ipsa
+        rem exercitationem molestias.
+      </p>
     </header>
-
     <div class="cajaPadre">
-        <!-- CAJA 1 -->
-        <div class="caja1">
-            <h2>Caja1</h2>
-            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolores quaerat esse animi expedita error impedit veritatis praesentium id culpa quibusdam.</p>
-
-            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Molestias illo porro corporis quo.</p>
-
-            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Tempore quis id nobis, corrupti ipsum necessitatibus, veritatis doloribus, cupiditate quia impedit esse odit nulla? Illo fugit ea, consectetur error cumque aliquam.</p>
+      <!-- CAJA 1 -->
+      <div class="caja1">
+        <h2>Caja1</h2>
+        <p>
+          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolores quaerat esse animi expedita error impedit
+          veritatis praesentium id culpa quibusdam.
+        </p>
+        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Molestias illo porro corporis quo.</p>
+        <p>
+          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Tempore quis id nobis, corrupti ipsum
+          necessitatibus, veritatis doloribus, cupiditate quia impedit esse odit nulla? Illo fugit ea, consectetur error
+          cumque aliquam.
+        </p>
+      </div>
+      <!-- CAJA 2 -->
+      <div class="caja2">
+        <h2>Caja2</h2>
+        <p>OFERTA</p>
+        <p>Lorem ipsum dolor sit.</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia nihil, quibusdam deserunt modi, id iure earum ipsam tempora impedit eaque esse exercitationem quos aut neque sit iste excepturi odio repudiandae natus sequi voluptatibus? Ut assumenda sapiente facere iste, doloribus maxime nesciunt repellat consequatur maiores qui provident esse rerum, iusto aliquam dolorem, et deserunt atque error a natus cupiditate modi voluptas? Voluptate ex dolorum, vel, ducimus neque officia sed excepturi possimus dolorem veritatis atque rerum quibusdam distinctio necessitatibus odio inventore beatae aspernatur autem perferendis! Necessitatibus, quis molestiae. Voluptas soluta nostrum eum odit consequuntur, quo officiis, quidem expedita nulla, molestiae sit saepe magni ex impedit quisquam dolore minus. Vero similique aperiam modi repellendus saepe quia voluptatem rerum fuga iste vitae minus laboriosam, tenetur impedit quisquam ab eos sit inventore necessitatibus autem. Nihil itaque voluptatum placeat libero. Porro beatae veniam veritatis distinctio rem minus a pariatur totam, laborum eum. Libero unde ducimus ratione ex tenetur veniam! Asperiores nostrum tenetur minus debitis quo quis fuga praesentium molestias magnam ab, quae doloremque eveniet esse cupiditate laboriosam vitae modi commodi blanditiis eum quisquam! Quidem, itaque quia sit vel nisi ab consequatur veritatis, numquam, aspernatur perspiciatis ipsa! Voluptates quaerat cum illum, ad asperiores aperiam reiciendis reprehenderit fuga?</p>
+      </div>
+      <!-- Pera animada que habla -->
+      <!-- <div class="pera-container">
+        <div class="pera-gif">
+          <div class="ojos">
+            <div class="ojo"></div>
+            <div class="ojo"></div>
+          </div>
+          <div class="boca"></div>
         </div>
-
-        <!-- CAJA 2 -->
-        <div class="caja2">
-            <h2>Caja2</h2>
-            <p>OFERTA</p>
-            <p>Lorem ipsum dolor sit.</p>
+        <div class="speech-bubble">
+          ¡Hola! Soy una pera parlante 🍐
         </div>
-
-        <!-- CAJA 3 -->
-        <div class="caja3">
-            <h2>Caja3</h2>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime doloremque similique temporibus explicabo eaque libero doloribus distinctio est.</p>
-
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas magnam unde odio!</p>
-
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime doloremque similique temporibus explicabo eaque libero doloribus distinctio est.</p>
-        </div>
-
-        <!-- CAJA 4 -->
-        <div class="caja4">
-            <h2>Caja4</h2>
-            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolores quaerat esse animi expedita error impedit veritatis praesentium id culpa quibusdam.</p>
-
-            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Molestias illo porro corporis quo.</p>
-
-            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Tempore quis id nobis, corrupti ipsum necessitatibus, veritatis doloribus, cupiditate quia impedit esse odit nulla? Illo fugit ea, consectetur error cumque aliquam.</p>
-        </div>
-
-        <!-- CAJA 5 -->
-        <div class="caja5">
-            <h2>Caja5</h2>
-            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolores quaerat esse animi expedita error impedit veritatis praesentium id culpa quibusdam.</p>
-
-            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Molestias illo porro corporis quo.</p>
-
-            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Tempore quis id nobis, corrupti ipsum necessitatibus, veritatis doloribus, cupiditate quia impedit esse odit nulla? Illo fugit ea, consectetur error cumque aliquam.</p>
-        </div>
-
-         <!-- CAJA 6 -->
-         <div class="caja6">
-            <h2>Caja6</h2>
-            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolores quaerat esse animi expedita error impedit veritatis praesentium id culpa quibusdam.</p>
-
-            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Molestias illo porro corporis quo.</p>
-
-            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Tempore quis id nobis, corrupti ipsum necessitatibus, veritatis doloribus, cupiditate quia impedit esse odit nulla? Illo fugit ea, consectetur error cumque aliquam.</p>
-        </div>
-
-         <!-- CAJA 7 -->
-         <div class="caja7">
-            <h2>Caja7</h2>
-            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolores quaerat esse animi expedita error impedit veritatis praesentium id culpa quibusdam.</p>
-
-            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Molestias illo porro corporis quo.</p>
-
-            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Tempore quis id nobis, corrupti ipsum necessitatibus, veritatis doloribus, cupiditate quia impedit esse odit nulla? Illo fugit ea, consectetur error cumque aliquam.</p>
-        </div>
-
-          <!-- CAJA 8 -->
-          <div class="caja8">
-            <h2>Caja8</h2>
-            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolores quaerat esse animi expedita error impedit veritatis praesentium id culpa quibusdam.</p>
-
-            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Molestias illo porro corporis quo.</p>
-
-            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Tempore quis id nobis, corrupti ipsum necessitatibus, veritatis doloribus, cupiditate quia impedit esse odit nulla? Illo fugit ea, consectetur error cumque aliquam.</p>
-        </div>
+      </div> -->
+      <!-- CAJA 3 -->
+      <div class="caja3">
+        <h2>Caja3</h2>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime doloremque similique temporibus explicabo
+          eaque libero doloribus distinctio est.
+        </p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas magnam unde odio!</p>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime doloremque similique temporibus explicabo
+          eaque libero doloribus distinctio est.
+        </p>
+      </div>
+      <!-- CAJA 4 -->
+      <div class="caja4">
+        <h2>Caja4</h2>
+        <p>
+          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolores quaerat esse animi expedita error impedit
+          veritatis praesentium id culpa quibusdam.
+        </p>
+        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Molestias illo porro corporis quo.</p>
+        <p>
+          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Tempore quis id nobis, corrupti ipsum
+          necessitatibus, veritatis doloribus, cupiditate quia impedit esse odit nulla? Illo fugit ea, consectetur error
+          cumque aliquam.
+        </p>
+      </div>
+      <!-- CAJA 5 -->
+      <div class="caja5">
+        <h2>Caja5</h2>
+        <p>
+          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolores quaerat esse animi expedita error impedit
+          veritatis praesentium id culpa quibusdam.
+        </p>
+        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Molestias illo porro corporis quo.</p>
+        <p>
+          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Tempore quis id nobis, corrupti ipsum
+          necessitatibus, veritatis doloribus, cupiditate quia impedit esse odit nulla? Illo fugit ea, consectetur error
+          cumque aliquam.
+        </p>
+      </div>
+      <!-- CAJA 6 -->
+      <div class="caja6">
+        <h2>Caja6</h2>
+        <p>
+          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolores quaerat esse animi expedita error impedit
+          veritatis praesentium id culpa quibusdam.
+        </p>
+        <img src="imagenes/food-03.jpg" alt="" class="food3" width="300" height="300">
+        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Molestias illo porro corporis quo.</p>
+        <img src="imagenes/logo-pajaro.png" alt="" class="logo-bird" width="100" height="100">
+        <p>
+          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Tempore quis id nobis, corrupti ipsum
+          necessitatibus, veritatis doloribus, cupiditate quia impedit esse odit nulla? Illo fugit ea, consectetur error
+          cumque aliquam.
+        </p>
+      </div>
+      <!-- CAJA 7 -->
+      <div class="caja7">
+        <h2>Background Clip</h2>
+        <!-- Explicación de background-clip -->
+        <p>
+          La propiedad <code>background-clip</code> se utiliza para especificar cómo se debe recortar el fondo de un elemento. Puede tomar los siguientes valores:
+        </p>
+        <ul>
+          <li><code>border-box</code>: El fondo se recorta en el borde del elemento, incluyendo el padding y el borde.</li>
+          <li><code>padding-box</code>: El fondo se recorta en el borde del padding del elemento.</li>
+          <li><code>content-box</code>: El fondo se recorta en el borde del contenido del elemento.</li>
+        </ul>
+    
+      </div>
+      <!-- CAJA 8 -->
+      <div class="caja8">
+        <h2>Caja8</h2>
+        <p>
+          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolores quaerat esse animi expedita error impedit
+          veritatis praesentium id culpa quibusdam.
+        </p>
+        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Molestias illo porro corporis quo.</p>
+        <p>
+          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Tempore quis id nobis, corrupti ipsum
+          necessitatibus, veritatis doloribus, cupiditate quia impedit esse odit nulla? Illo fugit ea, consectetur error
+          cumque aliquam.
+        </p>
+      </div>
     </div>
-
-</body>
+  </body>
 </html>
