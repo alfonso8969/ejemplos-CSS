@@ -21,7 +21,7 @@
            font-size: 8dvw;
            /* Generar color en texto con degradado */
            /* background: linear-gradient(to right, green, blue); */
-           background: url('imagenes/gesto-1.jpg') no-repeat center center / cover;
+           background: url('images/gesto-1.jpg') no-repeat center center / cover;
            background-clip: text;
            -webkit-background-clip: text;
            color: transparent;
@@ -51,7 +51,7 @@
 
         .caja1 {
             background-image: linear-gradient(rgba(0, 0, 255, 0.5), rgba(255, 255, 0, 0.5)),
-              url('imagenes/pera_extremidades.png');
+              url('images/pera_extremidades.png');
             background-repeat: no-repeat;
             background-size: contain;
             background-position: center;
@@ -59,7 +59,7 @@
         }
 
         .caja2 {
-            background: url('imagenes/fondo-naturaleza.png') no-repeat center center;
+            background: url('images/fondo-naturaleza.png') no-repeat center center;
             position: relative;
             background-attachment: fixed;
             background-size: cover;
@@ -75,12 +75,12 @@
         }
 
         .caja5 {
-          background: url('imagenes/food-01.jpg') fixed no-repeat center top / cover;          
+          background: url('images/food-01.jpg') fixed no-repeat center top / cover;          
         }
 
         .caja5 {
-          background: url('imagenes/fondo-pera.jpg') no-repeat right top / 64px,
-                      url('imagenes/logo-vaca.png') no-repeat right bottom / 48px;
+          background: url('images/fondo-pera.jpg') no-repeat right top / 64px,
+                      url('images/logo-vaca.png') no-repeat right bottom / 48px;
         }
 
         .caja7 {
@@ -92,9 +92,9 @@
 
         .caja8 {
             background: 
-            url('imagenes/logo-pajaro.png') no-repeat top right / 48px,
+            url('images/logo-pajaro.png') no-repeat top right / 48px,
             linear-gradient(to left top, rgba(10, 22, 22, 0.253), rgba(83, 79, 75, 0.637)),
-            url('imagenes/logo-vaca.png');
+            url('images/logo-vaca.png');
             color: #fff;
             text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
         }
@@ -108,6 +108,33 @@
         .logo-bird {
             filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.5));
         }
+
+        /*algunas opciones de display */
+        nav li {
+            display: inline;
+            margin: 0 10px;
+        }
+
+        .btn-big {
+            /* display: inline-block; */
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            margin : 64px 24px;
+        }
+
+        .d-inline-block > * {
+            display: inline-block;
+            margin-right: 1em;
+        }
+
+        .d-none {
+            display: none;
+        }
+
+
 
         /* Pera animada que habla */
         .pera-gif {
@@ -258,6 +285,14 @@
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum fugit est vero ex non officia! Inventore ipsa
         rem exercitationem molestias.
       </p>
+      <nav>
+        <ul>
+          <li><a href="#">Enlace 1</a></li>
+          <li><a href="#">Enlace 2</a></li>
+          <li><a href="#">Enlace 3</a></li>
+          <li><a href="#">Enlace 4</a></li>
+        </ul>
+      </nav>
     </header>
     <div class="cajaPadre">
       <!-- CAJA 1 -->
@@ -267,12 +302,28 @@
           Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolores quaerat esse animi expedita error impedit
           veritatis praesentium id culpa quibusdam.
         </p>
+        <a class="btn-big" href="#">Test button 1</a>
+        <a class="btn-big" href="#">Test button 2</a>
+        <a class="btn-big" href="#">Test button 3</a>
+        <a class="btn-big d-none" href="#">Test button 4</a>
         <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Molestias illo porro corporis quo.</p>
         <p>
           Lorem ipsum dolor, sit amet consectetur adipisicing elit. Tempore quis id nobis, corrupti ipsum
           necessitatibus, veritatis doloribus, cupiditate quia impedit esse odit nulla? Illo fugit ea, consectetur error
           cumque aliquam.
         </p>
+        <ul class="d-inline-block">
+          <li>Lorem ipsum dolor sit amet.</li>
+          <li>Consectetur adipisicing elit.</li>
+          <li>Quisquam, voluptatum.</li>
+          <li>Dolorem, officia.</li>
+        </ul>
+        <ul class="d-inline-block">
+          <li>Lorem ipsum dolor sit amet.</li>
+          <li>Consectetur adipisicing elit.</li>
+          <li>Quisquam, voluptatum.</li>
+          <li>Dolorem, officia.</li>
+        </ul>
       </div>
       <!-- CAJA 2 -->
       <div class="caja2">
@@ -342,9 +393,9 @@
           Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolores quaerat esse animi expedita error impedit
           veritatis praesentium id culpa quibusdam.
         </p>
-        <img src="imagenes/food-03.jpg" alt="" class="food3" width="300" height="300">
+        <img src="images/food-03.jpg" alt="" class="food3" width="300" height="300">
         <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Molestias illo porro corporis quo.</p>
-        <img src="imagenes/logo-pajaro.png" alt="" class="logo-bird" width="100" height="100">
+        <img src="images/logo-pajaro.png" alt="" class="logo-bird" width="100" height="100">
         <p>
           Lorem ipsum dolor, sit amet consectetur adipisicing elit. Tempore quis id nobis, corrupti ipsum
           necessitatibus, veritatis doloribus, cupiditate quia impedit esse odit nulla? Illo fugit ea, consectetur error
