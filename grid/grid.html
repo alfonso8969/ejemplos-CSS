@@ -29,6 +29,12 @@
 
         header {
             /* Aquí también podemos utilizar Grid para centrar los elementos en horizontal y vertical */
+            display: grid;
+            place-items: center;
+            justify-items: center;
+            align-items: center;
+            /* espacio entre los elementos */
+            gap: 24px;
 
 
             min-height: 200px;
@@ -56,9 +62,22 @@
         /* -------------CAJA PADRE DEL GRID ----------------*/
         .cajaPadre {
             /* En al padre definimos algunas opciones del Grid */
+            display: grid;
+            /* establecemos el Grid */
+            grid-template-columns: repeat(3, 1fr);
+            /* establecemos 3 columnas de igual tamaño */
+            grid-template-rows: repeat(2, 1fr);
+            /* establecemos 2 filas de igual tamaño */
+            grid-gap: 20px;
+            /* establecemos un espacio entre las filas y columnas */
+            grid-auto-rows: 150px;
+            /* establecemos una altura mínima a las filas */
+            grid-auto-columns: 200px;
+            /* establecemos un ancho mínimo a las columnas */
 
-            min-height: 700px;
+            min-height: 700px;            
             /* establecemos una altura al padre para ver mejor las opciones de Grid */
+
             margin: 40px;
             border: 4px solid #000;
             background: #ffffff;
