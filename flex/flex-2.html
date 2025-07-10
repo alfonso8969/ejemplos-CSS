@@ -77,6 +77,12 @@
       .titulo-header {
         font-size: 4em;
         text-shadow: 2px 2px 4px #000;
+        background: #ffff5b;
+      }
+
+      .slogan-header {
+        font-size: 1.2em;
+        background: #d4d41f;
       }
 
       .padding-lateral {
@@ -133,6 +139,7 @@
       }
 
       .productos .caja-producto {
+        flex-basis: 49.5%;
         padding: 15px;
         display: grid;
         grid-auto-flow: row;
@@ -140,10 +147,6 @@
         background: #1f1f1f;
         color: rgb(200, 200, 200);
         border: 1px solid gray;
-      }
-
-      .caja-producto {
-        flex-basis: 23%;
       }
 
       .caja-producto img {
@@ -179,7 +182,7 @@
     <!-- colocar los contenidos del header entrados en horizontal y vertical con FLEX -->
     <header>
       <p class="titulo-header">Demo FLEX</p>
-      <p>Lorem ipsum dolor sit amet consectetur.</p>
+      <p class="slogan-header"">Lorem ipsum dolor sit amet consectetur.</p>
     </header>
 
     <nav class="padding-lateral">
