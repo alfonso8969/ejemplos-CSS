@@ -129,10 +129,15 @@
 
         /* === GALERÍA RESPONSIVA === */
         .galeria-flex {
-            margin: 30px 0;
+          display: flex;  
+          flex-wrap: wrap;
+          row-gap: 20px;
+          justify-content: space-between;
+          margin: 30px 0;
         }
 
         .imagen-card {
+            flex-basis: 49%;
             background: white;
             border-radius: 15px;
             overflow: hidden;

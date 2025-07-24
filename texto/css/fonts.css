@@ -1,0 +1,117 @@
+@font-face {
+    font-family: 'Ashley';
+    src: url('../../fonts/Ashley.woff2') format('woff2'),
+        url('../../fonts/Ashley.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Cocogoose';
+    src: url('../../fonts/CocogooseProTrial-Regular.woff2') format('woff2'),
+        url('../../fonts/CocogooseProTrial-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Cocogoose';
+    src: url('../../fonts/CocogooseProTrial-Italic.woff2') format('woff2'),
+        url('../../fonts/CocogooseProTrial-Italic.woff') format('woff');
+    font-weight: normal;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Cocogoose';
+    src: url('../../fonts/CocogooseProTrial-BoldItalic.woff2') format('woff2'),
+        url('../../fonts/CocogooseProTrial-BoldItalic.woff') format('woff');
+    font-weight: bold;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Cocogoose';
+    src: url('../../fonts/CocogooseProTrial-Bold.woff2') format('woff2'),
+        url('../../fonts/CocogooseProTrial-Bold.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'BabelSans';
+    src: url('../../fonts/BabelSans.woff2') format('woff2'),
+        url('../../fonts/BabelSans.woff') format('woff');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'BabelSans';
+    src: url('../../fonts/BabelSans-Oblique.woff2') format('woff2'),
+        url('../../fonts/BabelSans-Oblique.woff') format('woff');
+    font-weight: 500;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'BabelSans';
+    src: url('../../fonts/BabelSans-BoldOblique.woff2') format('woff2'),
+        url('../../fonts/BabelSans-BoldOblique.woff') format('woff');
+    font-weight: bold;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'BabelSans';
+    src: url('../../fonts/BabelSans-Bold.woff2') format('woff2'),
+        url('../../fonts/BabelSans-Bold.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'OpenDyslexic';
+    src: url('../../fonts/OpenDyslexic-Regular.woff2') format('woff2'),
+         url('../../fonts/OpenDyslexic-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'OpenDyslexic';
+    src: url('../../fonts/OpenDyslexic-Italic.woff2') format('woff2'),
+         url('../../fonts/OpenDyslexic-Italic.woff') format('woff');
+    font-weight: normal;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'OpenDyslexic';
+    src: url('../../fonts/OpenDyslexic-Bold.woff2') format('woff2'),
+         url('../../fonts/OpenDyslexic-Bold.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'OpenDyslexic';
+    src: url('../../fonts/OpenDyslexic-BoldItalic.woff2') format('woff2'),
+         url('../../fonts/OpenDyslexic-BoldItalic.woff') format('woff');
+    font-weight: bold;
+    font-style: italic;
+    font-display: swap;
+}
+

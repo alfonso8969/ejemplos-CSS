@@ -1,418 +1,537 @@
 <!DOCTYPE html>
 <html lang="es">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Posicionamiento Mágico (Relative, Absolute, Fixed, Sticky)</title>
     <style>
-        * {
-            box-sizing: border-box;
-        }
+      * {
+        box-sizing: border-box;
+      }
 
-        body {
-            font-family: sans-serif;
-            background-color: #f1f8e9;
-            color: #333;
-            line-height: 1.8;
-            margin: 0;
-        }
+      body {
+        font-family: sans-serif;
+        background-color: #f1f8e9;
+        color: #333;
+        line-height: 1.8;
+        margin: 0;
+      }
 
-        header {
-            background-color: #558b2f;
-            color: white;
-            padding: 1.5em 0;
-            text-align: center;
-            border-bottom: 5px solid #33691e;
-            width: 100%;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-        }
+      header {
+        position: relative;
+        min-height: 380px;
+        background-color: #558b2f;
+        color: white;
+        padding: 1.5em 0;
+        text-align: center;
+        border-bottom: 5px solid #33691e;
+        width: 100%;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      }
 
-        header h1 {
-            font-size: 2.8em;
-            margin: 0;
-        }
+      .heroe {
+        position: absolute;
+        bottom: 0.8rem;
+        left: calc(50% - 12px);
+      }
 
-        .img-full {
-            width: 100%;
-        }
+      header h1 {
+        font-size: 2.8em;
+        margin: 0;
+      }
 
-        .contenedor {
-            max-width: 1000px;
-            margin: 25px auto;
-            background-color: #ffffff;
-            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
-            border-radius: 18px;
-            padding: 40px;
-        }
+      .img-full {
+        width: 100%;
+      }
 
-        .contenedor h2 {
-            color: #ef6c00;
-            font-size: 2.5em;
-            border-bottom: 3px solid #ef6c00;
-            padding-bottom: 1em;
-            margin-top: 0;
-            margin-bottom: 2em;
-        }
+      .contenedor {
+        max-width: 1000px;
+        margin: 25px auto;
+        background-color: #ffffff;
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+        border-radius: 18px;
+        padding: 40px;
+      }
 
-        .contenedor-relativo {
-            background-color: #e0f7fa;
-            border: 3px dashed #0097a7;
-            padding: 30px;
-            margin-bottom: 40px;
-            min-height: 250px;
-            border-radius: 10px;
-        }
+      .contenedor h2 {
+        color: #ef6c00;
+        font-size: 2.5em;
+        border-bottom: 3px solid #ef6c00;
+        padding-bottom: 1em;
+        margin-top: 0;
+        margin-bottom: 2em;
+      }
 
-        .contenedor-relativo.v2 {
-            width: 65%;
-            background: #1a237e;
-            color: #FFF;
-            border: none;
-        }
+      .contenedor-relativo {
+        background-color: #e0f7fa;
+        border: 3px dashed #0097a7;
+        padding: 30px;
+        margin-bottom: 40px;
+        min-height: 250px;
+        border-radius: 10px;
+      }
 
-        .caja-absoluta {
-            background-color: #ff5252;
-            color: white;
-            padding: 15px;
-            border: 2px solid #c62828;
-            width: 180px;
-            text-align: center;
-            border-radius: 8px;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-        }
+      .contenedor-relativo.v2 {
+        width: 65%;
+        background: #1a237e;
+        color: #fff;
+        border: none;
+      }
 
-        .caja-fixed {
-            background-color: #c0392b;
-            color: white;
-            padding: 15px;
-            border-radius: 50px;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
-            cursor: pointer;
-        }
+      .caja-absoluta {
+        background-color: #ff5252;
+        color: white;
+        padding: 15px;
+        border: 2px solid #c62828;
+        width: 180px;
+        text-align: center;
+        border-radius: 8px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+      }
 
+      .caja-fixed {
+        position: fixed;
+        bottom: 35px;
+        /* left: 35px; */
+        right: 35px;
+        background-color: #c0392b;
+        color: white;
+        padding: 15px;
+        border-radius: 50px;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+        cursor: pointer;
+      }
 
-        .sticky-box {
-            padding: 3rem 0;
-            margin: 4rem 0;
-            background-color: #ffeb3b;
-            border: 2px solid #fbc02d;
-            text-align: center;
-            border-radius: 10px;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-        }
+      .sticky-box {
+        position: sticky;
+        top: 20px;
+        padding: 3rem 0;
+        margin: 4rem 0;
+        background-color: #ffeb3b;
+        border: 2px solid #fbc02d;
+        text-align: center;
+        border-radius: 10px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      }
 
-        ul {
-            padding-left: 20px;
-            color: #555;
-        }
+      ul {
+        padding-left: 20px;
+        color: #555;
+      }
 
-        li {
-            margin-bottom: 0.8em;
-            line-height: 1.4;
-        }
+      li {
+        margin-bottom: 0.8em;
+        line-height: 1.4;
+      }
 
-        p {
-            margin-bottom: 1em;
-        }
+      p {
+        margin-bottom: 1em;
+      }
 
+      footer {
+        background-color: #1a237e;
+        color: white;
+        text-align: center;
+        padding: 1.5em 0;
+        width: 100%;
+        box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.2);
+      }
 
-        footer {
-            background-color: #1a237e;
-            color: white;
-            text-align: center;
-            padding: 1.5em 0;
-            width: 100%;
-            box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.2);
-        }
+      .pos-relative {
+        display: inline-block;
+        position: relative;
+        top: 10px;
+        left: 20px;
+        background-color: #c5cae9;
+        padding: 10px;
+        border-radius: 5px;
+      }
+
+      .contenedor-relativo {
+        position: relative;
+      }
+
+      .caja-absoluta {
+        position: absolute;
+        top: 20px;
+        left: 20px;
+      }
     </style>
-</head>
-
-<body>
+  </head>
+  <body>
     <header>
-        <h1>Posicionamiento CSS: ¡Domina el Espacio!</h1>
-        <p>Aprende a mover elementos con `relative`, `absolute`, `fixed` y `sticky`.</p>
-
-        <!-- esta caja del héroe la podemos colocar en posición absolute respecto al header -->
-        <div class="heroe">
-            <img src="imagenes/heroe.png" alt="">
-        </div>
+      <h1>Posicionamiento CSS: ¡Domina el Espacio!</h1>
+      <p>
+        Aprende a mover elementos con `relative`, `absolute`, `fixed` y
+        `sticky`.
+      </p>
+      <!-- esta caja del héroe la podemos colocar en posición absolute respecto al header -->
+      <div class="heroe">
+        <img src="images/heroe.png" alt />
+      </div>
     </header>
-
     <main>
-        <div class="contenedor">
-
-            <h2>Tipos de Posicionamiento</h2>
-            <p>El posicionamiento CSS nos permite mover elementos fuera de su flujo normal en el documento. ¡Es como
-                darles
-                superpoderes para volar!</p>
-            <ul>
-                <li>**`static` (Estático):** La posición por defecto. Los elementos se posicionan normalmente en el
-                    flujo
-                    del documento. Propiedades `top`, `bottom`, `left`, `right` y `z-index` NO tienen efecto.</li>
-                <li>**`relative` (Relativo):** El elemento se posiciona en relación con su posición normal. Sus hijos
-                    `absolute` se posicionarán respecto a él.</li>
-                <li>**`absolute` (Absoluto):** El elemento se posiciona en relación con el ancestro posicionado más
-                    cercano
-                    (que no sea `static`). Si no hay ancestro posicionado, se posiciona respecto al `
-
-
-                </li>
-                <li>**`fixed` (Fijo):** El elemento se posiciona en relación con la ventana del navegador (viewport).
-                    Permanece en su lugar incluso al hacer scroll. Ideal para barras de navegación o botones flotantes.
-                </li>
-                <li>**`sticky` (Pegajoso):** Una mezcla de `relative` y `fixed`. Se comporta como `relative` hasta que
-                    alcanza un cierto umbral de scroll, momento en el que se comporta como `fixed`.</li>
-            </ul>
-
-            <h2>`relative` y `absolute`: ¡El Dúo Dinámico!</h2>
-            <div class="contenedor-relativo">
-                <h3>Soy el Contenedor Relativo</h3>
-                <p>Mi posición es `relative`. Esto me convierte en el "padre de posicionamiento" para mi hijo absoluto.
-                </p>
-
-                <div class="caja-absoluta">
-                    <h4>¡Caja Absoluta!</h4>
-                    <p>Estoy posicionado respecto a mi padre relativo.</p>
-                </div>
-                <p>Sin `position: relative;` en el padre, la caja absoluta se habría posicionado respecto al `
-
-
-                </p>
-            </div>
-
-            <div class="contenedor-relativo v2">
-                <h3>Soy el Contenedor Relativo v2</h3>
-                <p>Mi posición es `relative`. y aunque no tengo hijos absolutos puedo hacer cambios en mi propia
-                    posición.
-                </p>
-
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Suscipit temporibus molestiae atque
-                    voluptas
-                    vel repudiandae architecto voluptates cupiditate rerum libero ipsa odit ea doloribus eius omnis,
-                    totam
-                    explicabo dignissimos fugit blanditiis in nemo quidem veritatis? Minus, repellat accusantium
-                    molestias
-                    ducimus doloribus tempore corporis nulla.</p>
-
-
-
-
-                </p>
-            </div>
-
-            <h2>`fixed`: ¡Siempre a la Vista!</h2>
-
-            <div class="caja-fixed">
-                <strong>Fixed!</strong><br>
-                Siempre visible
-            </div>
-
-            <h2>`sticky`: ¡El Elemento Pegajoso!</h2>
-            <p>A medida que hagas scroll hacia abajo en esta página, la siguiente caja amarilla se "pegará" a la parte
-                superior de la ventana del navegador una vez que la alcances, y se despegará cuando su contenedor
-                principal
-                salga de la vista.</p>
-            <div class="sticky-box">
-                <h3>¡Soy una Caja STICKY!</h3>
-                <p>¡Me pego al borde superior al hacer scroll!</p>
-            </div>
-
-            <p>Y para demostrar el `sticky`... aquí hay mucho, mucho texto de relleno.</p>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas, error! Ratione, iste! Quidem minus
-                dolores
-                voluptatibus vero, necessitatibus nemo accusamus earum fugiat, dignissimos sint aliquam et asperiores,
-                omnis
-                quae doloremque! Recusandae, ducimus! Earum, voluptatem. Placeat dolorum distinctio, fuga similique ab
-                molestias voluptatum veritatis libero non, quisquam, voluptatibus facere omnis asperiores consectetur
-                eaque
-                harum quas velit aut, dignissimos odio. Nemo minus, consectetur vitae debitis facilis earum impedit
-                animi
-                fugiat voluptatum temporibus assumenda, recusandae reprehenderit ab voluptatem maiores deleniti.
-                Blanditiis
-                eaque animi sint. Numquam, vitae corporis? Distinctio, nemo harum! Modi, ad magnam! Explicabo assumenda
-                error facilis cupiditate. Nesciunt fuga repellat earum illum aut deleniti accusantium! Laborum omnis
-                doloremque sint asperiores reiciendis architecto dicta officiis! Expedita consectetur ab ad animi ipsum,
-                facere reprehenderit fuga, quis culpa sequi officia, vitae debitis corrupti? Vero, provident eveniet non
-                ducimus quis, cumque laudantium voluptatibus facere, dolore nisi voluptas. Laboriosam rem ipsum
-                perferendis
-                eos doloremque reiciendis officiis distinctio expedita sint esse error, voluptate quis nostrum?
-                Exercitationem deleniti id voluptatibus ducimus error. Eaque, architecto! Nesciunt dolores eveniet
-                debitis
-                omnis, amet laudantium, ad iure sapiente voluptatem minus dolore ab! Consequatur quos necessitatibus
-                quis
-                eos ut dolores rerum, vitae, modi sapiente ipsam vero quam distinctio voluptatibus. Quas, sequi.</p>
-
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis, pariatur magni. Error fugit voluptatem
-                esse eligendi delectus dolorum dolorem repellat suscipit praesentium expedita natus, numquam nihil vitae
-                provident velit consequatur perspiciatis libero sequi aliquam perferendis. Amet ratione ipsam ipsum
-                natus,
-                temporibus, molestiae quasi vero non accusamus harum recusandae nihil alias! Animi earum asperiores
-                commodi
-                cumque exercitationem, molestias similique incidunt laborum voluptas voluptatem amet obcaecati itaque
-                eos.
-            </p>
-
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis, pariatur magni. Error fugit voluptatem
-                esse eligendi delectus dolorum dolorem repellat suscipit praesentium expedita natus, numquam nihil vitae
-                provident velit consequatur perspiciatis libero sequi aliquam perferendis. Amet ratione ipsam ipsum
-                natus,
-                temporibus, molestiae quasi vero non accusamus harum recusandae nihil alias! Animi earum asperiores
-                commodi
-                cumque exercitationem, molestias similique incidunt laborum voluptas voluptatem amet obcaecati itaque
-                eos.
-            </p>
-
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis, pariatur magni. Error fugit voluptatem
-                esse eligendi delectus dolorum dolorem repellat suscipit praesentium expedita natus, numquam nihil vitae
-                provident velit consequatur perspiciatis libero sequi aliquam perferendis. Amet ratione ipsam ipsum
-                natus,
-                temporibus, molestiae quasi vero non accusamus harum recusandae nihil alias! Animi earum asperiores
-                commodi
-                cumque exercitationem, molestias similique incidunt laborum voluptas voluptatem amet obcaecati itaque
-                eos.
-            </p>
-
-            <h4>Lorem ipsum dolor sit amet.</h4>
-
-            <p> Nesciunt fugit optio consectetur commodi, accusamus ab repellat ducimus ex
-                magni dolore nobis voluptate illo ratione itaque adipisci at sapiente eos consequatur tempore cum rerum
-                asperiores? Molestias, aperiam doloremque! Possimus iste a cupiditate accusamus sequi tempore, soluta
-                placeat vitae numquam itaque harum dolor doloremque. Commodi optio tempore blanditiis laborum ipsum, est
-                ipsam placeat corrupti aut fuga ut id quia suscipit mollitia delectus quidem dicta unde, amet rem
-                doloribus
-                officiis exercitationem dolore ab iure! Ipsa ducimus reiciendis aperiam. In culpa, vero voluptates
-                dolorem
-                minima distinctio quaerat alias illo rerum aperiam labore eum doloremque. Dicta non iusto nulla ullam ut
-                sed, reiciendis quas inventore rem, illum labore doloribus natus. Necessitatibus quas harum totam
-                suscipit
-                laboriosam porro veniam eius vitae eum?</p>
-
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis quasi ipsam nulla culpa aliquam
-                corrupti soluta pariatur amet eum maiores adipisci ea delectus aut esse cupiditate cum, numquam fugiat
-                nesciunt deserunt laudantium quam necessitatibus quia. Recusandae dolorem libero quas repellendus
-                voluptas
-                illo laboriosam. Quam, quod rem consequuntur veritatis quia inventore. Maxime magnam nostrum et
-                inventore
-                eum? Inventore assumenda tenetur harum voluptate debitis laudantium est beatae optio deleniti odit
-                molestias, quas error impedit enim ducimus sit vitae vel culpa aspernatur magnam sed rem a cupiditate
-                totam.
-                Velit itaque aut saepe molestias neque dignissimos animi voluptatem, non libero fugiat asperiores,
-                officia,
-                hic similique optio sit earum?</p>
-
-            <h4>Lorem ipsum dolor sit amet.</h4>
-
-            <p> Nesciunt fugit optio consectetur commodi, accusamus ab repellat ducimus ex
-                magni dolore nobis voluptate illo ratione itaque adipisci at sapiente eos consequatur tempore cum rerum
-                asperiores? Molestias, aperiam doloremque! Possimus iste a cupiditate accusamus sequi tempore, soluta
-                placeat vitae numquam itaque harum dolor doloremque. Commodi optio tempore blanditiis laborum ipsum, est
-                ipsam placeat corrupti aut fuga ut id quia suscipit mollitia delectus quidem dicta unde, amet rem
-                doloribus
-                officiis exercitationem dolore ab iure! Ipsa ducimus reiciendis aperiam. In culpa, vero voluptates
-                dolorem
-                minima distinctio quaerat alias illo rerum aperiam labore eum doloremque. Dicta non iusto nulla ullam ut
-                sed, reiciendis quas inventore rem, illum labore doloribus natus. Necessitatibus quas harum totam
-                suscipit
-                laboriosam porro veniam eius vitae eum?</p>
-
-            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. A laboriosam officiis nisi fugit veritatis? Sed
-                omnis esse laborum sint, alias tempore quisquam expedita et quos aperiam facere dolorum nostrum
-                aspernatur!
-                Placeat illum veritatis nobis est fugit a alias officia, ut aliquid velit reiciendis quos, officiis sunt
-                quam numquam tempore molestias soluta ad vitae! Autem dolorum modi labore. Amet velit voluptas
-                laboriosam
-                doloribus. Quo sed quia vero?</p>
-            <h4>Lorem ipsum dolor sit amet.</h4>
-
-            <p> Nesciunt fugit optio consectetur commodi, accusamus ab repellat ducimus ex
-                magni dolore nobis voluptate illo ratione itaque adipisci at sapiente eos consequatur tempore cum rerum
-                asperiores? Molestias, aperiam doloremque! Possimus iste a cupiditate accusamus sequi tempore, soluta
-                placeat vitae numquam itaque harum dolor doloremque. Commodi optio tempore blanditiis laborum ipsum, est
-                ipsam placeat corrupti aut fuga ut id quia suscipit mollitia delectus quidem dicta unde, amet rem
-                doloribus
-                officiis exercitationem dolore ab iure! Ipsa ducimus reiciendis aperiam. In culpa, vero voluptates
-                dolorem
-                minima distinctio quaerat alias illo rerum aperiam labore eum doloremque. Dicta non iusto nulla ullam ut
-                sed, reiciendis quas inventore rem, illum labore doloribus natus. Necessitatibus quas harum totam
-                suscipit
-                laboriosam porro veniam eius vitae eum?</p>
-
-            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. A laboriosam officiis nisi fugit veritatis? Sed
-                omnis esse laborum sint, alias tempore quisquam expedita et quos aperiam facere dolorum nostrum
-                aspernatur!
-                Placeat illum veritatis nobis est fugit a alias officia, ut aliquid velit reiciendis quos, officiis sunt
-                quam numquam tempore molestias soluta ad vitae! Autem dolorum modi labore. Amet velit voluptas
-                laboriosam
-                doloribus. Quo sed quia vero?</p>
-            <h4>Lorem ipsum dolor sit amet.</h4>
-
+      <div class="contenedor">
+        <h2>
+          Tipos de Posicionamiento
+          <span class="pos-relative">
+            Texto con <strong>relative</strong>
+          </span>
+        </h2>
+        <p>
+          El posicionamiento CSS nos permite mover elementos fuera de su flujo
+          normal en el documento. ¡Es como darles superpoderes para volar!
+        </p>
+        <ul>
+          <li>
+            **`static` (Estático):** La posición por defecto. Los elementos se
+            posicionan normalmente en el flujo del documento. Propiedades `top`,
+            `bottom`, `left`, `right` y `z-index` NO tienen efecto.
+          </li>
+          <li>
+            **`relative` (Relativo):** El elemento se posiciona en relación con
+            su posición normal. Sus hijos `absolute` se posicionarán respecto a
+            él.
+          </li>
+          <li>
+            **`absolute` (Absoluto):** El elemento se posiciona en relación con
+            el ancestro posicionado más cercano (que no sea `static`). Si no hay
+            ancestro posicionado, se posiciona respecto al `
+          </li>
+          <li>
+            **`fixed` (Fijo):** El elemento se posiciona en relación con la
+            ventana del navegador (viewport). Permanece en su lugar incluso al
+            hacer scroll. Ideal para barras de navegación o botones flotantes.
+          </li>
+          <li>
+            **`sticky` (Pegajoso):** Una mezcla de `relative` y `fixed`. Se
+            comporta como `relative` hasta que alcanza un cierto umbral de
+            scroll, momento en el que se comporta como `fixed`.
+          </li>
+        </ul>
+        <h2>`relative` y `absolute`: ¡El Dúo Dinámico!</h2>
+        <div class="contenedor-relativo">
+          <h3>Soy el Contenedor Relativo</h3>
+          <p>
+            Mi posición es `relative`. Esto me convierte en el "padre de
+            posicionamiento" para mi hijo absoluto.
+          </p>
+          <div class="caja-absoluta">
+            <h4>¡Caja Absoluta!</h4>
+            <p>Estoy posicionado respecto a mi padre relativo.</p>
+          </div>
+          <p>
+            Sin `position: relative;` en el padre, la caja absoluta se habría
+            posicionado respecto al `
+          </p>
+        </div>
+        <div class="contenedor-relativo v2">
+          <h3>Soy el Contenedor Relativo v2</h3>
+          <p>
+            Mi posición es `relative`. y aunque no tengo hijos absolutos puedo
+            hacer cambios en mi propia posición.
+          </p>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Suscipit
+            temporibus molestiae atque voluptas vel repudiandae architecto
+            voluptates cupiditate rerum libero ipsa odit ea doloribus eius
+            omnis, totam explicabo dignissimos fugit blanditiis in nemo quidem
+            veritatis? Minus, repellat accusantium molestias ducimus doloribus
+            tempore corporis nulla.
+          </p>
         </div>
 
-        <div class="contenedor">
-            <h2>Soy otro contenedor</h2>
-            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Consectetur, velit? Nemo delectus, iusto
-                adipisci sit maiores veritatis in corporis sunt distinctio rem non illo maxime temporibus alias illum.
-                Itaque, quo nostrum. Esse obcaecati in, explicabo omnis ipsam error, facilis reprehenderit ex placeat
-                iste reiciendis nostrum dicta fugiat alias sequi consequatur. Accusantium numquam quia quidem ullam.</p>
-
-            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Consectetur, velit? Nemo delectus, iusto
-                adipisci sit maiores veritatis in corporis sunt distinctio rem non illo maxime temporibus alias illum.
-                Itaque, quo nostrum. Esse obcaecati in, explicabo omnis ipsam error, facilis reprehenderit ex placeat
-                iste reiciendis nostrum dicta fugiat alias sequi consequatur. Accusantium numquam quia quidem ullam.</p>
-
-            <img class="img-full" src="imagenes/clase-robotica.jpg" alt="">
-
-            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Consectetur, velit? Nemo delectus, iusto
-                adipisci sit maiores veritatis in corporis sunt distinctio rem non illo maxime temporibus alias illum.
-                Itaque, quo nostrum. Esse obcaecati in, explicabo omnis ipsam error, facilis reprehenderit ex placeat
-                iste reiciendis nostrum dicta fugiat alias sequi consequatur. Accusantium numquam quia quidem ullam.</p>
-
-            <h3>Lorem ipsum dolor sit amet.</h3>
-
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates placeat delectus ex expedita a
-                quaerat suscipit nesciunt minus laboriosam quae voluptate, animi eligendi alias odit at iusto minima
-                accusamus omnis, sed earum ab modi! Veniam mollitia beatae recusandae iste consequuntur similique vel
-                maiores aliquam!</p>
-            <h3>Lorem ipsum dolor sit amet.</h3>
-
-            <img class="img-full" src="imagenes/peluquero.jpg" alt="">
-
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates placeat delectus ex expedita a
-                quaerat suscipit nesciunt minus laboriosam quae voluptate, animi eligendi alias odit at iusto minima
-                accusamus omnis, sed earum ab modi! Veniam mollitia beatae recusandae iste consequuntur similique vel
-                maiores aliquam!</p>
-            <h3>Lorem ipsum dolor sit amet.</h3>
-
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates placeat delectus ex expedita a
-                quaerat suscipit nesciunt minus laboriosam quae voluptate, animi eligendi alias odit at iusto minima
-                accusamus omnis, sed earum ab modi! Veniam mollitia beatae recusandae iste consequuntur similique vel
-                maiores aliquam!</p>
-            <h3>Lorem ipsum dolor sit amet.</h3>
-
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates placeat delectus ex expedita a
-                quaerat suscipit nesciunt minus laboriosam quae voluptate, animi eligendi alias odit at iusto minima
-                accusamus omnis, sed earum ab modi! Veniam mollitia beatae recusandae iste consequuntur similique vel
-                maiores aliquam!</p>
-            <h3>Lorem ipsum dolor sit amet.</h3>
-
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates placeat delectus ex expedita a
-                quaerat suscipit nesciunt minus laboriosam quae voluptate, animi eligendi alias odit at iusto minima
-                accusamus omnis, sed earum ab modi! Veniam mollitia beatae recusandae iste consequuntur similique vel
-                maiores aliquam!</p>
-            <h3>Lorem ipsum dolor sit amet.</h3>
-
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates placeat delectus ex expedita a
-                quaerat suscipit nesciunt minus laboriosam quae voluptate, animi eligendi alias odit at iusto minima
-                accusamus omnis, sed earum ab modi! Veniam mollitia beatae recusandae iste consequuntur similique vel
-                maiores aliquam!</p>
+        <h2>`fixed`: ¡Siempre a la Vista!</h2>
+        <div class="caja-fixed">
+          <strong>Fixed!</strong>
+          <br />Siempre visible
         </div>
+        <h2>`sticky`: ¡El Elemento Pegajoso!</h2>
+        <p>
+          A medida que hagas scroll hacia abajo en esta página, la siguiente
+          caja amarilla se "pegará" a la parte superior de la ventana del
+          navegador una vez que la alcances, y se despegará cuando su contenedor
+          principal salga de la vista.
+        </p>
+        <div class="sticky-box">
+          <h3>¡Soy una Caja STICKY!</h3>
+          <p>¡Me pego al borde superior al hacer scroll!</p>
+        </div>
+        <p>
+          Y para demostrar el `sticky`... aquí hay mucho, mucho texto de
+          relleno.
+        </p>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas,
+          error! Ratione, iste! Quidem minus dolores voluptatibus vero,
+          necessitatibus nemo accusamus earum fugiat, dignissimos sint aliquam
+          et asperiores, omnis quae doloremque! Recusandae, ducimus! Earum,
+          voluptatem. Placeat dolorum distinctio, fuga similique ab molestias
+          voluptatum veritatis libero non, quisquam, voluptatibus facere omnis
+          asperiores consectetur eaque harum quas velit aut, dignissimos odio.
+          Nemo minus, consectetur vitae debitis facilis earum impedit animi
+          fugiat voluptatum temporibus assumenda, recusandae reprehenderit ab
+          voluptatem maiores deleniti. Blanditiis eaque animi sint. Numquam,
+          vitae corporis? Distinctio, nemo harum! Modi, ad magnam! Explicabo
+          assumenda error facilis cupiditate. Nesciunt fuga repellat earum illum
+          aut deleniti accusantium! Laborum omnis doloremque sint asperiores
+          reiciendis architecto dicta officiis! Expedita consectetur ab ad animi
+          ipsum, facere reprehenderit fuga, quis culpa sequi officia, vitae
+          debitis corrupti? Vero, provident eveniet non ducimus quis, cumque
+          laudantium voluptatibus facere, dolore nisi voluptas. Laboriosam rem
+          ipsum perferendis eos doloremque reiciendis officiis distinctio
+          expedita sint esse error, voluptate quis nostrum? Exercitationem
+          deleniti id voluptatibus ducimus error. Eaque, architecto! Nesciunt
+          dolores eveniet debitis omnis, amet laudantium, ad iure sapiente
+          voluptatem minus dolore ab! Consequatur quos necessitatibus quis eos
+          ut dolores rerum, vitae, modi sapiente ipsam vero quam distinctio
+          voluptatibus. Quas, sequi.
+        </p>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis,
+          pariatur magni. Error fugit voluptatem esse eligendi delectus dolorum
+          dolorem repellat suscipit praesentium expedita natus, numquam nihil
+          vitae provident velit consequatur perspiciatis libero sequi aliquam
+          perferendis. Amet ratione ipsam ipsum natus, temporibus, molestiae
+          quasi vero non accusamus harum recusandae nihil alias! Animi earum
+          asperiores commodi cumque exercitationem, molestias similique incidunt
+          laborum voluptas voluptatem amet obcaecati itaque eos.
+        </p>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis,
+          pariatur magni. Error fugit voluptatem esse eligendi delectus dolorum
+          dolorem repellat suscipit praesentium expedita natus, numquam nihil
+          vitae provident velit consequatur perspiciatis libero sequi aliquam
+          perferendis. Amet ratione ipsam ipsum natus, temporibus, molestiae
+          quasi vero non accusamus harum recusandae nihil alias! Animi earum
+          asperiores commodi cumque exercitationem, molestias similique incidunt
+          laborum voluptas voluptatem amet obcaecati itaque eos.
+        </p>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis,
+          pariatur magni. Error fugit voluptatem esse eligendi delectus dolorum
+          dolorem repellat suscipit praesentium expedita natus, numquam nihil
+          vitae provident velit consequatur perspiciatis libero sequi aliquam
+          perferendis. Amet ratione ipsam ipsum natus, temporibus, molestiae
+          quasi vero non accusamus harum recusandae nihil alias! Animi earum
+          asperiores commodi cumque exercitationem, molestias similique incidunt
+          laborum voluptas voluptatem amet obcaecati itaque eos.
+        </p>
+        <h4>Lorem ipsum dolor sit amet.</h4>
+        <p>
+          Nesciunt fugit optio consectetur commodi, accusamus ab repellat
+          ducimus ex magni dolore nobis voluptate illo ratione itaque adipisci
+          at sapiente eos consequatur tempore cum rerum asperiores? Molestias,
+          aperiam doloremque! Possimus iste a cupiditate accusamus sequi
+          tempore, soluta placeat vitae numquam itaque harum dolor doloremque.
+          Commodi optio tempore blanditiis laborum ipsum, est ipsam placeat
+          corrupti aut fuga ut id quia suscipit mollitia delectus quidem dicta
+          unde, amet rem doloribus officiis exercitationem dolore ab iure! Ipsa
+          ducimus reiciendis aperiam. In culpa, vero voluptates dolorem minima
+          distinctio quaerat alias illo rerum aperiam labore eum doloremque.
+          Dicta non iusto nulla ullam ut sed, reiciendis quas inventore rem,
+          illum labore doloribus natus. Necessitatibus quas harum totam suscipit
+          laboriosam porro veniam eius vitae eum?
+        </p>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis
+          quasi ipsam nulla culpa aliquam corrupti soluta pariatur amet eum
+          maiores adipisci ea delectus aut esse cupiditate cum, numquam fugiat
+          nesciunt deserunt laudantium quam necessitatibus quia. Recusandae
+          dolorem libero quas repellendus voluptas illo laboriosam. Quam, quod
+          rem consequuntur veritatis quia inventore. Maxime magnam nostrum et
+          inventore eum? Inventore assumenda tenetur harum voluptate debitis
+          laudantium est beatae optio deleniti odit molestias, quas error
+          impedit enim ducimus sit vitae vel culpa aspernatur magnam sed rem a
+          cupiditate totam. Velit itaque aut saepe molestias neque dignissimos
+          animi voluptatem, non libero fugiat asperiores, officia, hic similique
+          optio sit earum?
+        </p>
+        <h4>Lorem ipsum dolor sit amet.</h4>
+        <p>
+          Nesciunt fugit optio consectetur commodi, accusamus ab repellat
+          ducimus ex magni dolore nobis voluptate illo ratione itaque adipisci
+          at sapiente eos consequatur tempore cum rerum asperiores? Molestias,
+          aperiam doloremque! Possimus iste a cupiditate accusamus sequi
+          tempore, soluta placeat vitae numquam itaque harum dolor doloremque.
+          Commodi optio tempore blanditiis laborum ipsum, est ipsam placeat
+          corrupti aut fuga ut id quia suscipit mollitia delectus quidem dicta
+          unde, amet rem doloribus officiis exercitationem dolore ab iure! Ipsa
+          ducimus reiciendis aperiam. In culpa, vero voluptates dolorem minima
+          distinctio quaerat alias illo rerum aperiam labore eum doloremque.
+          Dicta non iusto nulla ullam ut sed, reiciendis quas inventore rem,
+          illum labore doloribus natus. Necessitatibus quas harum totam suscipit
+          laboriosam porro veniam eius vitae eum?
+        </p>
+        <p>
+          Lorem ipsum dolor sit amet consectetur, adipisicing elit. A laboriosam
+          officiis nisi fugit veritatis? Sed omnis esse laborum sint, alias
+          tempore quisquam expedita et quos aperiam facere dolorum nostrum
+          aspernatur! Placeat illum veritatis nobis est fugit a alias officia,
+          ut aliquid velit reiciendis quos, officiis sunt quam numquam tempore
+          molestias soluta ad vitae! Autem dolorum modi labore. Amet velit
+          voluptas laboriosam doloribus. Quo sed quia vero?
+        </p>
+        <h4>Lorem ipsum dolor sit amet.</h4>
+        <p>
+          Nesciunt fugit optio consectetur commodi, accusamus ab repellat
+          ducimus ex magni dolore nobis voluptate illo ratione itaque adipisci
+          at sapiente eos consequatur tempore cum rerum asperiores? Molestias,
+          aperiam doloremque! Possimus iste a cupiditate accusamus sequi
+          tempore, soluta placeat vitae numquam itaque harum dolor doloremque.
+          Commodi optio tempore blanditiis laborum ipsum, est ipsam placeat
+          corrupti aut fuga ut id quia suscipit mollitia delectus quidem dicta
+          unde, amet rem doloribus officiis exercitationem dolore ab iure! Ipsa
+          ducimus reiciendis aperiam. In culpa, vero voluptates dolorem minima
+          distinctio quaerat alias illo rerum aperiam labore eum doloremque.
+          Dicta non iusto nulla ullam ut sed, reiciendis quas inventore rem,
+          illum labore doloribus natus. Necessitatibus quas harum totam suscipit
+          laboriosam porro veniam eius vitae eum?
+        </p>
+        <p>
+          Lorem ipsum dolor sit amet consectetur, adipisicing elit. A laboriosam
+          officiis nisi fugit veritatis? Sed omnis esse laborum sint, alias
+          tempore quisquam expedita et quos aperiam facere dolorum nostrum
+          aspernatur! Placeat illum veritatis nobis est fugit a alias officia,
+          ut aliquid velit reiciendis quos, officiis sunt quam numquam tempore
+          molestias soluta ad vitae! Autem dolorum modi labore. Amet velit
+          voluptas laboriosam doloribus. Quo sed quia vero?
+        </p>
+        <h4>Lorem ipsum dolor sit amet.</h4>
+      </div>
+      <div class="contenedor">
+        <h2>Soy otro contenedor</h2>
+        <p>
+          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Consectetur,
+          velit? Nemo delectus, iusto adipisci sit maiores veritatis in corporis
+          sunt distinctio rem non illo maxime temporibus alias illum. Itaque,
+          quo nostrum. Esse obcaecati in, explicabo omnis ipsam error, facilis
+          reprehenderit ex placeat iste reiciendis nostrum dicta fugiat alias
+          sequi consequatur. Accusantium numquam quia quidem ullam.
+        </p>
+        <p>
+          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Consectetur,
+          velit? Nemo delectus, iusto adipisci sit maiores veritatis in corporis
+          sunt distinctio rem non illo maxime temporibus alias illum. Itaque,
+          quo nostrum. Esse obcaecati in, explicabo omnis ipsam error, facilis
+          reprehenderit ex placeat iste reiciendis nostrum dicta fugiat alias
+          sequi consequatur. Accusantium numquam quia quidem ullam.
+        </p>
+        <img class="img-full" src="images/clase-robotica.jpg" alt />
+        <p>
+          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Consectetur,
+          velit? Nemo delectus, iusto adipisci sit maiores veritatis in corporis
+          sunt distinctio rem non illo maxime temporibus alias illum. Itaque,
+          quo nostrum. Esse obcaecati in, explicabo omnis ipsam error, facilis
+          reprehenderit ex placeat iste reiciendis nostrum dicta fugiat alias
+          sequi consequatur. Accusantium numquam quia quidem ullam.
+        </p>
+        <h3>Lorem ipsum dolor sit amet.</h3>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates
+          placeat delectus ex expedita a quaerat suscipit nesciunt minus
+          laboriosam quae voluptate, animi eligendi alias odit at iusto minima
+          accusamus omnis, sed earum ab modi! Veniam mollitia beatae recusandae
+          iste consequuntur similique vel maiores aliquam!
+        </p>
+        <h3>Lorem ipsum dolor sit amet.</h3>
+        <img class="img-full" src="images/peluquero.jpg" alt />
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates
+          placeat delectus ex expedita a quaerat suscipit nesciunt minus
+          laboriosam quae voluptate, animi eligendi alias odit at iusto minima
+          accusamus omnis, sed earum ab modi! Veniam mollitia beatae recusandae
+          iste consequuntur similique vel maiores aliquam!
+        </p>
+        <h3>Lorem ipsum dolor sit amet.</h3>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates
+          placeat delectus ex expedita a quaerat suscipit nesciunt minus
+          laboriosam quae voluptate, animi eligendi alias odit at iusto minima
+          accusamus omnis, sed earum ab modi! Veniam mollitia beatae recusandae
+          iste consequuntur similique vel maiores aliquam!
+        </p>
+        <h3>Lorem ipsum dolor sit amet.</h3>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates
+          placeat delectus ex expedita a quaerat suscipit nesciunt minus
+          laboriosam quae voluptate, animi eligendi alias odit at iusto minima
+          accusamus omnis, sed earum ab modi! Veniam mollitia beatae recusandae
+          iste consequuntur similique vel maiores aliquam!
+        </p>
+        <h3>Lorem ipsum dolor sit amet.</h3>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates
+          placeat delectus ex expedita a quaerat suscipit nesciunt minus
+          laboriosam quae voluptate, animi eligendi alias odit at iusto minima
+          accusamus omnis, sed earum ab modi! Veniam mollitia beatae recusandae
+          iste consequuntur similique vel maiores aliquam!
+        </p>
+        <h3>Lorem ipsum dolor sit amet.</h3>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates
+          placeat delectus ex expedita a quaerat suscipit nesciunt minus
+          laboriosam quae voluptate, animi eligendi alias odit at iusto minima
+          accusamus omnis, sed earum ab modi! Veniam mollitia beatae recusandae
+          iste consequuntur similique vel maiores aliquam!
+        </p>
+      </div>
     </main>
-
     <footer>
-        <p>¡Has dominado el arte de mover elementos a tu antojo!</p>
-        <p>&copy; Maestros del Espacio Digital</p>
+      <p>¡Has dominado el arte de mover elementos a tu antojo!</p>
+      <p>&copy;Maestros del Espacio Digital</p>
     </footer>
-</body>
-
+    <!-- Code injected by live-server -->
+    <script>
+      // <![CDATA[  <-- For SVG support
+      if ("WebSocket" in window) {
+        (function () {
+          function refreshCSS() {
+            var sheets = [].slice.call(document.getElementsByTagName("link"));
+            var head = document.getElementsByTagName("head")[0];
+            for (var i = 0; i < sheets.length; ++i) {
+              var elem = sheets[i];
+              var parent = elem.parentElement || head;
+              parent.removeChild(elem);
+              var rel = elem.rel;
+              if (
+                (elem.href && typeof rel != "string") ||
+                rel.length == 0 ||
+                rel.toLowerCase() == "stylesheet"
+              ) {
+                var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, "");
+                elem.href =
+                  url +
+                  (url.indexOf("?") >= 0 ? "&" : "?") +
+                  "_cacheOverride=" +
+                  new Date().valueOf();
+              }
+              parent.appendChild(elem);
+            }
+          }
+          var protocol =
+            window.location.protocol === "http:" ? "ws://" : "wss://";
+          var address =
+            protocol + window.location.host + window.location.pathname + "/ws";
+          var socket = new WebSocket(address);
+          socket.onmessage = function (msg) {
+            if (msg.data == "reload") window.location.reload();
+            else if (msg.data == "refreshcss") refreshCSS();
+          };
+          if (
+            sessionStorage &&
+            !sessionStorage.getItem("IsThisFirstTime_Log_From_LiveServer")
+          ) {
+            console.log("Live reload enabled.");
+            sessionStorage.setItem("IsThisFirstTime_Log_From_LiveServer", true);
+          }
+        })();
+      } else {
+        console.error(
+          "Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading."
+        );
+      }
+      // ]]>
+    </script>
+  </body>
 </html>

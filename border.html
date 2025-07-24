@@ -1,75 +1,144 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
+  <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
 
     <style>
-        *{
+        * {
             box-sizing: border-box;
         }
 
-        h1{
+        h1 {
             text-align: center;
         }
 
-        .cajaPadre{
+        .cajaPadre {
             width: 80%;
             margin:40px auto;
             border:3px solid #000;
             background: rgb(219, 219, 219);
         }
 
-        .cajaPadre > div{
+        .cajaPadre > div {
             width: 70%;
             margin:40px auto;
+            padding: 2em;
         }
 
 
-        .caja1{
+        .caja1 {
             background: rgb(103, 245, 139);
+            border: 10px solid red;
+            outline: 10px solid blue;
+            outline-offset: 10px;
         }
 
-        .caja2{      
+        .caja1 img {
+            width: 300px;
+            height: 300px;
+            object-fit: cover;
+            margin-bottom: 15px;
+            border-radius: 50%;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+        }
+
+        .caja2 {      
             background: rgb(240, 151, 228);
+            border: 2px dashed aliceblue;
+            border-block-end-color: orange;
+            border-bottom-style: dotted;
+            border-radius: 0 15px 30px;
         }
 
-        .caja3{
+        .caja2 form input {           
+            padding: 0.5em;
+            margin: 1em 0;           
+        }
+
+        .caja2 form input[type="email"] {
+            width: 50%;
+            border: none;
+            background: rgba(255, 255, 255, 0.527);                     
+        }
+        
+        .caja2 form input[type="submit"] {
+            padding: .7em 1em;
+            width: 40%;
+            border: none;
+            background: rgba(76, 15, 243, 0.527);
+            color: white;
+            font-weight: bold;
+            border-radius: 15px;
+          }
+          
+          .caja2 form input[type="submit"]:hover {
+            background: rgba(76, 15, 243, 0.827);
+            color: black;
+            cursor: pointer;                     
+            
+        }
+
+        .caja2 form input[type="email"]:focus {
+            outline: none;
+            background: #fff;
+        }
+
+        .caja3 {
             background: rgb(61, 98, 250);
+            border-width: 5px;
+            border-block: aliceblue;
+            border-color: antiquewhite;
+            border-style: double;
+            border-bottom: 10px solid red;
+            border-bottom-left-radius: 10px;
+            border-bottom-right-radius: 10px;
         }
 
  
      
 
     </style>
-	 
 
-        
     <title>Document</title>
-</head>
-<body>
+  </head>
+  <body>
     <h1>Probamos la propiedad border</h1>
     <div class="cajaPadre">
-        <div class="caja1">
-            <h2>Caja1</h2>
-            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolores quaerat esse animi expedita error impedit veritatis praesentium id culpa quibusdam.</p>
+      <div class="caja1">
+        <h2>Caja1</h2>
+        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolores
+          quaerat esse animi expedita error impedit veritatis praesentium id
+          culpa quibusdam.</p>
 
-            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Molestias illo porro corporis quo.</p>
+        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Molestias
+          illo porro corporis quo.</p>
 
-            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Tempore quis id nobis, corrupti ipsum necessitatibus, veritatis doloribus, cupiditate quia impedit esse odit nulla? Illo fugit ea, consectetur error cumque aliquam.</p>
-        </div>
+        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Tempore
+          quis id nobis, corrupti ipsum necessitatibus, veritatis doloribus,
+          cupiditate quia impedit esse odit nulla? Illo fugit ea, consectetur
+          error cumque aliquam.</p>
 
-        <div class="caja2">
-            <h2>Caja2</h2>
-            <p>Lorem ipsum dolor sit.</p>
-        </div>
+          <img src="images/food-06.jpg" alt="">
+          <img src="images/food-03.jpg" alt="">
+          <img src="images/fondo-naturaleza.png" alt="">
+      </div>
 
-        <div class="caja3">
-            <h2>Caja3</h2>
-            <p>Lorem ipsum dolor sit.</p>
-        </div>
+      <div class="caja2">
+        <h2>Caja2</h2>
+        <p>Lorem ipsum dolor sit.</p>
+        <form action="send.php" method="post" class="formulario">
+          <label for="caja2-input">Correo para suscripción</label>
+          <input type="email" id="caja2-input" placeholder="Escribe tu email...">
+          <input type="submit" value="Enviar">
+        </form>
+      </div>
+
+      <div class="caja3">
+        <h2>Caja3</h2>
+        <p>Lorem ipsum dolor sit.</p>
+      </div>
     </div>
 
-</body>
+  </body>
 </html>

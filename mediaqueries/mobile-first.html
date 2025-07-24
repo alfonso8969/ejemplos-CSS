@@ -1,198 +1,300 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>   
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
 
     <style>
-      
-        *{
-            box-sizing: border-box;
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        padding: 0;
+        background: #aaaaaa;
+        font-family: sans-serif;
+      }
+
+      h1 {
+        font-size: 2.5em;
+      }
+
+      header {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        min-height: 200px;
+        padding: 20px;
+        background: linear-gradient(
+            rgba(64, 10, 150, 0.6),
+            rgba(64, 10, 150, 0.1)
+          ),
+          url("https://picsum.photos/1800/1800") center/cover;
+        color: #fff;
+      }
+
+      header h1,
+      header p {
+        margin: 5px;
+        padding: 0;
+      }
+
+      nav {
+        position: relative;
+        padding: 1px;
+        background: #000;
+        height: 60px;
+      }
+
+      nav ul {
+        list-style-type: none;
+      }
+
+      nav li {
+        margin: 10px;
+      }
+
+      nav li a {
+        text-decoration: none;
+        color: #fff;
+        font-weight: bold;
+      }
+
+      .ancho-maximo {
+        max-width: 980px;
+        margin: 0 auto;
+      }
+
+      /* -------------CAJA PADRE ----------------*/
+      .cajaPadre {
+        background: #ffffff;
+      }
+
+      .cajaPadre > div {
+        padding: 15px;
+        border: 1px solid gray;
+      }
+
+      .cajaPadre > div:nth-child(even) {
+        background: #68980d;
+        color: #fff;
+      }
+
+      .cajaPadre > div:nth-child(odd) img {
+        max-width: 100%;
+      }
+
+      .menu ul {
+        display: none;
+      }
+
+      .menu-icon {
+        position: absolute;
+        top: 20%;
+        right: 5px;
+        width: 30px;
+        height: 30px;
+        cursor: pointer;
+        fill: #fff;
+      }
+
+      /* -------------FOOTER PRINCIPAL ----------------*/
+      footer {
+        padding: 30px;
+        color: #fff;
+        background: #000;
+        text-align: center;
+      }
+
+      /* -------------RESPONSIVE ----------------*/
+
+      @media screen and (min-width: 38.75em) {
+        header {
+          flex-direction: row;
+          justify-content: space-between;
+          align-items: center;
         }
 
-        body{
-			margin: 0;
-			padding: 0;
-            background: #aaaaaa;   
-			font-family: sans-serif; 
+        header h1 {
+          font-size: 3em;
         }
 
-        h1{
-            font-size: 2.5em;
-        }
- 
-    
-
-        header{
-			display: flex;
-			flex-direction: column;
-			justify-content: center;
-			align-items: center;
-            min-height: 200px;
-			padding: 20px;
-            background: linear-gradient(rgba(64, 10, 150,0.6),rgba(64, 10, 150,0.1)),
-                         url('https://picsum.photos/1800/1800') center/cover;
-            color:#FFF;
-                 
+        nav ul {
+          display: flex !important;
+          justify-content: center;
         }
 
-        header h1, header p{
-            margin:5px;
-            padding: 0;
+        nav {
+          height: 60px;
         }
 
-		nav{
-			padding: 1px;
-			background: #000;
-
-		}
-
-		nav ul{
-			list-style-type: none;
-		}
-
-		nav li{
-			margin:10px;
-		}
-		
-		nav li a{
-			text-decoration: none;
-			color:#FFF;
-			font-weight: bold;
-		}
-  
-
-        /* -------------CAJA PADRE ----------------*/
-        .cajaPadre{
-            background: #ffffff;
-        }
- 
-        .cajaPadre > div{
-            padding: 15px;
-            border:1px solid gray;
+        .menu-icon {
+          display: none;
         }
 
-        .cajaPadre > div:nth-child(even){
-            background: #68980d;
-			color:#FFF;
+        /* Responsive Design */
+        .cajaPadre {
+          display: grid;
+          grid-template-columns: repeat(2, 1fr);
+          gap: 20px;
+          margin: 40px;
         }
 
-		.cajaPadre > div:nth-child(odd) img{
-           max-width: 100%;
+        .cajaPadre > div {
+          padding: 15px;
+          border: 1px solid gray;
+        }
+      }
+
+      @media screen and (min-width: 64em) {
+        .cajaPadre {
+          grid-template-columns: repeat(3, 1fr);
+        }
+      }
+
+      @media screen and (max-width: 30em) {
+        nav {
+          padding: 1px;
+          height: 160px;
         }
 
-		  /* -------------FOOTER PRINCIPAL ----------------*/
-		footer{
-			padding: 30px;
-			color:#FFF;
-			background:#000 ;
-			text-align: center;
+        .menu-icon {
+          display: none !important;
+        }
 
-		}
-  
-
+        .menu ul {
+          display: block;
+        }
+      }
     </style>
-	
-        
-    
-</head>
-<body id="ejemplo">
+  </head>
+  <body id="ejemplo">
     <header>
-        <h1>Mobile First</h1>
-        
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum fugit est vero ex non officia! Inventore ipsa rem exercitationem molestias.</p>
+      <h1>Mobile First</h1>
+
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum fugit est
+        vero ex non officia! Inventore ipsa rem exercitationem molestias.
+      </p>
     </header>
 
-	<!-- menú de navegación -->
-	<nav>
-		<ul>
-			<li>
-				<a href="#">Inicio</a>
-			</li>
+    <!-- menú de navegación -->
+    <nav class="menu">
+      <ul>
+        <li>
+          <a href="#">Inicio</a>
+        </li>
 
-			<li>
-				<a href="#">Productos</a>
-			</li>
-	
-			<li>
-				<a href="#">Ofertas</a>
-			</li>
+        <li>
+          <a href="#">Productos</a>
+        </li>
 
-			<li>
-				<a href="#">Clientes</a>
-			</li>
-	
-			<li>
-				<a href="#">Contacto</a>
-			</li>
-		</ul>
-	</nav>
+        <li>
+          <a href="#">Ofertas</a>
+        </li>
 
-    <main>
-		<div class="cajaPadre">
-			<!-- CAJA 1 -->
-			<div class="caja1">
-				<h2>Caja1</h2>
-				<p>Lorem ipsum</p>
-				<img src="imagenes/gesto-1.jpg" width="400" alt="">
-	 
-			</div>
-	
-			<!-- CAJA 2 -->
-			<div class="caja2">
-				<h2>Caja2</h2>
-				<p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quod sed molestiae nobis?</p>
-	
-				<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde incidunt possimus voluptatibus nemo hic. Nisi vel eos alias esse id! Corporis consectetur perferendis numquam eveniet error quod, tempore soluta deserunt.</p>
-				  
-			 </div>
-	
-			<!-- CAJA 3 -->
-			<div class="caja3">
-				<h2>Caja3</h2>
-				<p>Lorem ipsum dolor sit amet. Lorem ipsum dolor sit, amet consectetur adipisicing elit. Suscipit!</p>
-				<img src="imagenes/gesto-2.jpg" width="400" alt="">
-	
-	  
-			</div>
-	
-			<!-- CAJA 4 -->
-			<div class="caja4">
-				<h2>Caja4</h2>
-				<p>Lorem ipsum dolor, Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda illum minima odit, consequatur impedit sunt deserunt? Quis rem iste illum autem voluptatem provident similique veritatis quidem, tempora voluptas, laborum sed!</p>
-	 
-			</div>
-	
-			<!-- CAJA 5 -->
-			<div class="caja5">
-				<h2>Caja5</h2>
-				<p>Lorem ipsum dolor, sit amet consectetur.</p>
-	
-				<img src="imagenes/gesto-3.jpg" width="400" alt="">
-		   
-			</div>
-	
-			 <!-- CAJA 6 -->
-			 <div class="caja6">
-				<h2>Caja6</h2>
-				<p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolores quaerat esse animi expedita error impedit veritatis praesentium id culpa quibusdam.</p>
-	
-				<p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Animi placeat deserunt quam? Possimus sed, ducimus accusantium, saepe repellendus vel expedita ipsa a quis, esse totam recusandae. Similique tenetur asperiores voluptas.</p>
-	 
-			</div> 
-		</div>
-	</main>
+        <li>
+          <a href="#">Clientes</a>
+        </li>
 
+        <li>
+          <a href="#">Contacto</a>
+        </li>
+      </ul>
+      <div class="menu-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+          <!--!Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.-->
+          <path
+            d="M0 96C0 78.3 14.3 64 32 64l384 0c17.7 0 32 14.3 32 32s-14.3 32-32 32L32 128C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32l384 0c17.7 0 32 14.3 32 32s-14.3 32-32 32L32 288c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32L32 448c-17.7 0-32-14.3-32-32s14.3-32 32-32l384 0c17.7 0 32 14.3 32 32z"
+          />
+        </svg>
+      </div>
+    </nav>
 
-	<footer>
-        <address>
-           <p>C/ Zapateros 17, 03680 Aspe - Alicante</p>
-           <p>hola@casika.es</p> 
-           <p>Telf: 965 038 972</p>
-        </address>
-        <p>&copy; Casika. Todos los derechos reservados</p>
+    <main class="ancho-maximo">
+      <div class="cajaPadre">
+        <!-- CAJA 1 -->
+        <div class="caja1">
+          <h2>Caja1</h2>
+          <p>Lorem ipsum</p>
+          <img src="../images/gato_triste.svg" width="400" alt="" />
+        </div>
+
+        <!-- CAJA 2 -->
+        <div class="caja2">
+          <h2>Caja2</h2>
+          <p>
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Lorem,
+            ipsum dolor sit amet consectetur adipisicing elit. Quod sed
+            molestiae nobis?
+          </p>
+
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde
+            incidunt possimus voluptatibus nemo hic. Nisi vel eos alias esse id!
+            Corporis consectetur perferendis numquam eveniet error quod, tempore
+            soluta deserunt.
+          </p>
+        </div>
+
+        <!-- CAJA 3 -->
+        <div class="caja3">
+          <h2>Caja3</h2>
+          <p>
+            Lorem ipsum dolor sit amet. Lorem ipsum dolor sit, amet consectetur
+            adipisicing elit. Suscipit!
+          </p>
+          <img src="../images/gesto-2.jpg" width="400" alt="" />
+        </div>
+
+        <!-- CAJA 4 -->
+        <div class="caja4">
+          <h2>Caja4</h2>
+          <p>
+            Lorem ipsum dolor, Lorem ipsum dolor sit amet, consectetur
+            adipisicing elit. Assumenda illum minima odit, consequatur impedit
+            sunt deserunt? Quis rem iste illum autem voluptatem provident
+            similique veritatis quidem, tempora voluptas, laborum sed!
+          </p>
+        </div>
+
+        <!-- CAJA 5 -->
+        <div class="caja5">
+          <h2>Caja5</h2>
+          <p>Lorem ipsum dolor, sit amet consectetur.</p>
+
+          <img src="../images/gesto-3.jpg" width="400" alt="" />
+        </div>
+
+        <!-- CAJA 6 -->
+        <div class="caja6">
+          <h2>Caja6</h2>
+          <p>
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolores
+            quaerat esse animi expedita error impedit veritatis praesentium id
+            culpa quibusdam.
+          </p>
+
+          <p>
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Animi
+            placeat deserunt quam? Possimus sed, ducimus accusantium, saepe
+            repellendus vel expedita ipsa a quis, esse totam recusandae.
+            Similique tenetur asperiores voluptas.
+          </p>
+        </div>
+      </div>
+    </main>
+
+    <footer>
+      <address>
+        <p>C/ Zapateros 17, 03680 Aspe - Alicante</p>
+        <p>hola@casika.es</p>
+        <p>Telf: 965 038 972</p>
+      </address>
+      <p>&copy; Casika. Todos los derechos reservados</p>
     </footer>
-
-</body>
+  </body>
 </html>
