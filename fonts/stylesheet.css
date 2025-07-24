@@ -1,0 +1,81 @@
+@font-face {
+    font-family: 'Ashley';
+    src: url('Ashley.woff2') format('woff2'),
+        url('Ashley.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display:swap;
+}
+
+@font-face {
+    font-family: 'Cocogoose';
+    src: url('CocogooseProTrial-Italic.woff2') format('woff2'),
+        url('CocogooseProTrial-Italic.woff') format('woff');
+    font-weight: normal;
+    font-style: italic;
+    font-display:swap;
+}
+
+@font-face {
+    font-family: 'Cocogoose';
+    src: url('CocogooseProTrial-BoldItalic.woff2') format('woff2'),
+        url('CocogooseProTrial-BoldItalic.woff') format('woff');
+    font-weight: bold;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Cocogoose';
+    src: url('CocogooseProTrial-Bold.woff2') format('woff2'),
+        url('CocogooseProTrial-Bold.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Cocogoose';
+    src: url('CocogooseProTrial-Regular.woff2') format('woff2'),
+        url('CocogooseProTrial-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'BabelSans';
+    src: url('BabelSans-Bold.woff2') format('woff2'),
+        url('BabelSans-Bold.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'BabelSans';
+    src: url('BabelSans-Oblique.woff2') format('woff2'),
+        url('BabelSans-Oblique.woff') format('woff');
+    font-weight: 500;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'BabelSans';
+    src: url('BabelSans.woff2') format('woff2'),
+        url('BabelSans.woff') format('woff');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'BabelSans';
+    src: url('BabelSans-BoldOblique.woff2') format('woff2'),
+        url('BabelSans-BoldOblique.woff') format('woff');
+    font-weight: bold;
+    font-style: italic;
+    font-display: swap;
+}
+
